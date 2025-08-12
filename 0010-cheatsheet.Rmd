@@ -60,19 +60,25 @@ This section is a quick reference on setting up GitHub Pages site for workshops.
 Add your pre-work, schedule, and faculty details. When slides and lab materials are ready, include them in their respective modules.
 
 # Editing Your Workshop {#editing-cheatsheet}
-1. [If you don't already have your repo cloned:](#clone)
+1.  [If you don't already have your repo cloned:](#clone)
 
 * On your repo page on GitHub's website, click the green Code button, ensure SSH is selected, and copy the text in the box
 * On your local machine, open your terminal and navigate to the folder where you store your CBW Github repos
 * Run ``git clone [THE TEXT YOU JUST COPIED]``
 
-2. Make any changes you like
+2.  Make any changes you like, but don't forget:
 
-3. [Click Build to create the HTML files that make up the website](#finishing-touches)
+    :::: {.callout type="red" title="Remember to pull first!" style="subtle" icon="fas fa-circle-info"}
+    
+    **Remember to always run `git pull` before making changes**. It doesn't matter if you do this in RStudio or the command line, but it will save you serious headaches down the road.
+    
+    ::::
 
-4. [Commit and push](#finishing-touches)
+3.  [Click Build to create the HTML files that make up the website](#finishing-touches)
 
-5. Your website will be ready in 1-2 minutes
+4.  [Commit and push](#finishing-touches)
+
+5.  Your website will be ready in 1-2 minutes
 
 For more details on this process, see the Reference Materials section below.
 

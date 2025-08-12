@@ -1,6 +1,6 @@
 # (PART) Formatting {-}
-<!--    ![Image showing how to ](img/template/.png)\
-    <br>-->
+
+# Markdown {#markdown}
 
 
 # Callouts {#callouts}
@@ -70,22 +70,22 @@ You can override any of these defaults by specifying a different icon class, for
 
 Here are some practical examples you can copy and adapt.
 
-### Example 1: Static Informational Note
+### Example 1: Informational Note
 
-A standard blue callout for providing information.
+A subtle blue callout for providing information.
 
 ```markdown
-:::: {.callout type="blue" title="Information"}
+:::: {.callout type="blue" title="Information" style="subtle"}
 
-This is a standard blue informational callout.
+This is a blue informational callout using the Subtle styling.
 The default icon for 'blue' will be used.
 
 ::::
 ```
 
-:::: {.callout type="blue" title="Information"}
+:::: {.callout type="blue" title="Information" style="subtle"}
 
-This is a standard blue informational callout.
+This is a blue informational callout using the Subtle styling.
 The default icon for 'blue' will be used.
 
 ::::
@@ -227,3 +227,10 @@ You can nest callouts inside other elements, such as lists, by indenting the ent
     ::::
 
 3.  This is the third item in the list, appearing after the callout.
+
+
+
+# Code {#code}
+
+
+

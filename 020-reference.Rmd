@@ -1,5 +1,7 @@
 # (PART) Reference Material {-}
 
+# Command line crash course {#command-line}
+
 # Bookdown crash course {#bookdown-crash-course}
 
 Here is a general summary of how Bookdown creates html websites from .Rmd files when you hit Build.
@@ -269,3 +271,4 @@ Now, we're done! We should see the updates on GitHub now. Also note, if we ever 
 
 Git pushing will automatically update the website, you can see the updates and progress in the actions window we saw previously. (Check out your website on the web once it's done deploying!)
 
+# Danger zones {#danger-zones}

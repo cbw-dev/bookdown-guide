@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>12 Clone to your computer | CBW Bookdown Guide</title>
+  <title>17 Code | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="12 Clone to your computer | CBW Bookdown Guide" />
+  <meta property="og:title" content="17 Code | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="12 Clone to your computer | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="17 Code | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="faculty-team.html"/>
-<link rel="next" href="finishing-touches.html"/>
+<link rel="prev" href="callouts.html"/>
+<link rel="next" href="command-line.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -275,76 +275,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="clone" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">12</span> Clone to your computer<a href="clone.html#clone" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Now that the website is created, let’s bring it to your computer where you can easily make edits. We’ll use the <code>git clone</code> command for this.</p>
-<ol style="list-style-type: decimal">
-<li><p>Navigate to the folder you created in <a href="local-setup.html#local-setup">Local Setup</a> using Terminal/Windows PowerShell/Command Prompt.</p>
-<div class="callout-blue-subtle">
-<span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
-<div class="callout-content">
-<div class="callout-title-static">
-<p>Opening your folder in the command line</p>
-</div>
-<p>You can use the cd command to navigate. Some easier options, if you prefer:</p>
-On <strong>Windows</strong><br />
-<em>Method 1</em>: Shift + Right-click
-<ul>
-<li>Open Windows File Explorer and navigate to the folder you want to open in the terminal.<br />
-</li>
-<li>Hold down the Shift key and right-click on the folder (or an empty area within the folder).<br />
-</li>
-<li>Select “Open in Terminal” from the context menu. <br></li>
-</ul>
-<em>Method 2</em>: Typing “cmd” in the address bar
-<ul>
-<li>Open Windows File Explorer and navigate to the folder.<br />
-</li>
-<li>Click in the address bar at the top of the window.<br />
-</li>
-<li>Type <code>cmd</code> and press Enter. <br><br></li>
-</ul>
-On <strong>Mac</strong>
-<ul>
-<li>Locate and open the folder you want to use in Finder.</li>
-<li>If you don’t see the path bar at the bottom of the Finder window, go to View &gt; Show Path Bar.</li>
-<li>In the path bar, right-click (or Control-click) the folder.</li>
-<li>Select Open in Terminal <br><br></li>
-</ul>
-<p>Note that the <code>pwd</code> command gives you the <em>path to your working directory</em>. You may want to use this in your CBWGithub folder and paste the output somewhere where you can quickly find it, so it is easier to navigate to in the future.</p>
-</div>
-</div></li>
-<li><p>Get your repo’s SSH URL.</p>
-<p>Find the ssh for your workshop repository:</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Click the green button entitled <code>&lt; &gt; Code</code> and see the drop down options.</p></li>
-<li><p>Click the SSH tab, as seen below, and then copy the text below it. The text should be something like <a href="mailto:git@github.com" class="email">git@github.com</a>:bioinformaticsdotca/WORKSHOP-NAME.git, as seen below.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/git-instruct/copy-ssh.png"
-alt="how to find the ssh for your repo" /><br />
-</p></div></details></li>
-<li><p><strong>Edit</strong> and <strong>run the following command</strong> in Terminal/PowerShell/Command Prompt, within the folder you want the workshop folder to be in. (Recall that we navigated there in step 1.)</p></li>
-</ol>
-<div class="callout-red">
-<span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
-<div class="callout-content">
-<div class="callout-title-static">
-<p>Edit this command!</p>
-</div>
-<p>Type “git clone”, paste the SSH url, and then hit enter. The command is below, but you must delete the entire “git@github.com:bioinformaticsdotca/[YOUR WORKSHOP NAME].git” text, and replace it with the text you copied.</p>
-<pre><code>git clone git@github.com:bioinformaticsdotca/[YOUR WORKSHOP NAME].git</code></pre>
-</div>
-</div></li>
-<li><p>You should be ready to go! With your given permissions, you should be able to git push (put your local edits on GitHub) and git pull (pull edits on GitHub to your local computer) fine!</p></li>
-</ol>
+<div id="code" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">17</span> Code<a href="code.html#code" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="faculty-team.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="finishing-touches.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="callouts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="command-line.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -375,7 +319,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0034-clone.Rmd",
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/016-last.Rmd",
     "text": "Edit"
   },
   "history": {

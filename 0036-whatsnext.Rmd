@@ -2,6 +2,12 @@
 
 Now that you have your repo set up, you can start filling it out! Some of the details you'll need to include are below.
 
+:::: {.callout type="red" title="Remember to pull first!" style="subtle" icon="fas fa-circle-info"}
+
+**Remember to always run `git pull` before making changes**. It doesn't matter if you do this in RStudio or the command line, but it will save you serious headaches down the road.
+
+::::
+
 ## Homepage
 The index.Rmd file creates your landing page, which has a few different components.
 
@@ -97,6 +103,12 @@ Copy the below code chunk and paste into your slide. Replace `YOUTUBE EMBED LINK
 
 ### Adding lab material
 RCs and faculty can add lab material directly into your bookdown website. Use the details in the Formatting section below to include features like code chunks, callouts, and images.
+
+## Bioschemas
+The `_bioschemas.html` file contains the Bioschemas metadata. It is mostly complete, but you'll need to update:  
+
+* *inLanguage* if the language is not English  
+* *keywords* with 3-5 keywords  
 
 ## What if I need to add a new file or change the existing file structure?
 Bookdown renders the Rmd files in the main repo in alphabetical order, hence the numbers at the beginning of each file. To create a new file, simply name it starting with the numbers that place it where you want it in your output website.
