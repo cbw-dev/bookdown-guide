@@ -9,6 +9,8 @@ handy-shortcuts
 getting-to-your-folder-in-the-terminal
 opening-your-folder-from-the-terminal
 commenting
+faq
+changes-not-appearing
 installs
 local-setup
 github-folder
@@ -17,8 +19,8 @@ generate-an-ssh-key
 add-your-ssh-key-to-the-ssh-agent
 add-your-ssh-key-to-your-github-account
 create-repo
-new-repo
-duplicate-existing-repo
+option-1-new-repo
+option-2-duplicate-existing-repo
 configure-details
 workshop-vs-repo
 deploy-website
@@ -55,6 +57,7 @@ example-of-a-nested-callout
 code
 command-line
 bookdown-crash-course
+file-setup
 opening-your-bookdown-project-in-rstudio
 explaining-rstudio
 build-the-book
@@ -62,6 +65,5 @@ other-ways-to-build-your-book
 knit-your-book
 knit-vs-build
 preview-your-book
-file-setup
 push-to-github-via-rstudio
 danger-zones

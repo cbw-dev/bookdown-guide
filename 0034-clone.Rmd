@@ -4,7 +4,7 @@ Now that the website is created, let's bring it to your computer where you can e
 
 1.  Navigate to the folder you created in [Local Setup](#local-setup) using Terminal/Windows PowerShell/Command Prompt.
 
-    ::: {.callout type="blue" style="subtle" title="Opening your folder in the command line"}
+    ::: {.callout type="blue" style="plain" title="Opening your folder in the command line" collapsible="true"}
 
     You can use the cd command to navigate. Some easier options, if you prefer:
     

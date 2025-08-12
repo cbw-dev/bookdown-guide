@@ -27,6 +27,7 @@
 Great! Now we're waiting on the page to build and deploy, which should take less than a minute.
   
 ## Check your deploy and see your website! {#check-deploy}
+
         
 To see updates, go to the **Actions** page (found along the top navigation bar. This will help you understand how the deploy is working, and if it succeeded or failed.
 

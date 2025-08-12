@@ -1,7 +1,7 @@
 # (PART) Setup and Installations {-}
 
 # Installations {#installs}
-You'll only need to run these steps once.  tets
+You'll only need to run these steps once.
 
 1.  **Download and install R** <a href="https://cran.rstudio.com/" target="_blank">here</a>, version 3.6.0 or higher. Follow the instructions for your operating system (Linux/macOS/Windows).
 
@@ -72,7 +72,7 @@ You'll only need to run these steps once.  tets
     -   **Other packages**:
 
         ``` r
-        install.packages(c("magrittr", "stringi", "stringr", "reticulate", "tinytex","servr"))
+        install.packages(c("magrittr", "stringi", "stringr", "reticulate", "tinytex","servr", "readr"))
         ```
 
         You may have to approve some downloads. Say "yes" and enter your password when necessary. This tells bookdown you are okay with downloading and installing these packages in their default locations.

@@ -5,20 +5,20 @@ These steps will auto-configure your workshop with certain variables. Note that 
 
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
 
-    ![Image showing how to open the configure_workshop.json file](img/template/find-workshop_config.png)\<br>
+    ![Image showing how to open the configure_workshop.json file](img/template/find-workshop_config.png)\
 
     :::
 
 2.  Click Edit.     
 
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
-    ![Image showing how to edit configure_workshop.json](img/template/edit-workshop_config.png)\<br>
+    ![Image showing how to edit configure_workshop.json](img/template/edit-workshop_config.png)\
     :::
 
 3.  Replace all the variables, then click Commit.
 
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
-    ![Image showing how to find the commit button](img/template/commit-workshop_config-1.png)\<br>
+    ![Image showing how to find the commit button](img/template/commit-workshop_config-1.png)\
     :::
 
 4.  Click commit changes.

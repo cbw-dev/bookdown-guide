@@ -10,7 +10,7 @@
     
     :::
 
-4.  In the same _output.yml file, add any sponsors not already included. To do this, copy one of the existing sponsor lines and change each section. Use the `height` or `width` attributes to change how large the images are. If two images are small enough and there is no `<br>` tag in between, they will be displayed side by side like the Genome Canada and Ontario Genomics logos.
+4.  In the same _output.yml file, add any sponsors not already included. To do this, copy one of the existing sponsor lines and change each section. Use the `height` or `width` attributes to change how large the images are. If two images are small enough and there is no `<br>` tag in between, they will be displayed side by side like the Genome Canada and Ontario Genomics logos. 
 
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
     
@@ -19,7 +19,7 @@
     :::
 
 
-4.  Hit "Build Book" and check preview once complete
+4.  Hit "Build Book" and check preview once complete. Note that you may need to adjust sizing of sponsor logos and build again.
 
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
     
@@ -58,6 +58,7 @@
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
     ![Image showing how to find actions](img/template/actions-menu.png)\
     :::
+
 
 ## Oops, I Git Cloned the Wrong Repository! {#delete-git-folder-locally}
 

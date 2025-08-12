@@ -50,9 +50,10 @@ This section is a quick reference on setting up GitHub Pages site for workshops.
 **8. [Finishing touches](#finishing-touches)**  
 
 * Open the .Rproj file in the folder you've just downloaded
-* Upload your workshop icon to the ``img/`` folder
+* Upload your workshop icon to the ``img/`` folder and sponsor logos to the ``img/sponsors/`` foldder
 * In _output.yml, replace ``missingimg.png`` with your icon's filename
-* Hit "Build Book" and check preview once complete
+* In _output.yml, add sponsors
+* Hit "Build Book" and check preview once complete. Note that you may need to adjust sizing of sponsor logos and build again
 * Commit and push
 
 **9. [Add content](#whats-next)**
@@ -116,3 +117,15 @@ If you are working in the Terminal and want to open your folder in your file exp
 
 ## Commenting and uncommenting in RStudio {#commenting}
 To quickly comment or uncomment lines in RStudio, use `Command + Shift + C` (Mac) or `Ctrl + Shift + C` (Windows/Linux).
+
+
+# FAQs {#faq}
+
+## Why aren't my changes appearing on the website? {#changes-not-appearing}
+There are a few things that could be the cause:
+
+1.  You forgot to *build your book*. Remember that this step is what creates the HTML files for the website.
+
+2.  You forgot to *commit and push your changes*. The build step creates the HTML files, but you need to push them to Github after building - otherwise, they only live on your computer.
+
+3.  You just haven't waited long enough - it takes 1-2 minutes for the site to build.
