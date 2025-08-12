@@ -1,0 +1,104 @@
+# (PART) Cheat Sheets {-}
+
+# RCs: Workshop Setup {#rc-cheatsheet}
+This section is a quick reference on setting up GitHub Pages site for workshops. Note that it assumes you've already followed the [installation instructions](#installs).
+
+#### Create your repo on GitHub
+**1. [Create your repo](#create-repo)**
+
+* Navigate to the **<a href="https://github.com/cbw-dev/bookdown-template" target="_blank">bookdown template</a>**. Click "Use this template" and then "Create a new repository". 
+
+**2. [Set your details](#create-repo)**  
+
+* Repo name = workshop code (e.g. INR_Mon-2510)
+* Visibility = public
+* Save
+
+**3. [Configure your workshop](#configure-details)**  
+
+* Open workshop_config.json in your browser and replace all variables. Commit.
+
+**4. [Deploy](#deploy-website)**  
+
+* From your repo on GitHub, go to Settings > Pages
+* Ensure it is set to "Deploy from a branch"
+* Set branch to "main"
+* Change folder to /docs
+* Save!
+* Check deploy by going to Actions
+
+#### Give your team access
+**5. [Set up your faculty team](#faculty-team)**  
+
+* On GitHub's website, go to the [bioinformaticsdotca organization teams page](https://github.com/orgs/bioinformaticsdotca/teams)
+* Create a team named as your workshop code (e.g. INR_Mon-2510); leave all settings as their defaults
+* Add your instructors and TAs to the team
+
+**6. [Give repo access](#faculty-team)**  
+
+* On your repo page on GitHub's website, navigate to Settings > Collaborators and Teams
+* Click "Add Teams" and select your team
+* Give your team Maintain access
+
+#### Set your workshop up locally
+**7. [Clone to your computer](#clone)**  
+
+* On your repo page on GitHub's website, click the green Code button, ensure SSH is selected, and copy the text in the box
+* On your local machine, open your terminal and navigate to the folder where you store your CBW Github repos
+* Run ``git clone [THE TEXT YOU JUST COPIED]``
+
+**8. [Finishing touches](#finishing-touches)**  
+
+* Open the .Rproj file in the folder you've just downloaded
+* Upload your workshop icon to the ``img/`` folder
+* In _output.yml, replace ``missingimg.png`` with your icon's filename
+* Hit "Build Book" and check preview once complete
+* Commit and push
+
+# Editing Your Workshop {#editing-cheatsheet}
+1. [If you don't already have your repo cloned:](#clone)
+
+* On your repo page on GitHub's website, click the green Code button, ensure SSH is selected, and copy the text in the box
+* On your local machine, open your terminal and navigate to the folder where you store your CBW Github repos
+* Run ``git clone [THE TEXT YOU JUST COPIED]``
+
+2. Make any changes you like
+
+3. [Click Build to create the HTML files that make up the website](#finishing-touches)
+
+4. [Commit and push](#finishing-touches)
+
+5. Your website will be ready in 1-2 minutes
+
+
+# Handy Shortcuts {#handy-shortcuts}
+
+#### Getting to your folder in the terminal
+You can use the `cd` command, or:
+
+:::: {.callout type="gray" title="Windows" collapsible="true" style="plain" icon="fas fa-circle-info"}
+
+*Method 1*: Shift + Right-click  
+* Open Windows File Explorer and navigate to the folder you want to open in the terminal.  
+* Hold down the Shift key and right-click on the folder (or an empty area within the folder).  
+* Select "Open in Terminal" from the context menu.   
+  
+*Method 2*: Typing "cmd" in the address bar  
+* Open Windows File Explorer and navigate to the folder.  
+* Click in the address bar at the top of the window.  
+* Type `cmd` and press Enter.
+
+::::
+
+:::: {.callout type="gray" title="Mac" collapsible="true" style="plain" icon="fas fa-circle-info"}
+
+* Locate and open the folder you want to use in Finder. 
+* If you don't see the path bar at the bottom of the Finder window, go to View > Show Path Bar. 
+* In the path bar, right-click (or Control-click) the folder. 
+* Select Open in Terminal
+
+::::
+
+
+#### Opening your folder from the terminal
+If you are working in the Terminal and want to open your folder in your file explorer, type `open .` (Mac) or `start .` (Windows)

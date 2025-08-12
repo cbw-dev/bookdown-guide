@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Configure your repo | CBW Bookdown Guide</title>
+  <meta name="description" content="Guide to using the CBW Bookdown template" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Configure your repo | CBW Bookdown Guide" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
+  <meta property="og:description" content="Guide to using the CBW Bookdown template" />
+  <meta name="github-repo" content="cbw-dev/bookdown-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Configure your repo | CBW Bookdown Guide" />
+  
+  <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
+  <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
+
+<meta name="author" content="Julia Qiu, Nia Hughes" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="create-repo.html"/>
+<link rel="next" href="deploy-website.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://bioinformaticsdotca.github.io/">
+ <img src="img/bioinformatics_logo.png" width="90%" alt="bioinformatics.ca logo" style="display:block; margin-left:auto; margin-right:auto; margin-top:15px;">
+ </a>
+<li><center><strong><a href="./"><br>CBW Bookdown Guide<br><br></a></strong></center></li>
+<br>
+
+<li class="divider"></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>CBW’s Bookdown Documentation</a></li>
+<li class="chapter" data-level="" data-path="how-bookdown-works.html"><a href="how-bookdown-works.html"><i class="fa fa-check"></i>How Bookdown Works</a></li>
+<li class="part"><span><b>II Cheat Sheets</b></span></li>
+<li class="chapter" data-level="" data-path="rc-cheatsheet.html"><a href="rc-cheatsheet.html"><i class="fa fa-check"></i>RCs: Workshop Setup</a></li>
+<li class="chapter" data-level="" data-path="editing-cheatsheet.html"><a href="editing-cheatsheet.html"><i class="fa fa-check"></i>Editing Your Workshop</a></li>
+<li class="chapter" data-level="" data-path="handy-shortcuts.html"><a href="handy-shortcuts.html"><i class="fa fa-check"></i>Handy Shortcuts</a></li>
+<li class="part"><span><b>III Setup and Installations</b></span></li>
+<li class="chapter" data-level="" data-path="installs.html"><a href="installs.html"><i class="fa fa-check"></i>Installations</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html"><i class="fa fa-check"></i>Local Setup and SSH</a>
+<ul>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#github-folder"><i class="fa fa-check"></i>GitHub Folder</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#ssh-connection"><i class="fa fa-check"></i>SSH Connection</a>
+<ul>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#generate-an-ssh-key"><i class="fa fa-check"></i>Generate an SSH key</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#add-your-ssh-key-to-the-ssh-agent"><i class="fa fa-check"></i>Add your SSH key to the ssh-agent</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#add-your-ssh-key-to-your-github-account"><i class="fa fa-check"></i>Add your SSH key to your GitHub account</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Set Up Workshop Site</b></span></li>
+<li class="chapter" data-level="" data-path="create-repo.html"><a href="create-repo.html"><i class="fa fa-check"></i>Create your repo</a></li>
+<li class="chapter" data-level="" data-path="configure-details.html"><a href="configure-details.html"><i class="fa fa-check"></i>Configure your repo</a>
+<ul>
+<li class="chapter" data-level="" data-path="configure-details.html"><a href="configure-details.html#workshop-vs-repo"><i class="fa fa-check"></i>A note on repos vs websites</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deploy-website.html"><a href="deploy-website.html"><i class="fa fa-check"></i>Deploy your site</a>
+<ul>
+<li class="chapter" data-level="" data-path="deploy-website.html"><a href="deploy-website.html#check-deploy"><i class="fa fa-check"></i>Check your deploy and see your website!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="faculty-team.html"><a href="faculty-team.html"><i class="fa fa-check"></i>Faculty team setup</a></li>
+<li class="chapter" data-level="" data-path="clone.html"><a href="clone.html"><i class="fa fa-check"></i>Clone to your computer</a></li>
+<li class="chapter" data-level="" data-path="finishing-touches.html"><a href="finishing-touches.html"><i class="fa fa-check"></i>Finishing touches</a>
+<ul>
+<li class="chapter" data-level="" data-path="finishing-touches.html"><a href="finishing-touches.html#delete-git-folder-locally"><i class="fa fa-check"></i>Oops, I Git Cloned the Wrong Repository!</a></li>
+</ul></li>
+<li class="part"><span><b>V Formatting</b></span></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i>Callouts</a>
+<ul>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i>Basic Syntax</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i>Attribute Reference</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i>Default Icons</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i>Nesting Callouts</a></li>
+</ul></li>
+<li class="part"><span><b>VI Reference Material</b></span></li>
+<li class="chapter" data-level="" data-path="bookdown-crash-course.html"><a href="bookdown-crash-course.html"><i class="fa fa-check"></i>Bookdown crash course</a></li>
+<li class="chapter" data-level="" data-path="opening-your-bookdown-project-in-rstudio.html"><a href="opening-your-bookdown-project-in-rstudio.html"><i class="fa fa-check"></i>Opening your bookdown project in RStudio</a></li>
+<li class="chapter" data-level="" data-path="file-setup.html"><a href="file-setup.html"><i class="fa fa-check"></i>File Setup Explanation</a></li>
+<li class="chapter" data-level="" data-path="push-to-github-via-rstudio.html"><a href="push-to-github-via-rstudio.html"><i class="fa fa-check"></i>Push to GitHub via RStudio</a></li>
+<li class="divider"></li>
+<h1 id="sponsors">Sponsors</h1>
+<center>
+<a href="https://www.cihr-irsc.gc.ca"><img src="img/sponsors/cihr.png" width=90% style="padding-bottom: 20px" alt="Canadian Institutes of Health Research logo."></a>
+<a href="https://genomecanada.ca/"><img src="img/sponsors/genomecanada.png" height="55" style="display:inline-block;"  style="padding-bottom: 20px" alt="Genome Canada logo.">
+<a href="https://www.ontariogenomics.ca/"><img src="img/sponsors/ontariogenomics.png" height="55" style="display:inline-block;" style="padding-bottom: 20px;" alt="Ontario Genomics logo.">
+<br><br>
+<a href="https://oicr.on.ca/"><img src="img/sponsors/oicr.png" width=35% style="display:inline-block;" style="padding-bottom: 20px" alt="Ontario Institute for Cancer Research logo.">
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CBW Bookdown Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="configure-details" class="section level1 hasAnchor">
+<h1>Configure your repo<a href="configure-details.html#configure-details" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>These steps will auto-configure your workshop with certain variables. Note that this is a one-time process and the configure_workshop.json file will disappear afterwards. Don’t worry - if you have changes (e.g. new faculty) later on, you can always change the website.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open your new repo’s configure_workshop.json file in your browser.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/find-workshop_config.png"
+alt="Image showing how to open the configure_workshop.json file" />&lt;br&gt;</p></div></details></li>
+<li><p>Click Edit.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/edit-workshop_config.png"
+alt="Image showing how to edit configure_workshop.json" />&lt;br&gt;</p></div></details></li>
+<li><p>Replace all the variables, then click Commit.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-1.png"
+alt="Image showing how to find the commit button" />&lt;br&gt;</p></div></details></li>
+<li><p>Click commit changes.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-2.png"
+alt="Image showing how to confirm commit" /><br />
+</p></div></details></li>
+<li><p>To check the progress of this configuration, click Actions in the top bar.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/actions-menu.png"
+alt="Image showing how to find actions" /><br />
+</p></div></details></li>
+</ol>
+<div id="workshop-vs-repo" class="section level3 hasAnchor">
+<h3>A note on repos vs websites<a href="configure-details.html#workshop-vs-repo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An important distinction:</p>
+<p><strong>GitHub</strong> (ex. <a href="https://github.com/cbw-dev/bookdown-template" class="uri">https://github.com/cbw-dev/bookdown-template</a>) holds your repo, which has version control for all your files.<br />
+The deployed <strong>website</strong> (ex. <a href="https://cbw-dev.github.io/bookdown-template/" class="uri">https://cbw-dev.github.io/bookdown-template/</a>) has the workshop online. It looks in the <code>docs</code> folder of your repo for HTML files to display.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">More details</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ve made a <em>repository</em> that holds what GitHub needs to
+make our <em>website</em>. When updating the site you’ll edit the
+markdown (.md) files in the main folder; they’ll be turned into HTML
+files by the Build action later on. The template has been configured so
+that these HTML files that make up our website go into a folder called
+<code>docs</code>. In the next step, we’ll tell GitHub to look at the
+<code>docs</code> folder to find our website files and make it available
+to see online (a.k.a deploy it).</p></div></details>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="create-repo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="deploy-website.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0031-configurerepo.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "depth": 2
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+# (PART) Setup and Installations {-}
+
+# Installations {#installs}
+You'll only need to run these steps once.  
+
+1.  **Download and install R** <a href="https://cran.rstudio.com/" target="_blank">here</a>, version 3.6.0 or higher. Follow the instructions for your operating system (Linux/macOS/Windows).
+
+    :::: {.callout type="green" title="Check your R install" collapsible="true" style="plain" icon="true"}
+
+    ***MacOS***
+
+    Open the program Terminal (installed on Macs by default) and run the command `"R"`. An R Console should start and you should be able to start running R commands. If not, your install was unsuccessful.
+
+    ***Windows***
+
+    - Click the "Start" menu icon in your bottom left of your taskbar (often a window pane).
+    - Click "All >" (in the top right of the popup) to see all the programs you have installed.
+    - Scroll to the "R" section. If "R X.X.X" (where the Xs indicate the version installed) is present, you installed R properly! If not, your install was unsuccessful.
+
+    **Note:** If you have not installed R properly, try deleting your previous attempt, redownloading, and reinstalling.
+
+    **Note:** **We will not be using the R console** (which will open if you try clicking R X.X.X). We will be using RStudio instead.
+
+    ::::
+
+2.  **Download and install RStudio** <a href="https://posit.co/download/rstudio-desktop/#:~:text=AND%20INSTALL%20R-,2%3A%20Install%20RStudio,-DOWNLOAD%20RSTUDIO%20DESKTOP" target="_blank">here</a>. Scroll down to find downloads for non-macOS.
+
+    > Note: While installing, you may be asked whether to install the 32-bit or 62-bit RStudio version. Download the version that matches your PC.
+
+
+3.  **Install Git, if you don't already have it.** Git is a tool that will help us with version control when editing your workshop. Linux and macOS computers generally have Git pre-installed. Windows computers must install Git. However, make sure to double check if you already have Git, so that you don't have to install it again! **Check if you have Git** by running this command in terminal/command prompt:
+
+    ```{bash}
+    git --version
+    ```
+
+    If your output looks like "git version X.X.X ...", you already have git. Move onto step 4.
+
+    However, if your output says "Git is not recognized" or a similar statement (such as the one provided below), you do not have Git, so you must install it as well.
+
+    ```         
+    'git' is not recognized as an internal or external command,
+    operable program or batch file.
+    ```
+
+    <a href="https://github.com/git-guides/install-git#install-git-on-mac" target="_blank">**Installing Git on macOS**</a>
+
+    -   When you ran `git --version`, it will have prompted you to install Git. Follow these instructions.
+ 
+    <a href="https://github.com/git-guides/install-git#install-git-on-windows" target="_blank">**Installing Git on Windows**</a>
+
+    -   Go to the <a href="https://posit.co/download/rstudio-desktop/#:~:text=AND%20INSTALL%20R-,2%3A%20Install%20RStudio,-DOWNLOAD%20RSTUDIO%20DESKTOP" target="_blank">Git for Windows installer</a> and download Git. Then, install it with all the default settings. <br>
+
+    Click here for instructions on <a href="https://github.com/git-guides/install-git#install-git-on-windows" target="_blank">**installing Git on Linux**</a>.
+
+    :::: {.callout type="green" title="Check your Git install" collapsible="true" style="plain" icon="true"}
+    
+    Re-run "git --version" and check that it returns your expected version. (On Windows, this may look like "git version 2.47.1.windows.1").
+
+    **Note:** If you installed Git while having a Command Prompt/Windows PowerShell window open, close this window and open a new one to run "git --version". This acts as a refresher to Command Prompt/Windows PowerShell.
+    
+    :::::
+
+4.  **R packages**: Open RStudio and run the following commands in the console (bottom left window): 
+
+    -   **Bookdown**:
+    
+        ```r
+        install.packages("bookdown")
+        ```
+
+    -   **Other packages**:
+
+        ``` r
+        install.packages(c("magrittr", "stringi", "stringr", "reticulate", "tinytex","servr"))
+        ```
+
+        You may have to approve some downloads. Say "yes" and enter your password when necessary. This tells bookdown you are okay with downloading and installing these packages in their default locations.
+
+       - **Tinytex:**
+
+          ``` r
+          tinytex::install_tinytex()
+          ```
+
+# Local Setup and SSH {#local-setup}
+You'll only need to do these steps once.  
+
+## GitHub Folder
+Create a folder on your computer to hold all your CBW repos. **We recommend** placing it in your Documents folder and naming it CBWGithub, but if you're confident with the command line, you can mix up the name and location.
+
+## SSH Connection
+
+We need to create an SSH connection, which is a secure link to GitHub using a cryptographic key instead of a password. It's a highly secure method that allows you to push and pull code without having to enter your credentials every time. If you've already been git cloning, pushing, and pulling, you have your SSH connection set up and can skip this step.
+
+You can run the commands in this section from **anywhere in your computer** - folder does not matter. 
+
+:::: {.callout type="blue" title="Output VS Commands in the GitHub Docs" collapsible="false" style="subtle" icon="true"}
+
+Commands are prefixed with a $ to simulate the terminal prompt. This character indicates where a command begins but is not part of the command itself, so do not copy it.
+
+Output is prefaced by a "\>" sign.
+::::
+
+### Generate an SSH key
+
+This step creates a unique cryptographic key pair that acts as a secure, digital identity for your computer.
+
+* [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) 
+* [Windows](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows#generating-a-new-ssh-key)
+
+If you have already created a SSH key and you are asked to rewrite another key, look at [the highlighted section here.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key:~:text=Please%20note%20that%20if%20you%20created%20SSH%20keys%20previously%2C%20ssh%2Dkeygen%20may%20ask%20you%20to%20rewrite%20another%20key%2C%20in%20which%20case%20we%20recommend%20creating%20a%20custom%2Dnamed%20SSH%20key.%20To%20do%20so%2C%20type%20the%20default%20file%20location%20and%20replace%20id_ALGORITHM%20with%20your%20custom%20key%20name)
+
+:::: {.callout type="yellow" title="Before you freak out" collapsible="false" style="subtle" icon="fas fa-lightbulb"}
+
+When typing your passphrase, your computer is so secretive that you won't see it being typed. You won't see a cursor moving and you won't see ● instead of the characters you're typing. Rest assured, your computer is receiving your text.
+
+If you make a mistake, it's best to hit the "delete" bar many times and retype.
+
+::::
+
+### Add your SSH key to the ssh-agent
+
+This step loads your private key into a secure background utility so you don't have to type your passphrase for every connection.
+
+* [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#adding-your-ssh-key-to-the-ssh-agent)
+* [Windows](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows#adding-your-ssh-key-to-the-ssh-agent)
+
+
+### Add your SSH key to your GitHub account
+
+This step adds your public key to your GitHub account to authorize your computer, allowing it to access your repositories without a password.
+
+* [Mac](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=mac#adding-a-new-ssh-key-to-your-account)
+* [Windows](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=windows#adding-a-new-ssh-key-to-your-account)

@@ -1,0 +1,229 @@
+# (PART) Formatting {-}
+    ![Image showing how to ](img/template/.png)\
+    <br>
+
+
+# Callouts {#callouts}
+
+### Basic Syntax
+
+Callouts are created using a fenced div block starting with `::::`.
+
+```markdown
+:::: {.callout type="blue" title="My First Callout"}
+
+This is the content of the callout. You can write any Markdown here.
+
+::::
+```
+
+:::: {.callout type="blue" title="My First Callout"}
+
+This is the content of the callout. You can write any Markdown here.
+
+::::
+
+**Important:** Always leave a **blank line** after the opening `:::: {....}` line and before the final closing `::::` line.
+
+The content area inside a callout is standard Markdown. You can include:
+
+-   Paragraphs and line breaks.
+-   Bulleted (`-`) or numbered (`1.`) lists.
+-   **Bold** and *italic* text.
+-   `inline code`.
+-   Fenced code blocks.
+-   Links and images.
+-   Even other nested callouts!
+
+### Attribute Reference
+
+Customize each callout by adding attributes inside the curly braces `{}`.
+
+| Attribute | Required? | Description | Example Values |
+| :--- | :--- | :--- | :--- |
+| `type` | **Yes** | Sets the color scheme. | `"red"`, `"blue"`, `"green"`, `"yellow"`, `"purple"`, `"orange"`, `"gray"` |
+| `style` | No | Defines the visual style. | `"regular"` (default), `"important"`, `"subtle"`, `"plain"` |
+| `title` | No | Text for the callout's title. Can include Markdown. | `"Important Note!"`, `"**Action Required**"` |
+| `icon` | No | Controls the icon next to the title. | `"true"` (default), `"false"`, `"fas fa-rocket"` |
+| `collapsible` | No | Makes the callout a dropdown. | `"true"`, `"false"` (default) |
+| `center_title` | No | Centers the title (static callouts only). | `"true"`, `"false"` (default) |
+
+### Default Icons
+
+If you set `icon="true"` or omit the `icon` attribute, a default icon will be shown based on the `type` you've chosen. Here are the defaults:
+
+| `type` (Color) | Default Icon | Icon Class (`fas fa-...`) |
+| :--- | :---: | :--- |
+| `red` | <i class="fas fa-triangle-exclamation" style="color: #C0392B;"></i> | `triangle-exclamation` |
+| `blue` | <i class="fas fa-circle-info" style="color: #2980B9;"></i> | `circle-info` |
+| `green` | <i class="fas fa-circle-check" style="color: #229954;"></i> | `circle-check` |
+| `yellow` | <i class="fas fa-bell" style="color: #FFC107;"></i> | `bell` |
+| `purple` | <i class="fas fa-star" style="color: #8E24AA;"></i> | `star` |
+| `orange` | <i class="fas fa-fire" style="color: #FB8C00;"></i> | `fire` |
+| `gray` | <i class="fas fa-comment-dots" style="color: #757575;"></i> | `comment-dots` |
+
+You can override any of these defaults by specifying a different icon class, for example: `icon="fas fa-lightbulb"`. Find more icons on the [Font Awesome website](https://fontawesome.com/icons?d=gallery&m=free&s=solid).
+
+---
+
+### Examples
+
+Here are some practical examples you can copy and adapt.
+
+#### Example 1: Static Informational Note
+
+A standard blue callout for providing information.
+
+```markdown
+:::: {.callout type="blue" title="Information"}
+
+This is a standard blue informational callout.
+The default icon for 'blue' will be used.
+
+::::
+```
+
+:::: {.callout type="blue" title="Information"}
+
+This is a standard blue informational callout.
+The default icon for 'blue' will be used.
+
+::::
+
+#### Example 2: Collapsible "Plain" Answer Box
+
+A minimal dropdown, perfect for hiding answers to questions.
+
+```markdown
+:::: {.callout type="green" style="plain" title="What is the answer?" icon="fas fa-question-circle" collapsible="true"}
+
+The answer is revealed here. This plain dropdown uses a green icon because we set `type="green"`.
+
+::::
+```
+
+:::: {.callout type="green" style="plain" title="What is the answer?" icon="fas fa-question-circle" collapsible="true"}
+
+The answer is revealed here. This plain dropdown uses a green icon because we set `type="green"`.
+
+::::
+
+#### Example 3: Important Red Warning
+
+A high-visibility static callout for critical information.
+
+```markdown
+:::: {.callout type="red" style="important" title="CRITICAL WARNING" icon="fas fa-triangle-exclamation"}
+
+System integrity is compromised. Immediate action required.
+Please check the `error_log.txt` file for details.
+
+::::
+```
+
+:::: {.callout type="red" style="important" title="CRITICAL WARNING" icon="fas fa-triangle-exclamation"}
+
+System integrity is compromised. Immediate action required.
+Please check the `error_log.txt` file for details.
+
+::::
+
+#### Example 4: Comprehensive Dropdown
+
+This example uses multiple attributes and contains rich Markdown content, including a fenced code block. **To prevent rendering issues when nesting code blocks, use a longer fence (e.g., five colons `:::::`) for the outer callout block.**
+
+``````markdown
+:::: {.callout type="orange" style="important" title="**Action Needed**: Review Workflow" icon="fas fa-clipboard-check" collapsible="true"}
+
+### Step 1: Data Ingestion
+
+Please ensure your data from `source_data/experiment_A.csv` has been correctly loaded.
+
+- Check for missing values.
+- Verify data types.
+
+### Step 2: Pre-processing
+
+The pre-processing script `scripts/01_preprocess.R` must be run before analysis.
+
+```{r, echo=TRUE, eval=FALSE}
+# Example snippet from the script
+# source("scripts/01_preprocess.R")
+# processed_data <- preprocess_data(raw_data)
+```
+
+### Step 3: Analysis & Reporting
+
+Confirm that the final report `output/final_report.html` has been generated.
+
+If you encounter any issues, please refer to the *Troubleshooting Guide* section.
+
+::::
+
+``````
+
+::::: {.callout type="orange" style="important" title="**Action Needed**: Review Workflow" icon="fas fa-clipboard-check" collapsible="true"}
+### Step 1: Data Ingestion
+
+Please ensure your data from `source_data/experiment_A.csv` has been correctly loaded.
+
+- Check for missing values.
+- Verify data types.
+
+### Step 2: Pre-processing
+
+The pre-processing script `scripts/01_preprocess.R` must be run before analysis.
+
+```{r, echo=TRUE, eval=FALSE}
+# Example snippet from the script
+# source("scripts/01_preprocess.R")
+# processed_data <- preprocess_data(raw_data)
+```
+
+### Step 3: Analysis & Reporting
+
+Confirm that the final report `output/final_report.html` has been generated.
+
+If you encounter any issues, please refer to the *Troubleshooting Guide* section.
+
+:::::
+
+### Nesting Callouts
+
+You can nest callouts inside other elements, such as lists, by indenting the entire callout block.
+
+**To place a callout inside a list item, indent the entire `::::` block (including its opening and closing fences and all of its content) by four spaces.**
+
+#### Example of a Nested Callout
+
+`````markdown
+1.  This is the first item in the list.
+
+2.  This is the second item, which will contain a callout.
+
+    :::: {.callout type="blue" title="This is an indented callout"}
+
+    This entire callout block is indented, making it part of the second list item.
+
+    - You can have other Markdown elements inside, like this list.
+    - They must also be indented to be part of the callout.
+
+    ::::
+
+3.  This is the third item in the list, appearing after the callout.
+`````
+
+1.  This is the first item in the list.
+
+2.  This is the second item, which will contain a callout.
+
+    :::: {.callout type="blue" title="This is an indented callout"}
+
+    This entire callout block is indented, making it part of the second list item.
+
+    - You can have other Markdown elements inside, like this list.
+    - They must also be indented to be part of the callout.
+
+    ::::
+
+3.  This is the third item in the list, appearing after the callout.

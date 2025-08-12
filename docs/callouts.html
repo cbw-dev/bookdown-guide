@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Callouts | CBW Bookdown Guide</title>
+  <meta name="description" content="Guide to using the CBW Bookdown template" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Callouts | CBW Bookdown Guide" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
+  <meta property="og:description" content="Guide to using the CBW Bookdown template" />
+  <meta name="github-repo" content="cbw-dev/bookdown-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Callouts | CBW Bookdown Guide" />
+  
+  <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
+  <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
+
+<meta name="author" content="Julia Qiu, Nia Hughes" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="finishing-touches.html"/>
+<link rel="next" href="bookdown-crash-course.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://bioinformaticsdotca.github.io/">
+ <img src="img/bioinformatics_logo.png" width="90%" alt="bioinformatics.ca logo" style="display:block; margin-left:auto; margin-right:auto; margin-top:15px;">
+ </a>
+<li><center><strong><a href="./"><br>CBW Bookdown Guide<br><br></a></strong></center></li>
+<br>
+
+<li class="divider"></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>CBW’s Bookdown Documentation</a></li>
+<li class="chapter" data-level="" data-path="how-bookdown-works.html"><a href="how-bookdown-works.html"><i class="fa fa-check"></i>How Bookdown Works</a></li>
+<li class="part"><span><b>II Cheat Sheets</b></span></li>
+<li class="chapter" data-level="" data-path="rc-cheatsheet.html"><a href="rc-cheatsheet.html"><i class="fa fa-check"></i>RCs: Workshop Setup</a></li>
+<li class="chapter" data-level="" data-path="editing-cheatsheet.html"><a href="editing-cheatsheet.html"><i class="fa fa-check"></i>Editing Your Workshop</a></li>
+<li class="chapter" data-level="" data-path="handy-shortcuts.html"><a href="handy-shortcuts.html"><i class="fa fa-check"></i>Handy Shortcuts</a></li>
+<li class="part"><span><b>III Setup and Installations</b></span></li>
+<li class="chapter" data-level="" data-path="installs.html"><a href="installs.html"><i class="fa fa-check"></i>Installations</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html"><i class="fa fa-check"></i>Local Setup and SSH</a>
+<ul>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#github-folder"><i class="fa fa-check"></i>GitHub Folder</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#ssh-connection"><i class="fa fa-check"></i>SSH Connection</a>
+<ul>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#generate-an-ssh-key"><i class="fa fa-check"></i>Generate an SSH key</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#add-your-ssh-key-to-the-ssh-agent"><i class="fa fa-check"></i>Add your SSH key to the ssh-agent</a></li>
+<li class="chapter" data-level="" data-path="local-setup.html"><a href="local-setup.html#add-your-ssh-key-to-your-github-account"><i class="fa fa-check"></i>Add your SSH key to your GitHub account</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Set Up Workshop Site</b></span></li>
+<li class="chapter" data-level="" data-path="create-repo.html"><a href="create-repo.html"><i class="fa fa-check"></i>Create your repo</a></li>
+<li class="chapter" data-level="" data-path="configure-details.html"><a href="configure-details.html"><i class="fa fa-check"></i>Configure your repo</a>
+<ul>
+<li class="chapter" data-level="" data-path="configure-details.html"><a href="configure-details.html#workshop-vs-repo"><i class="fa fa-check"></i>A note on repos vs websites</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="deploy-website.html"><a href="deploy-website.html"><i class="fa fa-check"></i>Deploy your site</a>
+<ul>
+<li class="chapter" data-level="" data-path="deploy-website.html"><a href="deploy-website.html#check-deploy"><i class="fa fa-check"></i>Check your deploy and see your website!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="faculty-team.html"><a href="faculty-team.html"><i class="fa fa-check"></i>Faculty team setup</a></li>
+<li class="chapter" data-level="" data-path="clone.html"><a href="clone.html"><i class="fa fa-check"></i>Clone to your computer</a></li>
+<li class="chapter" data-level="" data-path="finishing-touches.html"><a href="finishing-touches.html"><i class="fa fa-check"></i>Finishing touches</a>
+<ul>
+<li class="chapter" data-level="" data-path="finishing-touches.html"><a href="finishing-touches.html#delete-git-folder-locally"><i class="fa fa-check"></i>Oops, I Git Cloned the Wrong Repository!</a></li>
+</ul></li>
+<li class="part"><span><b>V Formatting</b></span></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i>Callouts</a>
+<ul>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i>Basic Syntax</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i>Attribute Reference</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i>Default Icons</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i>Nesting Callouts</a></li>
+</ul></li>
+<li class="part"><span><b>VI Reference Material</b></span></li>
+<li class="chapter" data-level="" data-path="bookdown-crash-course.html"><a href="bookdown-crash-course.html"><i class="fa fa-check"></i>Bookdown crash course</a></li>
+<li class="chapter" data-level="" data-path="opening-your-bookdown-project-in-rstudio.html"><a href="opening-your-bookdown-project-in-rstudio.html"><i class="fa fa-check"></i>Opening your bookdown project in RStudio</a></li>
+<li class="chapter" data-level="" data-path="file-setup.html"><a href="file-setup.html"><i class="fa fa-check"></i>File Setup Explanation</a></li>
+<li class="chapter" data-level="" data-path="push-to-github-via-rstudio.html"><a href="push-to-github-via-rstudio.html"><i class="fa fa-check"></i>Push to GitHub via RStudio</a></li>
+<li class="divider"></li>
+<h1 id="sponsors">Sponsors</h1>
+<center>
+<a href="https://www.cihr-irsc.gc.ca"><img src="img/sponsors/cihr.png" width=90% style="padding-bottom: 20px" alt="Canadian Institutes of Health Research logo."></a>
+<a href="https://genomecanada.ca/"><img src="img/sponsors/genomecanada.png" height="55" style="display:inline-block;"  style="padding-bottom: 20px" alt="Genome Canada logo.">
+<a href="https://www.ontariogenomics.ca/"><img src="img/sponsors/ontariogenomics.png" height="55" style="display:inline-block;" style="padding-bottom: 20px;" alt="Ontario Genomics logo.">
+<br><br>
+<a href="https://oicr.on.ca/"><img src="img/sponsors/oicr.png" width=35% style="display:inline-block;" style="padding-bottom: 20px" alt="Ontario Institute for Cancer Research logo.">
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CBW Bookdown Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="callouts" class="section level1 hasAnchor">
+<h1>Callouts<a href="callouts.html#callouts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="basic-syntax" class="section level3 hasAnchor">
+<h3>Basic Syntax<a href="callouts.html#basic-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Callouts are created using a fenced div block starting with <code>::::</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="callouts.html#cb10-1" tabindex="-1"></a>:::: {.callout type=&quot;blue&quot; title=&quot;My First Callout&quot;}</span>
+<span id="cb10-2"><a href="callouts.html#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="callouts.html#cb10-3" tabindex="-1"></a>This is the content of the callout. You can write any Markdown here.</span>
+<span id="cb10-4"><a href="callouts.html#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="callouts.html#cb10-5" tabindex="-1"></a>::::</span></code></pre></div>
+<div class="callout-blue">
+<span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>My First Callout</p>
+</div>
+<p>This is the content of the callout. You can write any Markdown here.</p>
+</div>
+</div>
+<p><strong>Important:</strong> Always leave a <strong>blank line</strong> after the opening <code>:::: {....}</code> line and before the final closing <code>::::</code> line.</p>
+<p>The content area inside a callout is standard Markdown. You can include:</p>
+<ul>
+<li>Paragraphs and line breaks.</li>
+<li>Bulleted (<code>-</code>) or numbered (<code>1.</code>) lists.</li>
+<li><strong>Bold</strong> and <em>italic</em> text.</li>
+<li><code>inline code</code>.</li>
+<li>Fenced code blocks.</li>
+<li>Links and images.</li>
+<li>Even other nested callouts!</li>
+</ul>
+</div>
+<div id="attribute-reference" class="section level3 hasAnchor">
+<h3>Attribute Reference<a href="callouts.html#attribute-reference" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Customize each callout by adding attributes inside the curly braces <code>{}</code>.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Attribute</th>
+<th align="left">Required?</th>
+<th align="left">Description</th>
+<th align="left">Example Values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>type</code></td>
+<td align="left"><strong>Yes</strong></td>
+<td align="left">Sets the color scheme.</td>
+<td align="left"><code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, <code>"yellow"</code>, <code>"purple"</code>, <code>"orange"</code>, <code>"gray"</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>style</code></td>
+<td align="left">No</td>
+<td align="left">Defines the visual style.</td>
+<td align="left"><code>"regular"</code> (default), <code>"important"</code>, <code>"subtle"</code>, <code>"plain"</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>title</code></td>
+<td align="left">No</td>
+<td align="left">Text for the callout’s title. Can include Markdown.</td>
+<td align="left"><code>"Important Note!"</code>, <code>"**Action Required**"</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>icon</code></td>
+<td align="left">No</td>
+<td align="left">Controls the icon next to the title.</td>
+<td align="left"><code>"true"</code> (default), <code>"false"</code>, <code>"fas fa-rocket"</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>collapsible</code></td>
+<td align="left">No</td>
+<td align="left">Makes the callout a dropdown.</td>
+<td align="left"><code>"true"</code>, <code>"false"</code> (default)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>center_title</code></td>
+<td align="left">No</td>
+<td align="left">Centers the title (static callouts only).</td>
+<td align="left"><code>"true"</code>, <code>"false"</code> (default)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="default-icons" class="section level3 hasAnchor">
+<h3>Default Icons<a href="callouts.html#default-icons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you set <code>icon="true"</code> or omit the <code>icon</code> attribute, a default icon will be shown based on the <code>type</code> you’ve chosen. Here are the defaults:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="38%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><code>type</code> (Color)</th>
+<th align="center">Default Icon</th>
+<th align="left">Icon Class (<code>fas fa-...</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>red</code></td>
+<td align="center"><i class="fas fa-triangle-exclamation" style="color: #C0392B;"></i></td>
+<td align="left"><code>triangle-exclamation</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>blue</code></td>
+<td align="center"><i class="fas fa-circle-info" style="color: #2980B9;"></i></td>
+<td align="left"><code>circle-info</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>green</code></td>
+<td align="center"><i class="fas fa-circle-check" style="color: #229954;"></i></td>
+<td align="left"><code>circle-check</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>yellow</code></td>
+<td align="center"><i class="fas fa-bell" style="color: #FFC107;"></i></td>
+<td align="left"><code>bell</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>purple</code></td>
+<td align="center"><i class="fas fa-star" style="color: #8E24AA;"></i></td>
+<td align="left"><code>star</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>orange</code></td>
+<td align="center"><i class="fas fa-fire" style="color: #FB8C00;"></i></td>
+<td align="left"><code>fire</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>gray</code></td>
+<td align="center"><i class="fas fa-comment-dots" style="color: #757575;"></i></td>
+<td align="left"><code>comment-dots</code></td>
+</tr>
+</tbody>
+</table>
+<p>You can override any of these defaults by specifying a different icon class, for example: <code>icon="fas fa-lightbulb"</code>. Find more icons on the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free&amp;s=solid">Font Awesome website</a>.</p>
+<hr />
+</div>
+<div id="examples" class="section level3 hasAnchor">
+<h3>Examples<a href="callouts.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here are some practical examples you can copy and adapt.</p>
+<div id="example-1-static-informational-note" class="section level4 hasAnchor">
+<h4>Example 1: Static Informational Note<a href="callouts.html#example-1-static-informational-note" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A standard blue callout for providing information.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="callouts.html#cb11-1" tabindex="-1"></a>:::: {.callout type=&quot;blue&quot; title=&quot;Information&quot;}</span>
+<span id="cb11-2"><a href="callouts.html#cb11-2" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="callouts.html#cb11-3" tabindex="-1"></a>This is a standard blue informational callout.</span>
+<span id="cb11-4"><a href="callouts.html#cb11-4" tabindex="-1"></a>The default icon for &#39;blue&#39; will be used.</span>
+<span id="cb11-5"><a href="callouts.html#cb11-5" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="callouts.html#cb11-6" tabindex="-1"></a>::::</span></code></pre></div>
+<div class="callout-blue">
+<span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>Information</p>
+</div>
+<p>This is a standard blue informational callout.
+The default icon for ‘blue’ will be used.</p>
+</div>
+</div>
+</div>
+<div id="example-2-collapsible-plain-answer-box" class="section level4 hasAnchor">
+<h4>Example 2: Collapsible “Plain” Answer Box<a href="callouts.html#example-2-collapsible-plain-answer-box" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A minimal dropdown, perfect for hiding answers to questions.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="callouts.html#cb12-1" tabindex="-1"></a>:::: {.callout type=&quot;green&quot; style=&quot;plain&quot; title=&quot;What is the answer?&quot; icon=&quot;fas fa-question-circle&quot; collapsible=&quot;true&quot;}</span>
+<span id="cb12-2"><a href="callouts.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="callouts.html#cb12-3" tabindex="-1"></a>The answer is revealed here. This plain dropdown uses a green icon because we set <span class="in">`type=&quot;green&quot;`</span>.</span>
+<span id="cb12-4"><a href="callouts.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="callouts.html#cb12-5" tabindex="-1"></a>::::</span></code></pre></div>
+<details class="callout-dropdown callout-plain callout-green"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-question-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">What is the answer?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>The answer is revealed here. This plain dropdown uses a green icon
+because we set <code>type="green"</code>.</p></div></details>
+</div>
+<div id="example-3-important-red-warning" class="section level4 hasAnchor">
+<h4>Example 3: Important Red Warning<a href="callouts.html#example-3-important-red-warning" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A high-visibility static callout for critical information.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="callouts.html#cb13-1" tabindex="-1"></a>:::: {.callout type=&quot;red&quot; style=&quot;important&quot; title=&quot;CRITICAL WARNING&quot; icon=&quot;fas fa-triangle-exclamation&quot;}</span>
+<span id="cb13-2"><a href="callouts.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="callouts.html#cb13-3" tabindex="-1"></a>System integrity is compromised. Immediate action required.</span>
+<span id="cb13-4"><a href="callouts.html#cb13-4" tabindex="-1"></a>Please check the <span class="in">`error_log.txt`</span> file for details.</span>
+<span id="cb13-5"><a href="callouts.html#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="callouts.html#cb13-6" tabindex="-1"></a>::::</span></code></pre></div>
+<div class="callout-red-important">
+<span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>CRITICAL WARNING</p>
+</div>
+<p>System integrity is compromised. Immediate action required.
+Please check the <code>error_log.txt</code> file for details.</p>
+</div>
+</div>
+</div>
+<div id="example-4-comprehensive-dropdown" class="section level4 hasAnchor">
+<h4>Example 4: Comprehensive Dropdown<a href="callouts.html#example-4-comprehensive-dropdown" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This example uses multiple attributes and contains rich Markdown content, including a fenced code block. <strong>To prevent rendering issues when nesting code blocks, use a longer fence (e.g., five colons <code>:::::</code>) for the outer callout block.</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="callouts.html#cb14-1" tabindex="-1"></a>:::: {.callout type=&quot;orange&quot; style=&quot;important&quot; title=&quot;**Action Needed**: Review Workflow&quot; icon=&quot;fas fa-clipboard-check&quot; collapsible=&quot;true&quot;}</span>
+<span id="cb14-2"><a href="callouts.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="callouts.html#cb14-3" tabindex="-1"></a><span class="fu">### Step 1: Data Ingestion</span></span>
+<span id="cb14-4"><a href="callouts.html#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="callouts.html#cb14-5" tabindex="-1"></a>Please ensure your data from <span class="in">`source_data/experiment_A.csv`</span> has been correctly loaded.</span>
+<span id="cb14-6"><a href="callouts.html#cb14-6" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="callouts.html#cb14-7" tabindex="-1"></a><span class="ss">- </span>Check for missing values.</span>
+<span id="cb14-8"><a href="callouts.html#cb14-8" tabindex="-1"></a><span class="ss">- </span>Verify data types.</span>
+<span id="cb14-9"><a href="callouts.html#cb14-9" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="callouts.html#cb14-10" tabindex="-1"></a><span class="fu">### Step 2: Pre-processing</span></span>
+<span id="cb14-11"><a href="callouts.html#cb14-11" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="callouts.html#cb14-12" tabindex="-1"></a>The pre-processing script <span class="in">`scripts/01_preprocess.R`</span> must be run before analysis.</span>
+<span id="cb14-13"><a href="callouts.html#cb14-13" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="callouts.html#cb14-14" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="callouts.html#cb14-15" tabindex="-1"></a><span class="in">``` r</span></span>
+<span id="cb14-16"><a href="callouts.html#cb14-16" tabindex="-1"></a><span class="co"># Example snippet from the script</span></span>
+<span id="cb14-17"><a href="callouts.html#cb14-17" tabindex="-1"></a><span class="co"># source(&quot;scripts/01_preprocess.R&quot;)</span></span>
+<span id="cb14-18"><a href="callouts.html#cb14-18" tabindex="-1"></a><span class="co"># processed_data &lt;- preprocess_data(raw_data)</span></span>
+<span id="cb14-19"><a href="callouts.html#cb14-19" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-20"><a href="callouts.html#cb14-20" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="callouts.html#cb14-21" tabindex="-1"></a><span class="fu">### Step 3: Analysis &amp; Reporting</span></span>
+<span id="cb14-22"><a href="callouts.html#cb14-22" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="callouts.html#cb14-23" tabindex="-1"></a>Confirm that the final report <span class="in">`output/final_report.html`</span> has been generated.</span>
+<span id="cb14-24"><a href="callouts.html#cb14-24" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="callouts.html#cb14-25" tabindex="-1"></a>If you encounter any issues, please refer to the *Troubleshooting Guide* section.</span>
+<span id="cb14-26"><a href="callouts.html#cb14-26" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="callouts.html#cb14-27" tabindex="-1"></a>::::</span></code></pre></div>
+<details class="callout-dropdown callout-orange-important"><summary class="callout-dropdown-summary"><i class="fas fa-clipboard-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title"><strong>Action Needed</strong>: Review Workflow</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><h3 class="hasAnchor" id="step-1-data-ingestion">Step 1: Data
+Ingestion<a href="callouts.html#step-1-data-ingestion" class="anchor-section"
+aria-label="Anchor link to header"></a></h3>
+<p>Please ensure your data from
+<code>source_data/experiment_A.csv</code> has been correctly loaded.</p>
+<ul>
+<li>Check for missing values.</li>
+<li>Verify data types.</li>
+</ul>
+<h3 class="hasAnchor" id="step-2-pre-processing">Step 2:
+Pre-processing<a href="callouts.html#step-2-pre-processing" class="anchor-section"
+aria-label="Anchor link to header"></a></h3>
+<p>The pre-processing script <code>scripts/01_preprocess.R</code> must
+be run before analysis.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="installs.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example snippet from the script</span></span>
+<span id="cb1-2"><a href="callouts.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&quot;scripts/01_preprocess.R&quot;)</span></span>
+<span id="cb1-3"><a href="callouts.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># processed_data &lt;- preprocess_data(raw_data)</span></span></code></pre></div>
+<h3 class="hasAnchor" id="step-3-analysis-reporting">Step 3: Analysis
+&amp; Reporting<a href="callouts.html#step-3-analysis-reporting"
+class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Confirm that the final report <code>output/final_report.html</code>
+has been generated.</p>
+<p>If you encounter any issues, please refer to the <em>Troubleshooting
+Guide</em> section.</p></div></details>
+</div>
+</div>
+<div id="nesting-callouts" class="section level3 hasAnchor">
+<h3>Nesting Callouts<a href="callouts.html#nesting-callouts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can nest callouts inside other elements, such as lists, by indenting the entire callout block.</p>
+<p><strong>To place a callout inside a list item, indent the entire <code>::::</code> block (including its opening and closing fences and all of its content) by four spaces.</strong></p>
+<div id="example-of-a-nested-callout" class="section level4 hasAnchor">
+<h4>Example of a Nested Callout<a href="callouts.html#example-of-a-nested-callout" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="callouts.html#cb15-1" tabindex="-1"></a><span class="ss">1.  </span>This is the first item in the list.</span>
+<span id="cb15-2"><a href="callouts.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="callouts.html#cb15-3" tabindex="-1"></a><span class="ss">2.  </span>This is the second item, which will contain a callout.</span>
+<span id="cb15-4"><a href="callouts.html#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="callouts.html#cb15-5" tabindex="-1"></a>    :::: {.callout type=&quot;blue&quot; title=&quot;This is an indented callout&quot;}</span>
+<span id="cb15-6"><a href="callouts.html#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="callouts.html#cb15-7" tabindex="-1"></a>    This entire callout block is indented, making it part of the second list item.</span>
+<span id="cb15-8"><a href="callouts.html#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="callouts.html#cb15-9" tabindex="-1"></a><span class="ss">    - </span>You can have other Markdown elements inside, like this list.</span>
+<span id="cb15-10"><a href="callouts.html#cb15-10" tabindex="-1"></a><span class="ss">    - </span>They must also be indented to be part of the callout.</span>
+<span id="cb15-11"><a href="callouts.html#cb15-11" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="callouts.html#cb15-12" tabindex="-1"></a>    ::::</span>
+<span id="cb15-13"><a href="callouts.html#cb15-13" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="callouts.html#cb15-14" tabindex="-1"></a><span class="ss">3.  </span>This is the third item in the list, appearing after the callout.</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>This is the first item in the list.</p></li>
+<li><p>This is the second item, which will contain a callout.</p>
+<div class="callout-blue">
+<span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>This is an indented callout</p>
+</div>
+<p>This entire callout block is indented, making it part of the second list item.</p>
+<ul>
+<li>You can have other Markdown elements inside, like this list.</li>
+<li>They must also be indented to be part of the callout.</li>
+</ul>
+</div>
+</div></li>
+<li><p>This is the third item in the list, appearing after the callout.</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="finishing-touches.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown-crash-course.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/016-last.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "depth": 2
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
