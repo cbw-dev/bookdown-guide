@@ -1,7 +1,7 @@
 # (PART) Setup and Installations {-}
 
 # Installations {#installs}
-You'll only need to run these steps once.  
+You'll only need to run these steps once.  tets
 
 1.  **Download and install R** <a href="https://cran.rstudio.com/" target="_blank">here</a>, version 3.6.0 or higher. Follow the instructions for your operating system (Linux/macOS/Windows).
 
