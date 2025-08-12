@@ -22,14 +22,14 @@ Enter the folder you git cloned using Finder/File Explorer. It should be titled 
 
 ::: {.callout type="orange" title="Important!" style="subtle" icon="true"}
 
-**TThis file is what you will open each time you want to work on this workshop.** You must explicitly **open the .Rproj** file to build properly!
+**This file is what you will open each time you want to work on this workshop.** You must explicitly **open the .Rproj** file to build properly!
 
 :::
 
 A RStudio window should open up and look something like the image below. 
 ![newly opened RStudio window](img/files-and-build/newly-opened-RStudio.png)\
 
-#### Explaining RStudio
+## Explaining RStudio
 
 In the bottom right, we have all of our files and subfolders. These files will be explained [below](#file-setup). This window also contains helpful views, like "Viewer" and "Plots". We will touch on these later.
 
@@ -45,7 +45,7 @@ Try closing (and maybe even restarting RStudio) and then reopening it. A "Git" t
 
 :::
 
-#### Build the Book
+## Build the Book
 
 Try pressing "Build Book" within the "Build" window. Your build window is going to fill up with text, and soon, a website is going to pop up in a new window. 
 
@@ -66,7 +66,7 @@ You can choose to only produce a gitbook (the first option). This can be helpful
 
 :::
 
-##### Other Ways to Build Your Book
+### Other Ways to Build Your Book
 
 1. Build the book from the R console:
 
@@ -76,7 +76,7 @@ bookdown::render_book()
 
 2. Press the keyboard buttons: `cmd + shift + B` (macOS) OR `ctrl + shift + B` (windows)
 
-##### Knit Your Book
+### Knit Your Book
 Building can take a long time. If you are editing just one file, you can press the "Knit" button that is at the top of the window with your file. This will run the code in the page, and show you what that page would look like in the website (as well as saving that file).
 
 > Note: Other pages in your website will not update.
@@ -85,13 +85,13 @@ Building can take a long time. If you are editing just one file, you can press t
 >
 > `cmd + shift + K` (macOS) OR `ctrl + shift + K` (Windows)
 
-##### Knit VS Build
+### Knit VS Build
 
 Building creates the website using **ALL** the .Rmd (and other) files. This is why it takes so long. Knitting creates/updates **only** the .Rmd file you're currently working in and reruns your code. (Note: You can't knit a non-.Rmd file!)
 
 Before pushing to GitHub, it is a good idea to build, in case of faulty links or small bugs that occur if you only knit or preview.
 
-##### Preview Your Book
+### Preview Your Book
 
 If you want live updates to your changes, you can preview the page as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console (in the bottom left window):
 

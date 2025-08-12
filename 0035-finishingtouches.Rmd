@@ -59,7 +59,7 @@
     ![Image showing how to find actions](img/template/actions-menu.png)\
     :::
 
-### Oops, I Git Cloned the Wrong Repository! {#delete-git-folder-locally}
+## Oops, I Git Cloned the Wrong Repository! {#delete-git-folder-locally}
 
 That's okay! To delete the entire local repository and the folder itself, run the following command:
 

@@ -33,7 +33,7 @@ These steps will auto-configure your workshop with certain variables. Note that 
     ![Image showing how to find actions](img/template/actions-menu.png)\
     :::
 
-### A note on repos vs websites {#workshop-vs-repo}
+## A note on repos vs websites {#workshop-vs-repo}
 
 An important distinction:  
 

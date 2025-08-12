@@ -1,11 +1,11 @@
 # (PART) Formatting {-}
-    ![Image showing how to ](img/template/.png)\
-    <br>
+<!--    ![Image showing how to ](img/template/.png)\
+    <br>-->
 
 
 # Callouts {#callouts}
 
-### Basic Syntax
+## Basic Syntax
 
 Callouts are created using a fenced div block starting with `::::`.
 
@@ -35,7 +35,7 @@ The content area inside a callout is standard Markdown. You can include:
 -   Links and images.
 -   Even other nested callouts!
 
-### Attribute Reference
+## Attribute Reference
 
 Customize each callout by adding attributes inside the curly braces `{}`.
 
@@ -48,7 +48,7 @@ Customize each callout by adding attributes inside the curly braces `{}`.
 | `collapsible` | No | Makes the callout a dropdown. | `"true"`, `"false"` (default) |
 | `center_title` | No | Centers the title (static callouts only). | `"true"`, `"false"` (default) |
 
-### Default Icons
+## Default Icons
 
 If you set `icon="true"` or omit the `icon` attribute, a default icon will be shown based on the `type` you've chosen. Here are the defaults:
 
@@ -66,11 +66,11 @@ You can override any of these defaults by specifying a different icon class, for
 
 ---
 
-### Examples
+## Examples
 
 Here are some practical examples you can copy and adapt.
 
-#### Example 1: Static Informational Note
+### Example 1: Static Informational Note
 
 A standard blue callout for providing information.
 
@@ -90,7 +90,7 @@ The default icon for 'blue' will be used.
 
 ::::
 
-#### Example 2: Collapsible "Plain" Answer Box
+### Example 2: Collapsible "Plain" Answer Box
 
 A minimal dropdown, perfect for hiding answers to questions.
 
@@ -108,7 +108,7 @@ The answer is revealed here. This plain dropdown uses a green icon because we se
 
 ::::
 
-#### Example 3: Important Red Warning
+### Example 3: Important Red Warning
 
 A high-visibility static callout for critical information.
 
@@ -128,7 +128,7 @@ Please check the `error_log.txt` file for details.
 
 ::::
 
-#### Example 4: Comprehensive Dropdown
+### Example 4: Comprehensive Dropdown
 
 This example uses multiple attributes and contains rich Markdown content, including a fenced code block. **To prevent rendering issues when nesting code blocks, use a longer fence (e.g., five colons `:::::`) for the outer callout block.**
 
@@ -188,13 +188,13 @@ If you encounter any issues, please refer to the *Troubleshooting Guide* section
 
 :::::
 
-### Nesting Callouts
+## Nesting Callouts
 
 You can nest callouts inside other elements, such as lists, by indenting the entire callout block.
 
 **To place a callout inside a list item, indent the entire `::::` block (including its opening and closing fences and all of its content) by four spaces.**
 
-#### Example of a Nested Callout
+### Example of a Nested Callout
 
 `````markdown
 1.  This is the first item in the list.

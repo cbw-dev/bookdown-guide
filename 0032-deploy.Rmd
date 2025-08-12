@@ -67,7 +67,7 @@ Warning: A website can build properly, but may not deploy properly! It is a good
 
 :::
 
-#### A very specific build and deployment warning {-}
+## A very specific build and deployment warning {-}
 
 This is a very specific (and unlikely) warning. It occurs when 1 deploy hasn't finished, but another deploy began. This is a warning message you do not have to worry about!
 

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Configure your repo | CBW Bookdown Guide</title>
+  <title>14 What’s next? | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Configure your repo | CBW Bookdown Guide" />
+  <meta property="og:title" content="14 What’s next? | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Configure your repo | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="14 What’s next? | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="create-repo.html"/>
-<link rel="next" href="deploy-website.html"/>
+<link rel="prev" href="finishing-touches.html"/>
+<link rel="next" href="callouts.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -271,51 +271,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configure-details" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">9</span> Configure your repo<a href="configure-details.html#configure-details" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>These steps will auto-configure your workshop with certain variables. Note that this is a one-time process and the configure_workshop.json file will disappear afterwards. Don’t worry - if you have changes (e.g. new faculty) later on, you can always change the website.</p>
+<div id="whats-next" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">14</span> What’s next?<a href="whats-next.html#whats-next" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Now that you have your repo set up, you can start filling it out! Some of the details you’ll need to include are below.</p>
+<div id="homepage" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Homepage<a href="whats-next.html#homepage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The index.Rmd file creates your landing page, which has a few different components.</p>
+<div id="pre-work" class="section level3 hasAnchor" number="14.1.1">
+<h3><span class="header-section-number">14.1.1</span> Pre-work<a href="whats-next.html#pre-work" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="handy-shortcuts.html#commenting">Uncomment</a> this line and enter the responder link to your pre-work form when ready.</p>
+</div>
+<div id="schedule" class="section level3 hasAnchor" number="14.1.2">
+<h3><span class="header-section-number">14.1.2</span> Schedule<a href="whats-next.html#schedule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Your schedule will be created using a special tool. To update the schedule, you’ll update the schedule.csv file. You do not need to edit anything in index.html - the R chunk will create the schedule for you.</p>
 <ol style="list-style-type: decimal">
-<li><p>Open your new repo’s configure_workshop.json file in your browser.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/find-workshop_config.png"
-alt="Image showing how to open the configure_workshop.json file" />&lt;br&gt;</p></div></details></li>
-<li><p>Click Edit.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/edit-workshop_config.png"
-alt="Image showing how to edit configure_workshop.json" />&lt;br&gt;</p></div></details></li>
-<li><p>Replace all the variables, then click Commit.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-1.png"
-alt="Image showing how to find the commit button" />&lt;br&gt;</p></div></details></li>
-<li><p>Click commit changes.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-2.png"
-alt="Image showing how to confirm commit" /><br />
-</p></div></details></li>
-<li><p>To check the progress of this configuration, click Actions in the top bar.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/actions-menu.png"
-alt="Image showing how to find actions" /><br />
-</p></div></details></li>
+<li><p>Open your schedule file in Google Drive. Copy the times and contents of Day 1, excluding headers. If you have multiple time zones, only include one - the utility will auto-calculate other time zones.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/copy-schedule.png"
+alt="Image showing schedule file contents to copy" /><br />
+<br></p></div></details></li>
+<li><p>Go to the <a href="https://cbw-dev.github.io/smart-scheduler/">smart scheduler utility</a>. Select the time zone corresponding to your copied data in the dropdown. If this is a distributed (or virtual) workshop, select other relevant time zones.</p></li>
+<li><p>Select the date of day 1 and paste your copied schedule data.</p></li>
+<li><p>For all other days, click “Add Another Day” and repeat.</p></li>
+<li><p>Click Generate CSV and then Copy to Clipboard.</p></li>
+<li><p>Open schedule.csv, delete all contents, and paste your newly formatted schedule.</p></li>
+<li><p>After your next build, the schedule will be visible on the landing page.</p></li>
 </ol>
-<div id="workshop-vs-repo" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> A note on repos vs websites<a href="configure-details.html#workshop-vs-repo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>An important distinction:</p>
-<p><strong>GitHub</strong> (ex. <a href="https://github.com/cbw-dev/bookdown-template" class="uri">https://github.com/cbw-dev/bookdown-template</a>) holds your repo, which has version control for all your files.<br />
-The deployed <strong>website</strong> (ex. <a href="https://cbw-dev.github.io/bookdown-template/" class="uri">https://cbw-dev.github.io/bookdown-template/</a>) has the workshop online. It looks in the <code>docs</code> folder of your repo for HTML files to display.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">More details</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ve made a <em>repository</em> that holds what GitHub needs to
-make our <em>website</em>. When updating the site you’ll edit the
-markdown (.md) files in the main folder; they’ll be turned into HTML
-files by the Build action later on. The template has been configured so
-that these HTML files that make up our website go into a folder called
-<code>docs</code>. In the next step, we’ll tell GitHub to look at the
-<code>docs</code> folder to find our website files and make it available
-to see online (a.k.a deploy it).</p></div></details>
+</div>
+<div id="class-photo" class="section level3 hasAnchor" number="14.1.3">
+<h3><span class="header-section-number">14.1.3</span> Class photo<a href="whats-next.html#class-photo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>After you take your class photos, upload them into your Google Drive’s PostWorkshop/ClassPhoto folder. Choose the best one and name it CODE_ClassPhoto (e.g. INR_Mon-2510_ClassPhoto). Make sure its permissions are set to Everyone Can View.</p></li>
+<li><p>Double-click the photo, use the three-dot menu, and click “Open In New Window”.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/photo-new-window.png"
+alt="Image showing how to open a Google Drive photo in a new window" /><br />
+<br></p></div></details></li>
+<li><p>Use the three-dot menu and select Embed Item.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/photo-embed-code.png"
+alt="Image showing how to get the embed code" /><br />
+<br></p></div></details></li>
+<li><p>Copy the embed code and paste it below the Class Photo header in your index.Rmd.</p></li>
+</ol>
+</div>
+</div>
+<div id="faculty-pages" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Faculty pages<a href="whats-next.html#faculty-pages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Copy the below code into the 001-faculty.Rmd file and complete for each faculty member. You’ll need to upload their headshots to the <code>img/faculty</code> folder.</p>
+<div class="sourceCode" id="cb9" eval="FALSE," echo="TRUE"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="whats-next.html#cb9-1" tabindex="-1"></a><span class="sc">&lt;</span>img src<span class="ot">=</span><span class="st">&quot;./img/faculty/MISSINGHEADSHOT.PNG&quot;</span> width<span class="ot">=</span><span class="st">&quot;200&quot;</span> alt<span class="ot">=</span><span class="st">&quot;Photo of NAME&quot;</span><span class="sc">&gt;</span></span>
+<span id="cb9-2"><a href="whats-next.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="whats-next.html#cb9-3" tabindex="-1"></a><span class="er">&gt;</span>JOB TITLE <span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
+<span id="cb9-4"><a href="whats-next.html#cb9-4" tabindex="-1"></a>INSTITUTION <span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
+<span id="cb9-5"><a href="whats-next.html#cb9-5" tabindex="-1"></a>LOCATION</span>
+<span id="cb9-6"><a href="whats-next.html#cb9-6" tabindex="-1"></a><span class="sc">&gt;</span></span>
+<span id="cb9-7"><a href="whats-next.html#cb9-7" tabindex="-1"></a><span class="er">&gt;</span> <span class="sc">---</span> CONTACT INFO, IF PROVIDED</span>
+<span id="cb9-8"><a href="whats-next.html#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="whats-next.html#cb9-9" tabindex="-1"></a>BIO GOES HERE</span></code></pre></div>
+</div>
+<div id="computing" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Computing<a href="whats-next.html#computing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In 002-computing.Rmd, you’ll include information on your data and computing setup.</p>
+<p>If your workshop includes compute, add data download links, AWS AMI/Magic Castle instructions, etc.</p>
+<p>If your workshop does not use compute, remove “And Compute Setup” from the top-level header and delete the Compute Setup section.</p>
+</div>
+<div id="modules" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Modules<a href="whats-next.html#modules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Each of the following files includes module material for the workshop.</p>
+<div id="embedding-slides" class="section level3 hasAnchor" number="14.4.1">
+<h3><span class="header-section-number">14.4.1</span> Embedding slides<a href="whats-next.html#embedding-slides" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Copy the below code chunk and paste into your slide. Replace <code>GOOGLE SLIDES LINK</code> with the URL of your slides <em>up to the word edit/</em>. The <code>/preview</code> in the code chunk will ensure that the slides are formatted for optimal viewing.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="whats-next.html#cb10-1" tabindex="-1"></a><span class="sc">&lt;</span>iframe src<span class="ot">=</span><span class="st">&quot;GOOGLE SLIDES LINK/preview&quot;</span> width<span class="ot">=</span><span class="st">&quot;640&quot;</span> height<span class="ot">=</span><span class="st">&quot;480&quot;</span> allow<span class="ot">=</span><span class="st">&quot;autoplay&quot;</span><span class="sc">&gt;</span><span class="er">&lt;/</span>iframe<span class="sc">&gt;</span>  </span></code></pre></div>
+<p>Ensure the share settings for your slides are set to Everyone Can View.</p>
+<p>Google Slides allows users to download slide decks in PPTX and PDF formats from the embed view.</p>
+</div>
+<div id="embedding-youtube-videos" class="section level3 hasAnchor" number="14.4.2">
+<h3><span class="header-section-number">14.4.2</span> Embedding YouTube videos<a href="whats-next.html#embedding-youtube-videos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Copy the below code chunk and paste into your slide. Replace <code>YOUTUBE EMBED LINK</code> with the URL of your YouTube video.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="whats-next.html#cb11-1" tabindex="-1"></a><span class="sc">&lt;</span>iframe width<span class="ot">=</span><span class="st">&quot;640&quot;</span> height<span class="ot">=</span><span class="st">&quot;360&quot;</span> src<span class="ot">=</span><span class="st">&quot;YOUTUBE EMBED LINK&quot;</span> title<span class="ot">=</span><span class="st">&quot;YouTube video player&quot;</span> frameborder<span class="ot">=</span><span class="st">&quot;0&quot;</span> allow<span class="ot">=</span><span class="st">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> referrerpolicy<span class="ot">=</span><span class="st">&quot;strict-origin-when-cross-origin&quot;</span> allowfullscreen<span class="sc">&gt;</span><span class="er">&lt;/</span>iframe<span class="sc">&gt;</span></span></code></pre></div>
+</div>
+<div id="adding-lab-material" class="section level3 hasAnchor" number="14.4.3">
+<h3><span class="header-section-number">14.4.3</span> Adding lab material<a href="whats-next.html#adding-lab-material" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RCs and faculty can add lab material directly into your bookdown website. Use the details in the Formatting section below to include features like code chunks, callouts, and images.</p>
+</div>
+</div>
+<div id="what-if-i-need-to-add-a-new-file-or-change-the-existing-file-structure" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> What if I need to add a new file or change the existing file structure?<a href="whats-next.html#what-if-i-need-to-add-a-new-file-or-change-the-existing-file-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bookdown renders the Rmd files in the main repo in alphabetical order, hence the numbers at the beginning of each file. To create a new file, simply name it starting with the numbers that place it where you want it in your output website.</p>
+<p>For instance, if you wanted to have a new page between modules 2 and 3, you could name your file 0025-mynewfile.Rmd.</p>
+<p>You can also rename all files or delete them and start over, if you like - this is a suggested structure.</p>
 
 </div>
+</div>
+
+
+
+    <br>-->
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="create-repo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="deploy-website.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="finishing-touches.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="callouts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -346,7 +402,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0031-configurerepo.Rmd",
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0036-whatsnext.Rmd",
     "text": "Edit"
   },
   "history": {

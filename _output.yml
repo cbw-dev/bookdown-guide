@@ -7,7 +7,7 @@ bookdown::gitbook:
       - fa-header.html
   config:
     toc: # Table of Contents
-      collapse: subsection
+      collapse: section
       depth: 2
 
       before: |
@@ -28,7 +28,7 @@ bookdown::gitbook:
     edit: https://github.com/cbw-dev/bookdown-guide/blob/main/%s
 
     download: ["pdf", "epub"]
-  number_sections: false
+  number_sections: true
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

@@ -2,13 +2,11 @@
 
 # Create your repo {#create-repo}
 
+## New repo
+
 1. Go to the **[bookdown template](https://github.com/cbw-dev/bookdown-template)**.
     
 2.  **Click on the "Use this template"** green button, which is to the right of the title of the repository "bookdown-template". Then, press the dropdown option: "**Create a new repository**", as seen below.
-
-    ::: {.callout type="green" title="Check your action's progress" collapsible="true" style="plain" icon="true"}
-    To check the progress of this configuration, click Actions in the top bar.
-    :::
 
 3. You will be brought to a "Create a new repository" page. Fill out the blanks as follows:
   * Change the **owner** to "bioinformaticsdotca"
@@ -22,3 +20,38 @@
     :::
 
 4. Click `Create Repository`.
+
+## Duplicate existing repo
+
+If you are repeating a previously offered workshop and know you'll mostly need to make minor edits, you can create a copy of an existing repo (a process called `forking`) instead of creating it from scratch.
+
+**How to Git Fork**
+
+1.  **Go to the pre-existing workshop repository** under the <a href="https://github.com/bioinformaticsdotca/" target="_blank">bioinformaticsdotca GitHub</a> for the workshop you want to recreate. For example, if we wanted to create a new workshop version of <a href="https://github.com/bioinformaticsdotca/AUR_2024" target="_blank">Analysis Using R 2024 (AUR 2024)</a>, we would go to this page:
+
+    ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
+   
+    <img src="https://docs.google.com/drawings/d/e/2PACX-1vR6kuw0wnLD1WL01iuZfnP3rPrDVhB-oClsjUribaDS7GpJNXw9QXbUVZ3aBCIO5N4pBKJXGtwpScfV/pub?w=2068&amp;h=597" alt="Analysis Using R 2024 GitHub Repo Screenshot">
+    :::
+
+2.  **Click "Fork"** as shown below.
+     
+    ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
+    <img src="https://docs.google.com/drawings/d/e/2PACX-1vQKy0kL2lRkDMug28L6zdgEw_WmUIDGhUi5vor_N5SpLyUMFvtSwTnoHpmefZChkSbEQhEcYHHNFy2Z/pub?w=2867&amp;h=997" alt="Where to find the fork button on a GitHub Repo">
+    :::
+     
+3.  You will be brought to this page. You need to **update** the following parts: the **owner** (change to bioinformaticsdotca, as shown), the **new repository name** (follow CBW Guidelines) and the **description**. The fork will automatically have "Copy the `main` branch only", which it should be (do not deselect this). Then, click the green `fork` button in the bottom right, as highlighted below.
+    
+    ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
+    
+    <img src="https://docs.google.com/drawings/d/e/2PACX-1vQGQ5pL3qc29i5p5m_aQmyH4YOFUCMVvfryHx3kpR8d-AviF0BKDdCd40GJSM4qc8N2P42TNMp2UIkD/pub?w=2864&amp;h=1624" alt="fork page, with edits highlighted">
+    
+    :::
+
+4.  You will be brought to your new repository, which will host the copy of the pre-existing workshop.
+
+::: {.callout type="blue" title="Note"  style="plain"}
+
+When you duplicate an existing workshop, you may be duplicating an older version of the bookdown template and some of its behaviours may differ from those listed in this documentation.
+
+:::
