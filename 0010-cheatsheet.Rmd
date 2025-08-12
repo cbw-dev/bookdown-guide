@@ -6,12 +6,14 @@ This section is a quick reference on setting up GitHub Pages site for workshops.
 ## Create your repo on GitHub
 **1. [Create your repo](#create-repo)**
 
-* Navigate to the **<a href="https://github.com/cbw-dev/bookdown-template" target="_blank">bookdown template</a>**. Click "Use this template" and then "Create a new repository". 
+* Navigate to the **<a href="https://github.com/cbw-dev/bookdown-template" target="_blank">bookdown template</a>**. Click "Use this template" and then "Create a new repository". If you don't see this button, be sure to sign in.
 
 **2. [Set your details](#create-repo)**  
 
 * Repo name = workshop code (e.g. INR_Mon-2510)
+* Owner = bioinformaticsdotca 
 * Visibility = public
+* All other options = leave as is (defaults are OK)
 * Save
 
 **3. [Configure your workshop](#configure-details)**  
@@ -81,7 +83,7 @@ Add your pre-work, schedule, and faculty details. When slides and lab materials 
 
 5.  Your website will be ready in 1-2 minutes
 
-For more details on this process, see the Reference Materials section below.
+For more details on this process, see the [Bookdown Crash Course](#bookdown-crash-course).
 
 # Handy Shortcuts {#handy-shortcuts}
 

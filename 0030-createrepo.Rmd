@@ -4,7 +4,7 @@
 
 ## Option 1: New repo
 
-1. Go to the **[bookdown template](https://github.com/cbw-dev/bookdown-template)**.
+1. Go to the **[bookdown template](https://github.com/cbw-dev/bookdown-template)**. Make sure you're signed into GitHub.
     
 2.  **Click on the "Use this template"** green button, which is to the right of the title of the repository "bookdown-template". Then, press the dropdown option: "**Create a new repository**", as seen below.
 
