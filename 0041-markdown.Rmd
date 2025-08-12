@@ -1,0 +1,410 @@
+# (PART) Formatting {-}
+
+# Markdown {#markdown}
+
+## Formatting your content {#formatting}
+
+### Option: Visual R Markdown {#visual-r-md}
+All our files are made up of code and markdown syntax that becomes formatted into our website. However, if you do not feel comfortable using Markdown (or you just want an easier way to write your pages), see this guide on using <a href="https://rstudio.github.io/visual-markdown-editing/#/citations" target="_blank">Visual R Markdown</a>.
+
+It can be significantly easier to use Visual R Markdown, especially for those who are used to working in Google Docs!
+
+If you want to use Markdown, a basic syntax guide is provided below.
+
+:::: {.callout type="blue" title="Want more options?" style="subtle" icon="fas fa-circle-info"}
+
+Bookdown has thorough documentation for specific elements, customizations, and further explanations. For simple elements, everything is provided below. However, there are many more possibilities with Bookdown! Click <a href="https://bookdown.org/yihui/bookdown/components.html" target="_blank">here</a> to read more!
+
+::::
+
+## Chapters and subheaders {#chapters-subheaders}
+
+Headers are defined by a \# before the title. Subheaders get increasingly more nested as add more \# symbols before it. For example,
+
+```         
+# Hello
+```
+
+would create a chapter title like **Markdown Options** above. Since there is only one `#` symbol, this would also create a new page.
+
+:::: {.callout type="yellow" title="Best Practice" style="subtle" icon="fas fa-lightbulb"}
+
+For ease of use, include only one chapter title (single \#) in each Rmd file.
+
+::::
+
+You can include more than one \# to nest your headers. For instance, the subheader above is written as:
+
+```         
+## Chapters and subheaders
+```
+
+### Sub-subheader
+
+```         
+### Sub-subheader
+```
+
+This is what a sub-subheader with 3 `#` symbols looks like. You can add as many `#` symbols as you would like! There is also no limit to the the number of subheaders you can have.
+
+### An unnumbered subheader {.unnumbered}
+
+Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the `{-}` at the end of the heading. For example, the above subheader was written like this:
+
+```         
+### An unnumbered subheader {-}
+```
+
+## Parts
+
+Notice how index.Rmd in our CBW Bookdown template has `# (PART) Introduction {-}` (followed by `# Welcome`). This creates the "Introduction" section on the sidebar.
+
+There are already 2 main parts in the template: the introduction and modules sections.
+
+If you want to add more parts, simply paste this: `# (PART) [Part Title] {-}` into a new .Rmd file, at the top of the file, before the main `# header` for that page/file.
+
+**Note**: If you would like to have a un-numbered part: Use this syntax:  `# (PART\*) [Part Title] {-}`
+
+**Another Note**: A similar un-numbered part is called an "Appendix" and Bookdown. Like a part, paste `# (APPENDIX) [Appendix Name] {-}` it above the "main" header you would like it to be before. All subsequent headers will be described via letters rather than numbers. (If your following headers are un-numbered, an Appendix looks the same as an un-numbered part).
+
+## Text Formatting
+
+Before we get too deep into formatting possibilities, let's cover the basics of markdown formatting options.
+
+### Bold {.unnumbered}
+
+``` markdown
+**bolded text**
+```
+
+**bolded text**
+
+### Italics {.unnumbered}
+
+``` markdown
+*italicized text*
+```
+
+*italicized text*
+
+### Subscript {.unnumbered}
+
+```         
+H~2~O
+```
+
+H~2~O
+
+### Superscript {.unnumbered}
+
+```         
+Na^+^
+```
+
+Na^+^
+
+### Footnotes {.unnumbered}
+
+`^[]` is the formatting for a footnote. For example
+
+```         
+Here is a footnote: ^[This is a footnote.].
+```
+
+Here is a footnote: [^06-formatting-md-1].
+
+[^06-formatting-md-1]: This is a footnote.
+
+(Scroll to the bottom of this page to see it.)
+
+### Horizontal Line {.unnumbered}
+
+```         
+---
+```
+
+------------------------------------------------------------------------
+
+### Blockquote {.unnumbered}
+
+``` markdown
+> blockquote
+>
+> --- someone who blockquotes
+```
+
+> blockquote
+>
+> --- someone who blockquotes
+
+You can put emojis to help these standout! For example:
+
+> ⚠️ **Warning:** Do not push the big red button.
+
+### Unordered List {.unnumbered}
+
+``` markdown
+- unordered
+  - list
+    - element
+- cool!
+```
+
+-   unordered
+    -   list
+        -   element
+-   cool!
+
+> Warning: Bookdown currently can not render Markdown to-do lists properly. Alternatively, use [this tip](#use-html) instead!
+
+### Ordered List {.unnumbered}
+
+``` markdown
+1. First item
+    1. a <!-- For nesting inside a list, put 2 tabs before the element -->
+    2. b
+2. Second item
+3. Third item
+```
+
+1.  First
+    1.  a
+        1.  c
+        2.  d
+    2.  b
+2.  Second
+3.  Third
+
+### Code {.unnumbered}
+
+There are 2 ways to write code:
+
+1.  `` `code` `` which looks like this: `code`
+
+2.  Or long pieces of code
+
+    ````         
+    ```
+    1 + 1  # a line of code
+    ```
+    ````
+
+    which would render into the following on your website
+
+    ```         
+    1 + 1  # a line of code
+    ```
+
+Find more code options and information in the [How to Render Code](#render-code) section.
+
+## Links {#links}
+
+### External webpages {.unnumbered}
+
+Links to a webpage are as follows:
+
+```         
+[Text you want to hyperlink](website link)
+```
+
+For example,
+
+```         
+Click [here](https://bioinformatics.ca/) to see the bioinformatics.ca main page!
+```
+
+Click [here](https://bioinformatics.ca/) to see the bioinformatics.ca main page!
+
+### Other sections within your workshop website {.unnumbered}
+
+Note these steps work for all headers, not just main (`#`) headers:
+
+1.  Label the heading: `# Hello world {#nice-label}`.
+    -   If you do not want to include a label, an automatic label is made: `# Hello world` = `# Hello world {#hello-world}`.
+    -   To label an un-numbered heading, use: `# Hello world {-#nice-label}` or `{# Hello world .unnumbered}`.
+2.  Next, reference the header in either 2 ways:
+    -   If you want the number referring to your header, use: `\@ref(label-name)`. For example:
+
+        ------------------------------------------------------------------------
+
+        ```
+        Please see Citations \@ref(citations).
+        ```
+
+        Please see Citations \@ref(citations).
+        
+        > Note: If you use this reference style for an unnumbered header, "**??**" will be used as the hyperlinked text.
+        
+        ------------------------------------------------------------------------
+
+    -   If you want a customizable text hyperlink, use the following:
+
+        ```         
+        See the [Citations](#citations)!
+        ```
+
+        See the [Citations](#citations)!
+
+## Embedding
+
+### Images {.unnumbered}
+
+The basic notation for a file is:
+
+```         
+![Alt Text](img/.../...)\
+```
+
+For example:
+
+```         
+![bioinformatics.ca logo](img/bioinformatics_logo.png)\
+```
+
+![bioinformatics.ca logo](img/bioinformatics_logo.png)\
+
+Without the backslash "\\" after the last round bracket, the alt text is displayed as a caption. [More info is available in the Pandoc documentation here.](https://pandoc.org/MANUAL.html#extension-implicit_figures)
+
+:::: {.callout type="yellow" title="Best Practice" style="subtle" icon="fas fa-lightbulb"}
+
+Small images (e.g. sponsor logos, headshots) can be stored in the `img` folder of your repo, but larger images/files should be stored in your workshop's Google Drive. To embed, place the full URL to the item in your round brackets:
+
+`![CIHR logo](https://drive.google.com/file/d/1CdamnzdoemqFXin4-dkFjORq_qNbUJVG/view?usp=drive_link)\`
+
+If you want to easily annotate and update your images without rebuilding the site every time., consider publishing a Google Drawing. See the [Developer's Guide](#publish-google-draw) for instructions.
+
+::::
+
+
+### PDFs {.unnumbered}
+
+Inserting PDFs is essentially the same notation as inserting images. The width and height elements are HTML code, and are up to you.
+```
+![insert alt text for pdf here](content-files/sample-pdf.pdf){width=100% height=900}\
+```
+
+![insert alt text for pdf here](content-files/sample-pdf.pdf){width=100% height=900}\
+
+:::: {.callout type="yellow" title="Best Practice" style="subtle" icon="fas fa-lightbulb"}
+
+We included this PDF in the repo's `content-files` folder, but for your workshops, we recommend storing all linked/embedded materials in your workshop's Google Drive for ease of access. In this case, you place the full URL of the file in the round brackets.
+
+::::
+
+### YouTube Videos {.unnumbered}
+
+YouTube generates HTML code to insert YouTube videos into your pages.
+
+1.  Go to the YouTube video you want to embed.
+2.  Click "Share", which is below the video.
+3.  Click the `< > Embed` symbol. 
+4.  Press copy.
+5.  Paste the code into your .Rmd file.
+6.  Edit the width and height options to 640 and 360 respectively.
+
+```
+<iframe width="640" height="360px" src="https://www.youtube.com/embed/MwsGSgybBVU?list=PL3izGL6oi0S_e5T8qx-74WRaMR5K5U8V5" title="Infectious Disease Genomic Epidemiology 2024 | 1: Introduction to Genomic Epidemiology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
+
+<iframe width="640" height="360px" src="https://www.youtube.com/embed/MwsGSgybBVU?list=PL3izGL6oi0S_e5T8qx-74WRaMR5K5U8V5" title="Infectious Disease Genomic Epidemiology 2024 | 1: Introduction to Genomic Epidemiology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Citations {#citations}
+
+First, tell bookdown your sources.
+
+```{r}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+This R code created a file called 'packages.bib' (in the bookdown template) which is now filled with a bunch of bibliography entries. 'book.bib' also has a manually entered bibliography entry. We must tell bookdown the files with bibliography information via the YAML `bibliography` key in index.Rmd. A bibliography entry looks like:
+
+```r
+@type{key,
+  title = {...},
+  author = {...},
+  organization = {...},
+  year = {...},
+  url = {...},
+  ... # see more possible fields at https://en.wikipedia.org/wiki/BibTeX
+}
+```
+
+`@type` refers to what type of source it is (ex. an article, book, manual, ...). `@key` refers to the name we refer to it by in in-text citations.
+
+For example, `@R-bookdown` renders to @R-bookdown. Adding square brackets also adds parentheses once it's rendered: so `[@R-bookdown]` becomes [@R-bookdown]. 
+
+**Note:** The [RStudio Visual Markdown Editor](#visual-r-md) can also make it easier to insert citations!
+
+On any page that you cite, a **References** section will be autogenerated at the bottom of that page (scroll down to see!).
+
+**Note:** When you cite, Bookdown also generates a citation list that it adds at the end of the last page of your website. However, Bookdown does not create a title, so on your very last page, add a `# Reference` main header. (To avoid having a "2 main headers in the same file" error, create a new .Rmd file with only `# Reference`). 
+
+## Equations
+
+Equations are written in latex. You can refer to them with a label you specify after writing it out.
+
+```latex
+\begin{equation}
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  (\#eq:binom) # the label!
+\end{equation}
+```
+
+\begin{equation}
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  (\#eq:binom)
+\end{equation}
+
+You may refer to using `\@ref(eq:binom)`, for example: `see Equation \@ref(eq:binom)` becomes "see Equation \@ref(eq:binom)". The number \@ref(eq:binom) depends on the chapter and the number of equations already in said chapter (the first equation will be numbered `[chapter number].1`). 
+
+## Theorems and Proofs
+
+We also have specific syntax for theorems and proofs, for example, this code:
+
+```         
+::: {.theorem #tri}
+For a right triangle, if $c$ denotes the *length* of the hypotenuse
+and $a$ and $b$ denote the lengths of the **other** two sides, we have
+$$a^2 + b^2 = c^2$$
+:::
+```
+
+::: {#tri .theorem}
+For a right triangle, if $c$ denotes the *length* of the hypotenuse and $a$ and $b$ denote the lengths of the **other** two sides, we have $$a^2 + b^2 = c^2$$
+:::
+
+Labeled theorems can be referenced in text using `\@ref(thm:tri)`. For example, check out this smart theorem \@ref(thm:tri).
+
+Learn more about styling and syntax for theorems and proofs [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html).
+## Using HTML {#use-html}
+
+Recall from this diagram that all files are rendered into .html files for the final official website.
+
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=237"/>
+
+Both Knitr and Pandoc will ignore HTML code, so if a certain part of Markdown's formatting isn't working, or you're not satisfied with Markdown's formatting options, use HTML/CSS formatting instead.
+
+Here are some examples:
+
+1.  Markdown has no formatting options for underlining. Hence, underline text in a .Rmd file with the following HTML syntax:
+
+    ```         
+    <u> underlined text</u>
+    ```
+
+    <u> underlined text</u>
+
+2.  Bookdown currently renders to-do lists incorrectly. Instead, you can use the following HTML code:
+
+    ```         
+    <div style="list-style-type: none;">
+      <label><input type="checkbox"> check box</label><br>
+    </div>
+    ```
+
+    ::: {style="list-style-type: none;"}
+    <label><input type="checkbox"> check box</label><br>
+    :::

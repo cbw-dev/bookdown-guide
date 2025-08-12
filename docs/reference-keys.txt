@@ -1,3 +1,7 @@
+eq:binom
+thm:tri
+fig:nice-fig
+tab:nice-tab
 cbws-bookdown-documentation
 how-bookdown-works
 rc-cheatsheet
@@ -11,6 +15,7 @@ opening-your-folder-from-the-terminal
 commenting
 faq
 changes-not-appearing
+comments
 installs
 local-setup
 github-folder
@@ -43,6 +48,17 @@ adding-lab-material
 bioschemas
 what-if-i-need-to-add-a-new-file-or-change-the-existing-file-structure
 markdown
+formatting
+visual-r-md
+chapters-subheaders
+sub-subheader
+parts
+text-formatting
+links
+embedding
+citations
+equations
+theorems-and-proofs
 callouts
 basic-syntax
 attribute-reference
@@ -54,7 +70,12 @@ example-3-important-red-warning
 example-4-comprehensive-dropdown
 nesting-callouts
 example-of-a-nested-callout
-code
+render-code
+rendering-code
+syntax-highlighting
+running-code
+code-chunk-options
+code-chunks-for-code-generated-figures-and-tables
 command-line
 bookdown-crash-course
 file-setup

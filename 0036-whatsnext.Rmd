@@ -55,11 +55,15 @@ Your schedule will be created using a special tool. To update the schedule, you'
 
 4.  Copy the embed code and paste it below the Class Photo header in your index.Rmd.
 
+5.  You can edit the width and height attributes to change the image dimensions, or delete them entirely to have the image autosized (not recommended for very large images).
+
 
 ## Faculty pages
 Copy the below code into the 001-faculty.Rmd file and complete for each faculty member. You'll need to upload their headshots to the `img/faculty` folder.
 
 ``` r {eval=FALSE, echo=TRUE}
+#### NAME
+
 <img src="./img/faculty/MISSINGHEADSHOT.PNG" width="200" alt="Photo of NAME">
 
 >JOB TITLE <br>
@@ -95,11 +99,22 @@ Google Slides allows users to download slide decks in PPTX and PDF formats from 
 
 ### Embedding YouTube videos
 
-Copy the below code chunk and paste into your slide. Replace `YOUTUBE EMBED LINK` with the URL of your YouTube video.
+1.  On your YouTube video, click **Share** then **Embed**.
 
-``` {r echo=TRUE, eval=FALSE}
-<iframe width="640" height="360" src="YOUTUBE EMBED LINK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-```
+    ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
+    ![Image showing how to find a YouTube embed code](img/template/find-embed.png)\
+    <br>
+    :::
+
+2.  Copy the embed code provided.
+
+    ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
+    ![Image showing how to copy a YouTube embed code](img/template/copy-embed.png)\
+    <br>
+    :::
+
+3.  Paste into your Bookdown project. Edit code to set *width* to 640 and *height* to 360.
+
 
 ### Adding lab material
 RCs and faculty can add lab material directly into your bookdown website. Use the details in the Formatting section below to include features like code chunks, callouts, and images.

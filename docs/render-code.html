@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>21 File Setup Explanation | CBW Bookdown Guide</title>
+  <title>18 Code | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="21 File Setup Explanation | CBW Bookdown Guide" />
+  <meta property="og:title" content="18 Code | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="21 File Setup Explanation | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="18 Code | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="bookdown-crash-course.html"/>
-<link rel="next" href="opening-your-bookdown-project-in-rstudio.html"/>
+<link rel="prev" href="callouts.html"/>
+<link rel="next" href="command-line.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -352,139 +352,226 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="file-setup" class="section level1 hasAnchor" number="21">
-<h1><span class="header-section-number">21</span> File Setup Explanation<a href="file-setup.html#file-setup" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Recall:
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=147"></p>
-<p>Hence, all the .Rmd files create a page in the produced website. To create more pages, you will be creating more .Rmd files.</p>
-<p>Here is a tree diagram of the bookdown template setup. (Note that this mimics how RStudio displays the files, if your RStudio shows these template files in a different order, right click your file window and press “Reload”)</p>
-<!-- PLEASE DO NOT DELETE THIS TREE DIAGRAM, I (Julia) FORMATTED some of IT MYSELF, PLEASE DO NOT DELETE UNLESS A BETTER TREE DIAGRAM THAT IS IN THE SAME ORDER AS HOW RSTUDIO ORDERS IT IS FOUND -->
-<!-- Potential Improvement: Find a way to format a tree such that the lines aren't disconnected, like what it would look like if it was just output by the tree command. There is some stack overflow suggestions to use ASCII, but this just created weird lines and characters for me when it was outputted. -->
+<div id="render-code" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">18</span> Code<a href="render-code.html#render-code" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>There are many ways to render and compile code using Bookdown. Here are most of the “language engines” (programming languages) available to render, run and compile in Bookdown.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="render-code.html#cb46-1" tabindex="-1"></a><span class="fu">names</span>(knitr<span class="sc">::</span>knit_engines<span class="sc">$</span><span class="fu">get</span>())</span></code></pre></div>
+<pre><code>##  [1] &quot;awk&quot;         &quot;bash&quot;        &quot;coffee&quot;      &quot;gawk&quot;        &quot;groovy&quot;     
+##  [6] &quot;haskell&quot;     &quot;lein&quot;        &quot;mysql&quot;       &quot;node&quot;        &quot;octave&quot;     
+## [11] &quot;perl&quot;        &quot;php&quot;         &quot;psql&quot;        &quot;Rscript&quot;     &quot;ruby&quot;       
+## [16] &quot;sas&quot;         &quot;scala&quot;       &quot;sed&quot;         &quot;sh&quot;          &quot;stata&quot;      
+## [21] &quot;zsh&quot;         &quot;asis&quot;        &quot;asy&quot;         &quot;block&quot;       &quot;block2&quot;     
+## [26] &quot;bslib&quot;       &quot;c&quot;           &quot;cat&quot;         &quot;cc&quot;          &quot;comment&quot;    
+## [31] &quot;css&quot;         &quot;ditaa&quot;       &quot;dot&quot;         &quot;embed&quot;       &quot;eviews&quot;     
+## [36] &quot;exec&quot;        &quot;fortran&quot;     &quot;fortran95&quot;   &quot;go&quot;          &quot;highlight&quot;  
+## [41] &quot;js&quot;          &quot;julia&quot;       &quot;python&quot;      &quot;R&quot;           &quot;Rcpp&quot;       
+## [46] &quot;sass&quot;        &quot;scss&quot;        &quot;sql&quot;         &quot;stan&quot;        &quot;targets&quot;    
+## [51] &quot;tikz&quot;        &quot;verbatim&quot;    &quot;theorem&quot;     &quot;lemma&quot;       &quot;corollary&quot;  
+## [56] &quot;proposition&quot; &quot;conjecture&quot;  &quot;definition&quot;  &quot;example&quot;     &quot;exercise&quot;   
+## [61] &quot;hypothesis&quot;  &quot;proof&quot;       &quot;remark&quot;      &quot;solution&quot;</code></pre>
+<div id="rendering-code" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Rendering Code<a href="render-code.html#rendering-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Just rendering code refers to Bookdown formatting code so that our users can view it. The code does not run or compile. An example is shown below.</p>
+<pre><code>```
+insert code here
+```</code></pre>
+<p>which appears as</p>
+<pre><code>insert code here</code></pre>
+<p>These are called “code chunks”.</p>
+</div>
+<div id="syntax-highlighting" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Syntax highlighting<a href="render-code.html#syntax-highlighting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bookdown has syntax highlighting for the languages shown above. To implement this, add the name of the language after the first 3 <code>`</code> symbols. Note that the language is not case sensitive (so both “r” and “R” would render the same below). For example:</p>
+<pre><code>```r
+x &lt;- 42
+x
+```</code></pre>
+<p>renders into:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="render-code.html#cb51-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb51-2"><a href="render-code.html#cb51-2" tabindex="-1"></a>x</span></code></pre></div>
+<p>Notice that since <code>&lt;-</code> is how to assign values to variables in R, it is highlighted. If we were to replace “r” with a different language, this may not be highlighted (depending if “&lt;-” is a relevant symbol in that language.)</p>
+</div>
+<div id="running-code" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Running code<a href="render-code.html#running-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To have the code actually compile, we need to put “{” and “}” brackets around the language. For example:</p>
+<pre class="text"><code>```{r}
+x &lt;- 42
+x
+```</code></pre>
+<p>renders and compiles into:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="render-code.html#cb53-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">42</span></span>
+<span id="cb53-2"><a href="render-code.html#cb53-2" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 42</code></pre>
+<p>The second bar you see is the output of the R commands. This can be used to create and display images and charts.</p>
+<pre class="text"><code>```{r fig, out.width=&#39;80%&#39;, fig.asp=.75, fig.align=&#39;center&#39;, fig.alt=&#39;Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.&#39;}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = &#39;b&#39;, pch = 19)
+```</code></pre>
+<p>renders and compiles into:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="render-code.html#cb56-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
+<span id="cb56-2"><a href="render-code.html#cb56-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/fig-1.png" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%" style="display: block; margin: auto;" /></p>
+<p>You can run these “code chunks” without previewing or building the book. To the right of your code chunk, there are 3 symbols (as seen below).</p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSAWwloWK_sYRV44BYYCC2lhBpxLQQvkSYlJECfHnlYTwg7aPSPgOWuUfp_ybZQkAQ8QYSwUpH378Hv/pub?w=3763&amp;h=1237" alt="Picture of a R code chunk in RStudio"></p>
+<p>The <span style="color:#FF0000;">gear symbol</span> opens chunk options.</p>
+<p>The <span style="color:#ff9900;">down arrow symbol</span> runs all previous chunks and the current chunk. This is helpful if previous chunks define a variable that you will need in your current chunk.</p>
 <blockquote>
-<p><strong>Note:</strong> only relevant files or files you might be concerned about are explained in blue. If there is no explanation, you can safely assume you do not have to worry about it.</p>
+<p><strong>Note:</strong> This means we can use variables from previous chunks.</p>
 </blockquote>
-<div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="file-setup.html#cb63-1" tabindex="-1"></a><span class="ex">bookdown-template</span></span>
-<span id="cb63-2"><a href="file-setup.html#cb63-2" tabindex="-1"></a><span class="ex">├──</span> _404.md <span class="co"># This becomes your 404 page. This is the only file that can become a page that can also be either a .md or .Rmd file!</span></span>
-<span id="cb63-3"><a href="file-setup.html#cb63-3" tabindex="-1"></a><span class="ex">├──</span> _bookdown.yml <span class="co"># a config file, you most likely won&#39;t have to edit it unless you want additional configuration settings</span></span>
-<span id="cb63-4"><a href="file-setup.html#cb63-4" tabindex="-1"></a><span class="ex">├──</span> _bookdown_files</span>
-<span id="cb63-5"><a href="file-setup.html#cb63-5" tabindex="-1"></a><span class="ex">├──</span> _main_files</span>
-<span id="cb63-6"><a href="file-setup.html#cb63-6" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># [in case of confusion: image and pdf output files]</span></span>
-<span id="cb63-7"><a href="file-setup.html#cb63-7" tabindex="-1"></a><span class="ex">├──</span> _output.yml <span class="co"># a config file, RC/workshop team will have to edit a few things (the workshop name, sponsor images, repo link)</span></span>
-<span id="cb63-8"><a href="file-setup.html#cb63-8" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
-<span id="cb63-9"><a href="file-setup.html#cb63-9" tabindex="-1"></a><span class="ex">├──</span> .Rhistory</span>
-<span id="cb63-10"><a href="file-setup.html#cb63-10" tabindex="-1"></a><span class="ex">├──</span> 010-course-schedule.Rmd <span class="co"># --&gt; &quot;Course Schedule&quot; section</span></span>
-<span id="cb63-11"><a href="file-setup.html#cb63-11" tabindex="-1"></a><span class="ex">├──</span> 011-content-files.Rmd <span class="co"># --&gt; &quot;Pre-workshop Materials&quot; and &quot;Computing Setup &amp; Downloads&quot; section</span></span>
-<span id="cb63-12"><a href="file-setup.html#cb63-12" tabindex="-1"></a><span class="ex">├──</span> 012-meet-your-fac.Rmd <span class="co"># --&gt; &quot;Meet Your Faculty&quot; section</span></span>
-<span id="cb63-13"><a href="file-setup.html#cb63-13" tabindex="-1"></a><span class="ex">├──</span> 020-module-1.Rmd <span class="co">#--&gt; &quot;Module 1&quot;, &quot;Lecture, and &quot;Lab&quot; section</span></span>
-<span id="cb63-14"><a href="file-setup.html#cb63-14" tabindex="-1"></a><span class="ex">├──</span> 030-module-2.Rmd</span>
-<span id="cb63-15"><a href="file-setup.html#cb63-15" tabindex="-1"></a><span class="ex">├──</span> README.md <span class="co"># README file that has some helpful explanations, consider reading this before starting to edit (along with this documentation!)</span></span>
-<span id="cb63-16"><a href="file-setup.html#cb63-16" tabindex="-1"></a><span class="ex">├──</span> book.bib <span class="co"># citation file</span></span>
-<span id="cb63-17"><a href="file-setup.html#cb63-17" tabindex="-1"></a><span class="ex">├──</span> bookdown-template.Rproj <span class="co"># always open this file in RStudio, opening this helps bookdown understand what to build</span></span>
-<span id="cb63-18"><a href="file-setup.html#cb63-18" tabindex="-1"></a><span class="ex">├──</span> content-files <span class="co"># store all files from your modules here (ex. data sets, empty code worksheets)</span></span>
-<span id="cb63-19"><a href="file-setup.html#cb63-19" tabindex="-1"></a>    <span class="ex">└──</span> sample-pdf.pdf</span>
-<span id="cb63-20"><a href="file-setup.html#cb63-20" tabindex="-1"></a><span class="ex">├──</span> docs</span>
-<span id="cb63-21"><a href="file-setup.html#cb63-21" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># html files &amp; other generated content</span></span>
-<span id="cb63-22"><a href="file-setup.html#cb63-22" tabindex="-1"></a><span class="ex">├──</span> img <span class="co"># folder where you should store all your images</span></span>
-<span id="cb63-23"><a href="file-setup.html#cb63-23" tabindex="-1"></a>    <span class="ex">├──</span> bioinformatics.ca-logo.svg </span>
-<span id="cb63-24"><a href="file-setup.html#cb63-24" tabindex="-1"></a>    <span class="ex">├──</span> faculty <span class="co"># store all images of faculty in this folder</span></span>
-<span id="cb63-25"><a href="file-setup.html#cb63-25" tabindex="-1"></a>        <span class="ex">├──</span> michelle-brazas.jpg</span>
-<span id="cb63-26"><a href="file-setup.html#cb63-26" tabindex="-1"></a>        <span class="ex">└──</span> nia-hughes.jpeg</span>
-<span id="cb63-27"><a href="file-setup.html#cb63-27" tabindex="-1"></a>    <span class="ex">├──</span> favicon.ico</span>
-<span id="cb63-28"><a href="file-setup.html#cb63-28" tabindex="-1"></a>    <span class="ex">└──</span> sponsors <span class="co"># store all sponsor logos/titles in this folder</span></span>
-<span id="cb63-29"><a href="file-setup.html#cb63-29" tabindex="-1"></a>         <span class="ex">└──</span> Your-Sponsor-Here.svg</span>
-<span id="cb63-30"><a href="file-setup.html#cb63-30" tabindex="-1"></a><span class="ex">├──</span> index.Rmd <span class="co"># landing page --&gt; &quot;Welcome&quot; section</span></span>
-<span id="cb63-31"><a href="file-setup.html#cb63-31" tabindex="-1"></a><span class="ex">├──</span> packages.bib <span class="co"># R generated citation file</span></span>
-<span id="cb63-32"><a href="file-setup.html#cb63-32" tabindex="-1"></a><span class="ex">├──</span> preamble.tex</span>
-<span id="cb63-33"><a href="file-setup.html#cb63-33" tabindex="-1"></a><span class="ex">└──</span> style.css <span class="co"># css styling options are defined here - feel free to add your own styling features</span></span></code></pre></div>
-<!-- Dev Suggestion: add code chunk option so that this takes up the width of the entire page? -->
-<div id="output.yml-_bookdown.yml" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> _output.yml &amp; _bookdown.yml </font><a href="file-setup.html#output.yml-_bookdown.yml" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>2 important files are the <code>_output.yml</code> files and the <code>_bookdown.yml</code> files. They help tell bookdown what we want and what to do, especially when making our website.</p>
-<p>You will only have to edit _output.yml a bit. The _output.yml file creates the table of contents/sidebar you see on the left of the workshop. It is written in HTML, which is why it looks so different. There are 3 things either the RC or the workshop team will need to do:</p>
-<ol style="list-style-type: decimal">
-<li><p>Change the workshop name: [YOUR WORKSHOP NAME] on line 7.</p></li>
-<li><p>Add your sponsors: Replace “Your-Sponsor-Here.svg” with the file name of your sponsors name/logo. Remember to place these files inside the ./img/sponsors/ folder.</p></li>
-<li><p>Replace your workshop repo edit link. This allows users to suggest edits to your work on GitHub. Follow these instructions (they are also provided in the template).</p>
-<ol style="list-style-type: decimal">
-<li>Go to your index.Rmd page on GitHub, Copy and paste the link to it.</li>
-<li>Copy and paste the link to it, excluding the “index.Rmd” ending.</li>
-<li>Add <code>/%s</code> to the ending.</li>
-<li>Replace the above link.</li>
-</ol></li>
-</ol>
+<p>The <span style="color:#05a34f;">right-pointing arrow symbol</span> runs the current code chunk. A rectangular box will appear below your code chunk, with the output of your code.</p>
+<p>Additionally, notice that in your bottom left window, any code you run also runs in your console. Both of these ways of checking your code happen for all languages. Note - if you are previewing your book, you must re-preview it, since running the code becomes the new action for your console instead of previewing the book.</p>
+<p>If you’re running R, you don’t have to exit the console (we already work in the R console when using Bookdown). However, if you’re running a different language (for example, Python), you will remain in the Python console, and must exit it to run Bookdown commands. You can look online for different ways to exit certain consoles, but generally running “quit” will return you to the R console.</p>
+<div class="callout-blue-subtle">
+<span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>Note</p>
 </div>
-<div id="organizing-the-table-of-contents" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> Organizing the Table of Contents </font><a href="file-setup.html#organizing-the-table-of-contents" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>The order of the sidebar is completely dependent on the alphabetical order of the files (see your bottom right window pane! The order is generally the same as the order shown in the RStudio file window pane. If not, right click the window and press “Reload”). Our template has numbering first, to help ease our understanding and organization of files. The only file without this is <code>index.Rmd</code>, since as the landing page we can not change the file name.</p>
+<p>If you want to run a certain language, you must have the language installed - R and Python are already set up for you. Python relies on the RStudio interface option, reticulate; you can reconfigure this if you’d like. You may have to configure new languages so that they can run in RStudio, but generally, they should be able to run automatically.</p>
 </div>
-<div id="index.rmd" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> index.Rmd </font><a href="file-setup.html#index.rmd" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>The only .Rmd that must have some configuration details is the landing page: <strong>index.Rmd</strong>. This is what fills up the beginning of the index.Rmd file, surrounded by the ---, which tells bookdown the configuration information.</p>
-<p><strong>Follow the instructions in the template’s index.Rmd file - you must fill in the title, author, date and url.</strong> The description, cover-image and github-repo can be changed, but aren’t mandatory.</p>
-<!-- double check with Nia what we want to enforce -->
 </div>
-<div id="rmd-files" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> .Rmd Files </font><a href="file-setup.html#rmd-files" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>Let’s move on to discussing the breakdown of the .Rmd files. Each new page is defined by a new header, which starts with <code>#</code>, each sub-header has increasingly more <code>#</code> symbols (##, ###, and more all create smaller sub-headers). A “main” header only has 1 <code>#</code> symbol. These headers define new pages, as well as the title in the sidebar referring to that page.</p>
-<p>Hence, if we have multiple “main” headers in 1 .Rmd file, 1 .Rmd file will encode multiple pages. Try to have only 1 single # as a header on one page! (You may get warnings otherwise).</p>
-<p>However, if a new file only has sub-headers (2 <code>#</code> or more), the sub-header will appear on the page that was defined by the previous .Rmd file (in alphabetical order - see the order of the “File” window pane).</p>
-<p>In our template, we want the introduction material to appear on the same page. Hence, the introduction files (other than 020-course-schedule.Rmd, which starts the page) all only have sub-headers.</p>
-<p><em>Note:</em> Due to this, you may receive this warning:</p>
-<blockquote>
-<p>Warning message: <br>
-In split_chapters(output, gitbook_page, global_numbering, split_by, : <br>
-You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget first-level headings in certain Rmd files?</p>
-</blockquote>
-<p>You can ignore this warning message!</p>
+<p>Now we know how to both render (just show) and compile (see the output) of our code!</p>
 </div>
-<div id="how-to-create-a-new-file" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> How to Create a New File </font><a href="file-setup.html#how-to-create-a-new-file" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>You can create new files anywhere. You should only be making new website pages, so you should also only be making .Rmd files. (Creating new .md files in hopes of making a new page usually ends up with weird bugs, stick to .Rmd files).</p>
-<ol style="list-style-type: decimal">
-<li>Under the “Files” tab of the lower right window pane, there are many options to modify your files. You can use these buttons instead of your File Explorer. Click “New Blank File”.</li>
-<li>Click the second dropdown option: R Markdown</li>
-<li>Give your file a unique name that matches CBW’s Bookdown template file naming convention. That is, “0XX-[description].Rmd”. Decide what X should be depending on where you want the page to show up on your sidebar. Name your file a short but descriptive name, with hyphens (-) to split up words.</li>
-<li>Start editing your new file in the upper left window!</li>
-</ol>
-</div>
-<div id="page" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> 404 Page </font><a href="file-setup.html#page" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>That being said, there is one file that can be a markdown (.md) file: the _404.(R)md file. If website user goes to a webpage that belongs to our website but no longer exists, they will get this 404 page instead. Put links to your landing page for your workshop or the bioinformatics.ca homepage here!</p>
-</div>
-<div id="cbw-organization-folders" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> CBW Organization Folders </font><a href="file-setup.html#cbw-organization-folders" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>We want our workshops to be easy to navigate and understand. Hence, images or files that are required for your lessons should be placed in <code>./img/</code> and <code>./content-files/</code> respectively. Within these files, try creating sub-folders within these folders to help organize groups of files. For example, if you have a bunch of data sets, try creating a “datasets” folder within <code>./content-files/</code>.</p>
-<p>Subfolders already exist in <code>./img</code>: <code>./img/faculty/</code> and <code>./img/sponsors/</code>. Fill these with photos of your faculty and images of the names’/logos’ of your sponsors, respectfully!</p>
-</div>
-<div id="bookdowns-wesbite-building-folders" class="section level6 unnumbered hasAnchor">
-<h6><font color="d46d63"> Bookdown’s Wesbite Building Folders </font><a href="file-setup.html#bookdowns-wesbite-building-folders" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>Bookdown makes some folders to store .html files, among other files that help create the website. Hence, you should not (need to) touch:</p>
+<div id="code-chunk-options" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Code Chunk Options<a href="render-code.html#code-chunk-options" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bookdown has options to customize how code appears and what it produces.</p>
+<p>The typical structure of adding code chunk options is shown below.</p>
+<pre class="text"><code>```{r, option=VALUE, option=VALUE, ...}
+code
+```</code></pre>
+<p>Some common code chunk options are:</p>
 <ul>
-<li>_bookdown_files</li>
-<li>_main_files</li>
-<li>docs</li>
+<li><code>echo</code>
+<ul>
+<li><code>echo=TRUE</code> shows the code output (by default, it is on).</li>
+<li><code>echo=FALSE</code> hides the code output.</li>
+</ul></li>
+<li><code>eval</code>
+<ul>
+<li><code>eval=TRUE</code> runs the code (default).</li>
+<li><code>eval=FALSE</code> skips the chunk and does not execute the code.</li>
+</ul></li>
+<li><code>results</code>
+<ul>
+<li><code>results='markup'</code> runs the code (default).</li>
+<li><code>results='asis'</code> leaves the output with no additional formatting.</li>
+<li><code>results='hide'</code> does not show the output.</li>
+</ul></li>
+<li><code>include</code>
+<ul>
+<li><code>include=TRUE</code> includes both the code and the output on your website (default).</li>
+<li><code>include=FALSE</code> excludes both the code and the output on your website.</li>
+</ul></li>
 </ul>
-<blockquote>
-<p><strong>Debugging Tip</strong>: If you do get an error that seems like it’s coming from one of these files, there was probably an error that resulted from bookdown not being able to process something. Double check that your syntax, formatting, file names and related files are correct.</p>
-</blockquote>
-<blockquote>
-<p><strong>Debugging Tip 2</strong>: Each time we build, we produce a “docs” folder. If we have already built once, we just add new files to it. HTML files that were produced from .Rmd that were deleted are not removed. Hence, if you see errors from files that no longer exist in your root project folder, try deleting the whole docs folder, and rebuilding.</p>
-</blockquote>
-<div class="redbox">
-<div class="center">
-<p><strong>WARNING!</strong></p>
+<p>Click <a href="https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html" target="_blank">here</a> to find more code chunk options.</p>
 </div>
-<p><em>If you delete the docs folder, make sure to create an empty file, named </em>".nojekyll" <em>and put it inside the /docs folder. R-generated figures will not appear without this.</em></p>
+<div id="code-chunks-for-code-generated-figures-and-tables" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">18.5</span> Code Chunks for Code-Generated Figures and Tables<a href="render-code.html#code-chunks-for-code-generated-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can use code chunks to help specify certain ways for code-generated figures and tables to appear, and how to link to them.</p>
+<p>Generally, this will look like:</p>
+<pre class="text"><code>```{r reference-name, option=VALUE, option=VALUE, ...}
+code that generates an image/table
+```</code></pre>
+<p>Then, we can refer to the figure or table generated by the code in this chunk by using <code>\@ref(fig:reference-name)</code> or <code>\@ref(tab:chunk-label)</code></p>
+<p>For example, an R-generated image can be made using a similar code chunk to the one shown below:</p>
+<pre class="text"><code>See Figure \@ref(fig:nice-fig).
+
+```{r nice-fig, fig.cap=&#39;Here is a nice figure!&#39;, out.width=&#39;80%&#39;, fig.asp=.75, fig.align=&#39;center&#39;, fig.alt=&#39;Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.&#39;}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = &#39;b&#39;, pch = 19)
+```</code></pre>
+<p>This renders into:</p>
+<p>See Figure <a href="render-code.html#fig:nice-fig">18.1</a>.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="render-code.html#cb60-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
+<span id="cb60-2"><a href="render-code.html#cb60-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:nice-fig"></span>
+<img src="_main_files/figure-html/nice-fig-1.png" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%" />
+<p class="caption">
+Figure 18.1: Here is a nice figure!
+</p>
+</div>
+<p>When you are writing code that generates images, and will produce images that will stay in your folders, make sure it is written to the img/ folder or a subfolder.</p>
+<p><br></p>
+<p>Here is an example of a table generated by R from a code chunk:</p>
+<pre class="text"><code>Don&#39;t miss Table \@ref(tab:nice-tab).
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(pressure, 10), caption = &#39;Here is a nice table!&#39;,
+  booktabs = TRUE
+)
+```</code></pre>
+<p>This renders into:</p>
+<p>Don’t miss Table <a href="render-code.html#tab:nice-tab">18.1</a>.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="render-code.html#cb62-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb62-2"><a href="render-code.html#cb62-2" tabindex="-1"></a>  <span class="fu">head</span>(pressure, <span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
+<span id="cb62-3"><a href="render-code.html#cb62-3" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
+<span id="cb62-4"><a href="render-code.html#cb62-4" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:nice-tab">Table 18.1: </span>Here is a nice table!</caption>
+<thead>
+<tr class="header">
+<th align="right">temperature</th>
+<th align="right">pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0.0002</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">0.0012</td>
+</tr>
+<tr class="odd">
+<td align="right">40</td>
+<td align="right">0.0060</td>
+</tr>
+<tr class="even">
+<td align="right">60</td>
+<td align="right">0.0300</td>
+</tr>
+<tr class="odd">
+<td align="right">80</td>
+<td align="right">0.0900</td>
+</tr>
+<tr class="even">
+<td align="right">100</td>
+<td align="right">0.2700</td>
+</tr>
+<tr class="odd">
+<td align="right">120</td>
+<td align="right">0.7500</td>
+</tr>
+<tr class="even">
+<td align="right">140</td>
+<td align="right">1.8500</td>
+</tr>
+<tr class="odd">
+<td align="right">160</td>
+<td align="right">4.2000</td>
+</tr>
+<tr class="even">
+<td align="right">180</td>
+<td align="right">8.8000</td>
+</tr>
+</tbody>
+</table>
+<p>You can find more information on figures and tables in Bookdown <a href="https://bookdown.org/yihui/rmarkdown/r-code.html#figures" target="_blank">here</a>.</p>
+
 </div>
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="bookdown-crash-course.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="opening-your-bookdown-project-in-rstudio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="callouts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="command-line.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -515,7 +602,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/020-reference.Rmd",
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0043-code.Rmd",
     "text": "Edit"
   },
   "history": {

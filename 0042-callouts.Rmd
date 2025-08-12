@@ -1,8 +1,3 @@
-# (PART) Formatting {-}
-
-# Markdown {#markdown}
-
-
 # Callouts {#callouts}
 
 ## Basic Syntax
@@ -227,10 +222,3 @@ You can nest callouts inside other elements, such as lists, by indenting the ent
     ::::
 
 3.  This is the third item in the list, appearing after the callout.
-
-
-
-# Code {#code}
-
-
-
