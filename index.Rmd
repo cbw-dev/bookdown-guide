@@ -26,17 +26,22 @@ If you don't know which one to use, use the following flowchart to help decide:
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSZaIjEG1ebE4EpmajloUcBcG304StHdlC53Uio9obBFmxK5j190fcgpiNhx5p5p-FYILaoWz9Y5ZXb/pub?w=1663&amp;h=1044">
 
-# How Bookdown Works 
+# How Bookdown Works: A Primer
 Here is a general summary of how Bookdown creates html websites from .Rmd files when you hit Build.
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=147">
 
-Essentially, **Knitr renders and runs all the code**, and the outputs are converted into markdown. After knitr, we essentially have a bunch of only markdown files.
-
-**Pandoc translates this markdown into HTML**, so that we get a website! It can be helpful to know when and how these packages work, to help debug later on. 
+**Knitr renders and runs all the code**, and the outputs are converted into markdown. After knitr, we  have a bunch of markdown files. **Pandoc translates this markdown into HTML**, so that we get a website! It can be helpful to know when and how these packages work to help debug later on. 
 
 :::: {.callout type="blue" style="subtle" title="Note!"}
 
 The Build step is *required* for changes to be reflected on the website. If you push an update and the site looks the same, you probably forgot to build.
+
+::::
+
+
+:::: {.callout type="yellow" style="important" title="For more information:"}
+
+For more information, take a look at the [Bookdown Crash Course section.](#bookdown-crash-course)
 
 ::::

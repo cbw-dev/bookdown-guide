@@ -271,7 +271,7 @@ Small images (e.g. sponsor logos, headshots) can be stored in the `img` folder o
 
 `![CIHR logo](https://drive.google.com/file/d/1CdamnzdoemqFXin4-dkFjORq_qNbUJVG/view?usp=drive_link)\`
 
-If you want to easily annotate and update your images without rebuilding the site every time., consider publishing a Google Drawing. See the [Developer's Guide](#publish-google-draw) for instructions.
+If you want to easily annotate and update your images without rebuilding the site every time., consider publishing a Google Drawing. See the [Developers' Guide](#publish-google-draw) for instructions.
 
 ::::
 
@@ -379,6 +379,7 @@ For a right triangle, if $c$ denotes the *length* of the hypotenuse and $a$ and 
 Labeled theorems can be referenced in text using `\@ref(thm:tri)`. For example, check out this smart theorem \@ref(thm:tri).
 
 Learn more about styling and syntax for theorems and proofs [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html).
+
 ## Using HTML {#use-html}
 
 Recall from this diagram that all files are rendered into .html files for the final official website.

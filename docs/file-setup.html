@@ -168,7 +168,7 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="part"><span><b>I Introduction</b></span></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> CBW’s Bookdown Documentation</a></li>
-<li class="chapter" data-level="2" data-path="how-bookdown-works.html"><a href="how-bookdown-works.html"><i class="fa fa-check"></i><b>2</b> How Bookdown Works</a></li>
+<li class="chapter" data-level="2" data-path="how-bookdown-works-a-primer.html"><a href="how-bookdown-works-a-primer.html"><i class="fa fa-check"></i><b>2</b> How Bookdown Works: A Primer</a></li>
 <li class="part"><span><b>II Cheat Sheets</b></span></li>
 <li class="chapter" data-level="3" data-path="rc-cheatsheet.html"><a href="rc-cheatsheet.html"><i class="fa fa-check"></i><b>3</b> RCs: Workshop Setup</a>
 <ul>
@@ -307,10 +307,14 @@ div.csl-indent {
 <li class="chapter" data-level="18.5" data-path="render-code.html"><a href="render-code.html#code-chunks-for-code-generated-figures-and-tables"><i class="fa fa-check"></i><b>18.5</b> Code Chunks for Code-Generated Figures and Tables</a></li>
 </ul></li>
 <li class="part"><span><b>VI Reference Material</b></span></li>
-<li class="chapter" data-level="19" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>19</b> Command line crash course</a></li>
+<li class="chapter" data-level="19" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>19</b> Command line crash course</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="command-line.html"><a href="command-line.html#terminal-command-prompt-and-windows-powershell"><i class="fa fa-check"></i><b>19.1</b> Terminal, Command Prompt and Windows PowerShell</a></li>
+<li class="chapter" data-level="19.2" data-path="command-line.html"><a href="command-line.html#common-commands-for-us"><i class="fa fa-check"></i><b>19.2</b> Common Commands (for us)</a></li>
+</ul></li>
 <li class="chapter" data-level="20" data-path="bookdown-crash-course.html"><a href="bookdown-crash-course.html"><i class="fa fa-check"></i><b>20</b> Bookdown crash course</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="how-bookdown-works.html"><a href="how-bookdown-works.html#how-bookdown-works"><i class="fa fa-check"></i><b>20.1</b> How Bookdown works</a></li>
+<li class="chapter" data-level="20.1" data-path="bookdown-crash-course.html"><a href="bookdown-crash-course.html#how-bookdown-works"><i class="fa fa-check"></i><b>20.1</b> How Bookdown works</a></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="file-setup.html"><a href="file-setup.html"><i class="fa fa-check"></i><b>21</b> File Setup Explanation</a></li>
 <li class="chapter" data-level="22" data-path="opening-your-bookdown-project-in-rstudio.html"><a href="opening-your-bookdown-project-in-rstudio.html"><i class="fa fa-check"></i><b>22</b> Opening your bookdown project in RStudio</a>
@@ -363,39 +367,39 @@ div.csl-indent {
 <blockquote>
 <p><strong>Note:</strong> only relevant files or files you might be concerned about are explained in blue. If there is no explanation, you can safely assume you do not have to worry about it.</p>
 </blockquote>
-<div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="file-setup.html#cb63-1" tabindex="-1"></a><span class="ex">bookdown-template</span></span>
-<span id="cb63-2"><a href="file-setup.html#cb63-2" tabindex="-1"></a><span class="ex">├──</span> _404.md <span class="co"># This becomes your 404 page. This is the only file that can become a page that can also be either a .md or .Rmd file!</span></span>
-<span id="cb63-3"><a href="file-setup.html#cb63-3" tabindex="-1"></a><span class="ex">├──</span> _bookdown.yml <span class="co"># a config file, you most likely won&#39;t have to edit it unless you want additional configuration settings</span></span>
-<span id="cb63-4"><a href="file-setup.html#cb63-4" tabindex="-1"></a><span class="ex">├──</span> _bookdown_files</span>
-<span id="cb63-5"><a href="file-setup.html#cb63-5" tabindex="-1"></a><span class="ex">├──</span> _main_files</span>
-<span id="cb63-6"><a href="file-setup.html#cb63-6" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># [in case of confusion: image and pdf output files]</span></span>
-<span id="cb63-7"><a href="file-setup.html#cb63-7" tabindex="-1"></a><span class="ex">├──</span> _output.yml <span class="co"># a config file, RC/workshop team will have to edit a few things (the workshop name, sponsor images, repo link)</span></span>
-<span id="cb63-8"><a href="file-setup.html#cb63-8" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
-<span id="cb63-9"><a href="file-setup.html#cb63-9" tabindex="-1"></a><span class="ex">├──</span> .Rhistory</span>
-<span id="cb63-10"><a href="file-setup.html#cb63-10" tabindex="-1"></a><span class="ex">├──</span> 010-course-schedule.Rmd <span class="co"># --&gt; &quot;Course Schedule&quot; section</span></span>
-<span id="cb63-11"><a href="file-setup.html#cb63-11" tabindex="-1"></a><span class="ex">├──</span> 011-content-files.Rmd <span class="co"># --&gt; &quot;Pre-workshop Materials&quot; and &quot;Computing Setup &amp; Downloads&quot; section</span></span>
-<span id="cb63-12"><a href="file-setup.html#cb63-12" tabindex="-1"></a><span class="ex">├──</span> 012-meet-your-fac.Rmd <span class="co"># --&gt; &quot;Meet Your Faculty&quot; section</span></span>
-<span id="cb63-13"><a href="file-setup.html#cb63-13" tabindex="-1"></a><span class="ex">├──</span> 020-module-1.Rmd <span class="co">#--&gt; &quot;Module 1&quot;, &quot;Lecture, and &quot;Lab&quot; section</span></span>
-<span id="cb63-14"><a href="file-setup.html#cb63-14" tabindex="-1"></a><span class="ex">├──</span> 030-module-2.Rmd</span>
-<span id="cb63-15"><a href="file-setup.html#cb63-15" tabindex="-1"></a><span class="ex">├──</span> README.md <span class="co"># README file that has some helpful explanations, consider reading this before starting to edit (along with this documentation!)</span></span>
-<span id="cb63-16"><a href="file-setup.html#cb63-16" tabindex="-1"></a><span class="ex">├──</span> book.bib <span class="co"># citation file</span></span>
-<span id="cb63-17"><a href="file-setup.html#cb63-17" tabindex="-1"></a><span class="ex">├──</span> bookdown-template.Rproj <span class="co"># always open this file in RStudio, opening this helps bookdown understand what to build</span></span>
-<span id="cb63-18"><a href="file-setup.html#cb63-18" tabindex="-1"></a><span class="ex">├──</span> content-files <span class="co"># store all files from your modules here (ex. data sets, empty code worksheets)</span></span>
-<span id="cb63-19"><a href="file-setup.html#cb63-19" tabindex="-1"></a>    <span class="ex">└──</span> sample-pdf.pdf</span>
-<span id="cb63-20"><a href="file-setup.html#cb63-20" tabindex="-1"></a><span class="ex">├──</span> docs</span>
-<span id="cb63-21"><a href="file-setup.html#cb63-21" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># html files &amp; other generated content</span></span>
-<span id="cb63-22"><a href="file-setup.html#cb63-22" tabindex="-1"></a><span class="ex">├──</span> img <span class="co"># folder where you should store all your images</span></span>
-<span id="cb63-23"><a href="file-setup.html#cb63-23" tabindex="-1"></a>    <span class="ex">├──</span> bioinformatics.ca-logo.svg </span>
-<span id="cb63-24"><a href="file-setup.html#cb63-24" tabindex="-1"></a>    <span class="ex">├──</span> faculty <span class="co"># store all images of faculty in this folder</span></span>
-<span id="cb63-25"><a href="file-setup.html#cb63-25" tabindex="-1"></a>        <span class="ex">├──</span> michelle-brazas.jpg</span>
-<span id="cb63-26"><a href="file-setup.html#cb63-26" tabindex="-1"></a>        <span class="ex">└──</span> nia-hughes.jpeg</span>
-<span id="cb63-27"><a href="file-setup.html#cb63-27" tabindex="-1"></a>    <span class="ex">├──</span> favicon.ico</span>
-<span id="cb63-28"><a href="file-setup.html#cb63-28" tabindex="-1"></a>    <span class="ex">└──</span> sponsors <span class="co"># store all sponsor logos/titles in this folder</span></span>
-<span id="cb63-29"><a href="file-setup.html#cb63-29" tabindex="-1"></a>         <span class="ex">└──</span> Your-Sponsor-Here.svg</span>
-<span id="cb63-30"><a href="file-setup.html#cb63-30" tabindex="-1"></a><span class="ex">├──</span> index.Rmd <span class="co"># landing page --&gt; &quot;Welcome&quot; section</span></span>
-<span id="cb63-31"><a href="file-setup.html#cb63-31" tabindex="-1"></a><span class="ex">├──</span> packages.bib <span class="co"># R generated citation file</span></span>
-<span id="cb63-32"><a href="file-setup.html#cb63-32" tabindex="-1"></a><span class="ex">├──</span> preamble.tex</span>
-<span id="cb63-33"><a href="file-setup.html#cb63-33" tabindex="-1"></a><span class="ex">└──</span> style.css <span class="co"># css styling options are defined here - feel free to add your own styling features</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="file-setup.html#cb71-1" tabindex="-1"></a><span class="ex">bookdown-template</span></span>
+<span id="cb71-2"><a href="file-setup.html#cb71-2" tabindex="-1"></a><span class="ex">├──</span> _404.md <span class="co"># This becomes your 404 page. This is the only file that can become a page that can also be either a .md or .Rmd file!</span></span>
+<span id="cb71-3"><a href="file-setup.html#cb71-3" tabindex="-1"></a><span class="ex">├──</span> _bookdown.yml <span class="co"># a config file, you most likely won&#39;t have to edit it unless you want additional configuration settings</span></span>
+<span id="cb71-4"><a href="file-setup.html#cb71-4" tabindex="-1"></a><span class="ex">├──</span> _bookdown_files</span>
+<span id="cb71-5"><a href="file-setup.html#cb71-5" tabindex="-1"></a><span class="ex">├──</span> _main_files</span>
+<span id="cb71-6"><a href="file-setup.html#cb71-6" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># [in case of confusion: image and pdf output files]</span></span>
+<span id="cb71-7"><a href="file-setup.html#cb71-7" tabindex="-1"></a><span class="ex">├──</span> _output.yml <span class="co"># a config file, RC/workshop team will have to edit a few things (the workshop name, sponsor images, repo link)</span></span>
+<span id="cb71-8"><a href="file-setup.html#cb71-8" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
+<span id="cb71-9"><a href="file-setup.html#cb71-9" tabindex="-1"></a><span class="ex">├──</span> .Rhistory</span>
+<span id="cb71-10"><a href="file-setup.html#cb71-10" tabindex="-1"></a><span class="ex">├──</span> 010-course-schedule.Rmd <span class="co"># --&gt; &quot;Course Schedule&quot; section</span></span>
+<span id="cb71-11"><a href="file-setup.html#cb71-11" tabindex="-1"></a><span class="ex">├──</span> 011-content-files.Rmd <span class="co"># --&gt; &quot;Pre-workshop Materials&quot; and &quot;Computing Setup &amp; Downloads&quot; section</span></span>
+<span id="cb71-12"><a href="file-setup.html#cb71-12" tabindex="-1"></a><span class="ex">├──</span> 012-meet-your-fac.Rmd <span class="co"># --&gt; &quot;Meet Your Faculty&quot; section</span></span>
+<span id="cb71-13"><a href="file-setup.html#cb71-13" tabindex="-1"></a><span class="ex">├──</span> 020-module-1.Rmd <span class="co">#--&gt; &quot;Module 1&quot;, &quot;Lecture, and &quot;Lab&quot; section</span></span>
+<span id="cb71-14"><a href="file-setup.html#cb71-14" tabindex="-1"></a><span class="ex">├──</span> 030-module-2.Rmd</span>
+<span id="cb71-15"><a href="file-setup.html#cb71-15" tabindex="-1"></a><span class="ex">├──</span> README.md <span class="co"># README file that has some helpful explanations, consider reading this before starting to edit (along with this documentation!)</span></span>
+<span id="cb71-16"><a href="file-setup.html#cb71-16" tabindex="-1"></a><span class="ex">├──</span> book.bib <span class="co"># citation file</span></span>
+<span id="cb71-17"><a href="file-setup.html#cb71-17" tabindex="-1"></a><span class="ex">├──</span> bookdown-template.Rproj <span class="co"># always open this file in RStudio, opening this helps bookdown understand what to build</span></span>
+<span id="cb71-18"><a href="file-setup.html#cb71-18" tabindex="-1"></a><span class="ex">├──</span> content-files <span class="co"># store all files from your modules here (ex. data sets, empty code worksheets)</span></span>
+<span id="cb71-19"><a href="file-setup.html#cb71-19" tabindex="-1"></a>    <span class="ex">└──</span> sample-pdf.pdf</span>
+<span id="cb71-20"><a href="file-setup.html#cb71-20" tabindex="-1"></a><span class="ex">├──</span> docs</span>
+<span id="cb71-21"><a href="file-setup.html#cb71-21" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># html files &amp; other generated content</span></span>
+<span id="cb71-22"><a href="file-setup.html#cb71-22" tabindex="-1"></a><span class="ex">├──</span> img <span class="co"># folder where you should store all your images</span></span>
+<span id="cb71-23"><a href="file-setup.html#cb71-23" tabindex="-1"></a>    <span class="ex">├──</span> bioinformatics.ca-logo.svg </span>
+<span id="cb71-24"><a href="file-setup.html#cb71-24" tabindex="-1"></a>    <span class="ex">├──</span> faculty <span class="co"># store all images of faculty in this folder</span></span>
+<span id="cb71-25"><a href="file-setup.html#cb71-25" tabindex="-1"></a>        <span class="ex">├──</span> michelle-brazas.jpg</span>
+<span id="cb71-26"><a href="file-setup.html#cb71-26" tabindex="-1"></a>        <span class="ex">└──</span> nia-hughes.jpeg</span>
+<span id="cb71-27"><a href="file-setup.html#cb71-27" tabindex="-1"></a>    <span class="ex">├──</span> favicon.ico</span>
+<span id="cb71-28"><a href="file-setup.html#cb71-28" tabindex="-1"></a>    <span class="ex">└──</span> sponsors <span class="co"># store all sponsor logos/titles in this folder</span></span>
+<span id="cb71-29"><a href="file-setup.html#cb71-29" tabindex="-1"></a>         <span class="ex">└──</span> Your-Sponsor-Here.svg</span>
+<span id="cb71-30"><a href="file-setup.html#cb71-30" tabindex="-1"></a><span class="ex">├──</span> index.Rmd <span class="co"># landing page --&gt; &quot;Welcome&quot; section</span></span>
+<span id="cb71-31"><a href="file-setup.html#cb71-31" tabindex="-1"></a><span class="ex">├──</span> packages.bib <span class="co"># R generated citation file</span></span>
+<span id="cb71-32"><a href="file-setup.html#cb71-32" tabindex="-1"></a><span class="ex">├──</span> preamble.tex</span>
+<span id="cb71-33"><a href="file-setup.html#cb71-33" tabindex="-1"></a><span class="ex">└──</span> style.css <span class="co"># css styling options are defined here - feel free to add your own styling features</span></span></code></pre></div>
 <!-- Dev Suggestion: add code chunk option so that this takes up the width of the entire page? -->
 <div id="output.yml-_bookdown.yml" class="section level6 unnumbered hasAnchor">
 <h6><font color="d46d63"> _output.yml &amp; _bookdown.yml </font><a href="file-setup.html#output.yml-_bookdown.yml" class="anchor-section" aria-label="Anchor link to header"></a></h6>
@@ -500,8 +504,8 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
   "sharing": {
     "github": false,
-    "facebook": true,
-    "twitter": true,
+    "facebook": false,
+    "twitter": false,
     "linkedin": false,
     "weibo": false,
     "instapaper": false,
@@ -515,7 +519,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/020-reference.Rmd",
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0082-bookdown.Rmd",
     "text": "Edit"
   },
   "history": {

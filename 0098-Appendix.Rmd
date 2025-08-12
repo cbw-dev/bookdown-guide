@@ -1,0 +1,25 @@
+# Appendix: developers' guide {#appendix}
+
+For the developers of this guide, here are helpful sources.
+
+## GitHub Repo
+
+The Bookdown Guide is hosted from the [cbw-dev/bookdown-guide](https://github.com/cbw-dev/bookdown-guide) public repository.
+
+## Diagram Links
+
+Many diagrams shown on these docs are in this [Google folder](https://drive.google.com/drive/folders/136sy6WIiSG3tBFVpHt8yQwLakB4TFJvn?usp=sharing). Note: Many explanatory screenshots are currently stored locally in the repository's subfolders.
+
+
+### How to Publish a Google Drawing {#publish-google-draw}
+
+1.  Open the drawing.
+2.  Edit. Tip: Editing size of the Google Drawing is very easy when you drag the diagonal lines in the bottom right corner. 
+3.  To publish, go to "File > Share > Publish to Web > Embed". Copy the "Medium" *(optional)* image size HTML code. Paste where you want it to appear in your .Rmd file.
+4.  Add alt text to the img embed code: Add `alt="Alt Text"` after `src = ...` and before `>`. 
+
+    :::: {.callout type="yellow" title="Tip" style="subtle"}
+    
+    If you're putting a screenshot into your Google Drawing, the resolution of the image will look very poor when     it is rendered. You can fix this by simply making the image extremely big.
+
+    ::::

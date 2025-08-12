@@ -6,6 +6,9 @@ bookdown::gitbook:
     in_header:
       - fa-header.html
   config:
+    sharing:
+      facebook: no
+      twitter: no
     toc: # Table of Contents
       collapse: section
       depth: 2
