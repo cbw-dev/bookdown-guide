@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>20 Command line crash course | CBW Bookdown Guide</title>
+  <title>15 Logistics page | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="20 Command line crash course | CBW Bookdown Guide" />
+  <meta property="og:title" content="15 Logistics page | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="20 Command line crash course | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="15 Logistics page | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="render-code.html"/>
-<link rel="next" href="bookdown-crash-course.html"/>
+<link rel="prev" href="link-to-homepage.html"/>
+<link rel="next" href="whats-next.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -400,133 +400,17 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="command-line" class="section level1 hasAnchor" number="20">
-<h1><span class="header-section-number">20</span> Command line crash course<a href="command-line.html#command-line" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is for those who have no (or extremely little) experience with the command line.</p>
-<p>Using the command line, you can use text commands to interact with your computer’s operating system. For us, we will be using it to move around our folders and to <a href="#git-clone">git clone</a> our workshop into our computer, so we can work on it using RStudio.</p>
-<div id="terminal-command-prompt-and-windows-powershell" class="section level2 hasAnchor" number="20.1">
-<h2><span class="header-section-number">20.1</span> Terminal, Command Prompt and Windows PowerShell<a href="command-line.html#terminal-command-prompt-and-windows-powershell" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can use the command line using certain tools and applications. Terminal is a Unix-based (meaning Linux and macOS computer already have it) application that allows you to access the command line. Similarly, Command Prompt (CMD) and Windows PowerShell give access to the command line on Windows computers. However, Terminal, Command Prompt and Windows PowerShell differ in what commands are accepted. The same commands we give to Terminal may not work in Command Prompt and/or Windows PowerShell.</p>
-<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><i class="fa-solid fa-question" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">What’s the difference between PowerShell and Command Prompt?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>The Command Prompt is a legacy tool inherited from the days of
-MS-DOS. It’s a simple shell that’s good for basic system tasks and
-running batch files. It primarily works with text strings as its input
-and output. PowerShell, on the other hand, is a more advanced and
-feature-rich environment. It tends to be more advanced than Command
-Prompt, and often can accept more commands that are accepted by Terminal
-than Command Prompt.</p></div></details>
-</div>
-<div id="common-commands-for-us" class="section level2 hasAnchor" number="20.2">
-<h2><span class="header-section-number">20.2</span> Common Commands (for us)<a href="command-line.html#common-commands-for-us" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We won’t need to know that many commands, but for easy navigation and understanding, here is what you (generally) need:</p>
-<div class="callout-green-subtle">
-<span class="callout-icon"><i class="fas fa-circle-check" aria-hidden="true"></i></span>
-<div class="callout-content">
-<div class="callout-title-static">
-<p>Note</p>
-</div>
-<p>Commands are written below as headers, with an explanation provided beneath.</p>
-<p>They follow the format: “[Linux Command]” OR “[Windows Command]”</p>
-</div>
-</div>
-<div id="pwd-or-echo-cd" class="section level6 unnumbered hasAnchor">
-<h6>pwd OR echo %cd%<a href="command-line.html#pwd-or-echo-cd" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>“pwd” stands for “print working directory”. It is a command that works in <strong>Linux</strong> and <strong>Windows PowerShell</strong>. The equivalent in <strong>Command Prompt</strong> is “echo %cd%”. For example, below our output is where in my folders the current .Rmd file that makes up this website is:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="command-line.html#cb65-1" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
-<pre><code>## /Users/nhughes/Documents/CBWGithub/bookdown-guide</code></pre>
-</div>
-<div id="ls-or-dir" class="section level6 unnumbered hasAnchor">
-<h6>ls OR dir<a href="command-line.html#ls-or-dir" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>“ls” is a command that works in <strong>Linux</strong> and <strong>Windows PowerShell</strong>. It’s short for “list” and outputs all the files and folders in the directory (folder) you are currently in. (Note: this code only shows 4 files to save space.)</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="command-line.html#cb67-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
-<pre><code>## _404.md
-## _bookdown_files
-## _bookdown.yml
-## _main_files</code></pre>
-<p>A similar command in <strong>Command Prompt</strong> is <code>dir</code> (short for “directory”), which also outputs the files and folders in your current directory along with timestamps.</p>
-</div>
-<div id="cd" class="section level6 unnumbered hasAnchor">
-<h6>cd<a href="command-line.html#cd" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>“cd” stands for “change directory”. The command produces no output, but it allows you to go to a different directory than the one you’re currently in. For example,</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="command-line.html#cb69-1" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># recall: pwd tells us where we currently are</span></span>
-<span id="cb69-2"><a href="command-line.html#cb69-2" tabindex="-1"></a><span class="bu">cd</span> img <span class="co"># img is a folder in bookdown-docs</span></span>
-<span id="cb69-3"><a href="command-line.html#cb69-3" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;now switching directories&quot;</span> <span class="co"># outputs the following string</span></span>
-<span id="cb69-4"><a href="command-line.html#cb69-4" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
-<pre><code>## /Users/nhughes/Documents/CBWGithub/bookdown-guide
-## now switching directories
-## /Users/nhughes/Documents/CBWGithub/bookdown-guide/img</code></pre>
-<details class="callout-dropdown callout-subtle callout-orange-subtle"><summary class="callout-dropdown-summary"><i class="fa-solid fa-exclamation" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Tip: Autocomplete</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>Typing “cd” and then hitting the <code>tab</code> key will give you
-the available directories you can go to from where you are, or what you
-have currently typed in. If there is only one option, hitting
-<code>tab</code> will fill in your command with that option. (This works
-when typing in any file location into your command line, not only using
-“cd”). On macOS, the terminal will give you a list if there are multiple
-options. On Windows, both Command Prompt and Windows Powershell will
-fill in potential options, and you can hit tab multiple times untill you
-find your desired file destination.</p></div></details>
-<p><strong>File Location Shorthands</strong> When referring to file addresses, there are helpful shorthands. Here’s a summary: - <code>.</code> = Current Directory - <code>..</code> = Parent Directory - <code>~</code> = Home Directory</p>
-<p>Here’s an example (recall that cd produces no output):</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="command-line.html#cb71-1" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb71-2"><a href="command-line.html#cb71-2" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="co"># creates a line</span></span>
-<span id="cb71-3"><a href="command-line.html#cb71-3" tabindex="-1"></a></span>
-<span id="cb71-4"><a href="command-line.html#cb71-4" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Current Directory Example&quot;</span></span>
-<span id="cb71-5"><a href="command-line.html#cb71-5" tabindex="-1"></a><span class="bu">cd</span> .</span>
-<span id="cb71-6"><a href="command-line.html#cb71-6" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb71-7"><a href="command-line.html#cb71-7" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span></span>
-<span id="cb71-8"><a href="command-line.html#cb71-8" tabindex="-1"></a></span>
-<span id="cb71-9"><a href="command-line.html#cb71-9" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Parent Directory Example&quot;</span></span>
-<span id="cb71-10"><a href="command-line.html#cb71-10" tabindex="-1"></a><span class="bu">cd</span> ..</span>
-<span id="cb71-11"><a href="command-line.html#cb71-11" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb71-12"><a href="command-line.html#cb71-12" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span></span>
-<span id="cb71-13"><a href="command-line.html#cb71-13" tabindex="-1"></a></span>
-<span id="cb71-14"><a href="command-line.html#cb71-14" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Home Directory Example&quot;</span></span>
-<span id="cb71-15"><a href="command-line.html#cb71-15" tabindex="-1"></a><span class="bu">cd</span> ~</span>
-<span id="cb71-16"><a href="command-line.html#cb71-16" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
-<pre><code>## /Users/nhughes/Documents/CBWGithub/bookdown-guide
-## 
-## Current Directory Example
-## /Users/nhughes/Documents/CBWGithub/bookdown-guide
-## 
-## Parent Directory Example
-## /Users/nhughes/Documents/CBWGithub
-## 
-## Home Directory Example
-## /Users/nhughes</code></pre>
-</div>
-<div id="mkdir" class="section level6 unnumbered hasAnchor">
-<h6>mkdir<a href="command-line.html#mkdir" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>“mkdir [directory address]” stands for “make directory”. Essentially, mkdir will make an empty directory (folder) at a specified location. For example: <code>mkdir test</code> would create a folder named “test” in our current directory. The following commands do the same thing. Note: <code>mkdir ./test</code> does the same thing.</p>
-</div>
-<div id="rmdir" class="section level6 unnumbered hasAnchor">
-<h6>rmdir<a href="command-line.html#rmdir" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>“rmdir [directory address]” removes an <em>empty</em> directory. For example, <code>rmdir test</code> would delete the directory we just made.</p>
-</div>
-<div id="rmdir--r-or-rmdir-s" class="section level6 unnumbered hasAnchor">
-<h6>rmdir -r OR rmdir /s<a href="command-line.html#rmdir--r-or-rmdir-s" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>“rmdir -r [directory address]” (Terminal &amp; Windows PowerShell) and “rmdir /s [directory address]” removes a directory recursively, meaning it deletes all the contents of the folder as we all as the folder in itself.</p>
-<div class="callout-red-important">
-<span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
-<div class="callout-content">
-<div class="callout-title-static">
-<p>There is no undo button</p>
-</div>
-<p>Be careful! You can not restore a directory you removed using “rmdir” (or a file removed with “rm”).</p>
-</div>
-</div>
-</div>
-<div id="up-and-down-arrows" class="section level6 unnumbered hasAnchor">
-<h6>Up [⬆] and Down [⬇] Arrows<a href="command-line.html#up-and-down-arrows" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>One of the most useful tips for using the command line is to use your up [↑] and down [↓] arrow keys. Using the up [↑] key gives you the previous commands you typed, and the down [↓] arrow returns you to your earlier commands.</p>
+<div id="logistics" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">15</span> Logistics page<a href="logistics.html#logistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="render-code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bookdown-crash-course.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="link-to-homepage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="whats-next.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -557,7 +441,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0081-commandline.Rmd",
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0037-logistics-page.Rmd",
     "text": "Edit"
   },
   "history": {

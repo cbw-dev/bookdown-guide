@@ -58,14 +58,3 @@
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
     ![Image showing how to find actions](img/template/actions-menu.png)\
     :::
-
-
-## Oops, I Git Cloned the Wrong Repository! {#delete-git-folder-locally}
-
-That's okay! To delete the entire local repository and the folder itself, run the following command:
-
-```         
-rm -fr folder-path
-```
-
-where "folder-path" is a file address to the repo that you want to delete. *Double check that the path is correct before running this command.*

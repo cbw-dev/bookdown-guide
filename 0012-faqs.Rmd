@@ -1,0 +1,18 @@
+# FAQs {#faq}
+
+## Why aren't my changes appearing on the website? {#changes-not-appearing}
+There are a few things that could be the cause:
+
+1.  You forgot to *build your book*. Remember that this step is what creates the HTML files for the website.
+
+2.  You forgot to *commit and push your changes*. The build step creates the HTML files, but you need to push them to Github after building - otherwise, they only live on your computer.
+
+3.  You just haven't waited long enough - it takes 1-2 minutes for the site to build.
+
+## What are the unusual symbols I'm seeing? {#comments}
+
+**<-- -->**  
+These are comment tags - they prevent the contents inside them from being displayed. You can either type/delete them manually or use the shortcuts `Command + Shift + C` (Mac) or `Ctrl + Shift + C` (Windows).
+
+**\[ ]( )**  
+This is the markdown syntax for a hyperlink. The contents of the square brackets indicate the text to be displayed, and the round brackets contain the link itself.

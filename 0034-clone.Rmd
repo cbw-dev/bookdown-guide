@@ -43,7 +43,7 @@ Now that the website is created, let's bring it to your computer where you can e
 
     c)  **Edit** and **run the following command** in Terminal/PowerShell/Command Prompt, within the folder you want the workshop folder to be in. (Recall that we navigated there in step 1.)
 
-    ::: {.callout type="red" title="Edit this command!"}
+    ::: {.callout type="green" title="Edit this command!"}
 
     Type "git clone ", paste the SSH url, and then hit enter. The command is below, but you must delete the entire "git\@github.com:bioinformaticsdotca/[YOUR WORKSHOP NAME].git" text, and replace it with the text you copied.
     
@@ -54,3 +54,13 @@ Now that the website is created, let's bring it to your computer where you can e
     ::::
 
 3.  You should be ready to go! With your given permissions, you should be able to git push (put your local edits on GitHub) and git pull (pull edits on GitHub to your local computer) fine!
+
+## Oops, I Git Cloned the Wrong Repository! {#delete-git-folder-locally}
+
+That's okay! To delete the entire local repository and the folder itself, run the following command:
+
+```         
+rm -fr folder-path
+```
+
+where "folder-path" is a file address to the repo that you want to delete. *Double check that the path is correct before running this command, as it cannot be undone.*

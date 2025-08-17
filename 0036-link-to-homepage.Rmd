@@ -1,0 +1,54 @@
+# Link to homepage {#link-to-homepage}
+
+:::: {.callout type="yellow" title="Note" style="subtle"}
+
+You can find more info on the Github homepage setup in [Appendix B](#homepage-guide).
+
+For the best experience, we **strongly recommend** setting up the local validation system [described here.](#local-validation)
+
+::::
+
+## Get your code
+
+1.  Use the below widget to generate your metadata entries for the website.
+
+    :::: {.callout type="gray" title="Metadata generator" style="plain" collapsible="true"}
+
+
+    ```{r, echo=FALSE}
+    htmltools::tags$iframe(
+      src = "json_generator.html",
+      height = "850",
+      style = "width: 100%; min-width: 650px; border: none;"
+    )
+    
+    ```
+
+    ::::
+
+## Add to GitHub homepage
+
+2.  Navigate to your `bioinformaticsdotca.github.io` repo in your `CBWGithub` folder.
+
+3.  Run `git pull`. You can do this in Terminal/PowerShell, or if you prefer, you can use an integrated Git system in your code editor.
+
+4.  If it's not already present, add your workshop image to the `img/` folder. If it is present, make note of the filename.
+
+5.  Open the `workshops.json` file and paste the **first** output from the widget **below the first square bracket**. 
+
+
+## Add to GitHub sitemap
+
+6.  Open the `sitemap.xml` file and paste the **second** output below the ``<urlset ...>``` line at the top.
+
+## Update the website 
+
+7.  Git add, commit, and push the file. Code for use on the command line is below.
+
+    ```
+    git add workshops.json sitemap.xml
+    git commit -m "YOUR MESSAGE HERE"
+    git push
+    ```
+
+8.  Go to the [actions page](https://github.com/bioinformaticsdotca/bioinformaticsdotca.github.io/actions) and confirm that your update deploys successfully. This page has built-in validation: if your data does not match the expected format, deployment will fail.

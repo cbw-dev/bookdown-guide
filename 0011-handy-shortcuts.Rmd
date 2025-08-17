@@ -1,0 +1,34 @@
+# Handy Shortcuts {#handy-shortcuts}
+
+## Getting to your folder in the terminal
+You can use the `cd` command, or:
+
+:::: {.callout type="gray" title="Windows" collapsible="true" style="plain" icon="fas fa-circle-info"}
+
+*Method 1*: Shift + Right-click  
+* Open Windows File Explorer and navigate to the folder you want to open in the terminal.  
+* Hold down the Shift key and right-click on the folder (or an empty area within the folder).  
+* Select "Open in Terminal" from the context menu.   
+  
+*Method 2*: Typing "cmd" in the address bar  
+* Open Windows File Explorer and navigate to the folder.  
+* Click in the address bar at the top of the window.  
+* Type `cmd` and press Enter.
+
+::::
+
+:::: {.callout type="gray" title="Mac" collapsible="true" style="plain" icon="fas fa-circle-info"}
+
+* Locate and open the folder you want to use in Finder. 
+* If you don't see the path bar at the bottom of the Finder window, go to View > Show Path Bar. 
+* In the path bar, right-click (or Control-click) the folder. 
+* Select Open in Terminal
+
+::::
+
+
+## Opening your folder from the terminal
+If you are working in the Terminal and want to open your folder in your file explorer, type `open .` (Mac) or `start .` (Windows)
+
+## Commenting and uncommenting in RStudio {#commenting}
+To quickly comment or uncomment lines in RStudio, use `Command + Shift + C` (Mac) or `Ctrl + Shift + C` (Windows/Linux).

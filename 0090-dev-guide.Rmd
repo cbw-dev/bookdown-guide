@@ -1,4 +1,6 @@
-# Appendix: developers' guide {#appendix}
+# (APPENDIX) Appendices {-} 
+
+# Appendix A: developers' guide {#dev-guide}
 
 For the developers of this guide, here are helpful sources.
 

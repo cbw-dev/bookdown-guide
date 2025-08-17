@@ -2,6 +2,12 @@
 
 # Create your repo {#create-repo}
 
+:::: {.callout type="yellow" title="Note"}
+
+  This section provides a step-by-step practical guide on setting up a workshop website. If you're looking for more detail on how Bookdown works, go to the [Bookdown crash course](#bookdown-crash-course).
+  
+::::
+
 ## Option 1: New repo
 
 1. Go to the **[bookdown template](https://github.com/cbw-dev/bookdown-template)**. Make sure you're signed into GitHub.
