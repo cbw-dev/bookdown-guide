@@ -196,6 +196,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="local-setup.html"><a href="local-setup.html#create-your-folder"><i class="fa fa-check"></i><b>7.2.1</b> Create your folder</a></li>
 <li class="chapter" data-level="7.2.2" data-path="local-setup.html"><a href="local-setup.html#clone-the-github-homepage"><i class="fa fa-check"></i><b>7.2.2</b> Clone the GitHub homepage</a></li>
+<li class="chapter" data-level="7.2.3" data-path="local-setup.html"><a href="local-setup.html#clone-the-travel-logistics-repo"><i class="fa fa-check"></i><b>7.2.3</b> Clone the travel logistics repo</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Set Up Workshop Site</b></span></li>
@@ -226,7 +227,10 @@ div.csl-indent {
 <li class="chapter" data-level="14.3" data-path="link-to-homepage.html"><a href="link-to-homepage.html#add-to-github-sitemap"><i class="fa fa-check"></i><b>14.3</b> Add to GitHub sitemap</a></li>
 <li class="chapter" data-level="14.4" data-path="link-to-homepage.html"><a href="link-to-homepage.html#update-the-website"><i class="fa fa-check"></i><b>14.4</b> Update the website</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a></li>
+<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="logistics.html"><a href="logistics.html#create-logistics"><i class="fa fa-check"></i><b>15.1</b> Create your logistics page</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="whats-next.html"><a href="whats-next.html"><i class="fa fa-check"></i><b>16</b> What’s next?</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="whats-next.html"><a href="whats-next.html#homepage"><i class="fa fa-check"></i><b>16.1</b> Homepage</a>
@@ -402,7 +406,56 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="logistics" class="section level1 hasAnchor" number="15">
 <h1><span class="header-section-number">15</span> Logistics page<a href="logistics.html#logistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>If your workshop has an in-person location, you’ll need to create a travel logistics page for your participants.</p>
+<div class="callout-orange-subtle">
+<span class="callout-icon"><i class="fas fa-fire" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>Important note</p>
+</div>
+<p><strong>Do not link this page on your workshop website!</strong> To prevent uninvited guests, this link is <em>only</em> sent out by email directly to participants.</p>
+</div>
+</div>
+<div id="create-logistics" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Create your logistics page<a href="logistics.html#create-logistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Navigate to the <code>travel_logistics</code> folder you cloned as part of your <a href="local-setup.html#github-folder">local setup</a>.</p></li>
+<li><p>Make a copy of template.md named <code>[CODE].md</code> (e.g. <code>INR_Mon-2511.md</code>) in the folder for the city your workshop will be held in (e.g. <code>montreal</code>). If that folder does not exist, create it.</p></li>
+<li><p>Open the file in your editor, likely VSCode, and fill in each section. Be careful not to miss anything.</p>
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Embedding Google Maps</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ll need to embed a Google Maps for your venue. To do this, find
+your venue on Google Maps and click Share, then Embed A Map.</p>
+<p><img src="img/logistics/embed-share.png"
+alt="How to find the embed code for Google Maps" /><br />
+</p>
+<p>Click Copy HTML, then paste it into your logistics document.</p>
+<p><img src="img/logistics/embed-copyhtml.png"
+alt="How to copy the embed code" /><br />
+</p></div></details></li>
+<li><p>Git add, commit, and push your changes.</p></li>
+<li><p>Your workshop will be available at <code>bioinformaticsdotca.github.io/travel_logistics/[city]/[code]</code>. In the example above, the URL would be <code>bioinformaticsdotca.github.io/travel_logistics/montreal/INR_Mon-2511</code></p></li>
+</ol>
+<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><i class="fas fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Looking for previous examples?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’re welcome to review previous years’ logistics pages and copy as
+appropriate - just make sure the info is up to date! Links to legacy
+(pre-Hub) pages are below.</p>
+<ul>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/vancouver">Vancouver</a></li>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/calgary">Calgary</a></li>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/edmonton">Edmonton</a></li>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/ottawa">Ottawa</a></li>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/quebeccity">Quebec
+City</a></li>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/stjohns">St. John’s</a></li>
+<li><a
+href="https://bioinformaticsdotca.github.io/travel_logistics/legacy/toronto">Toronto</a></li>
+</ul></div></details>
 
+</div>
 </div>
             </section>
 

@@ -196,6 +196,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="local-setup.html"><a href="local-setup.html#create-your-folder"><i class="fa fa-check"></i><b>7.2.1</b> Create your folder</a></li>
 <li class="chapter" data-level="7.2.2" data-path="local-setup.html"><a href="local-setup.html#clone-the-github-homepage"><i class="fa fa-check"></i><b>7.2.2</b> Clone the GitHub homepage</a></li>
+<li class="chapter" data-level="7.2.3" data-path="local-setup.html"><a href="local-setup.html#clone-the-travel-logistics-repo"><i class="fa fa-check"></i><b>7.2.3</b> Clone the travel logistics repo</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Set Up Workshop Site</b></span></li>
@@ -226,7 +227,10 @@ div.csl-indent {
 <li class="chapter" data-level="14.3" data-path="link-to-homepage.html"><a href="link-to-homepage.html#add-to-github-sitemap"><i class="fa fa-check"></i><b>14.3</b> Add to GitHub sitemap</a></li>
 <li class="chapter" data-level="14.4" data-path="link-to-homepage.html"><a href="link-to-homepage.html#update-the-website"><i class="fa fa-check"></i><b>14.4</b> Update the website</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a></li>
+<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="logistics.html"><a href="logistics.html#create-logistics"><i class="fa fa-check"></i><b>15.1</b> Create your logistics page</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="whats-next.html"><a href="whats-next.html"><i class="fa fa-check"></i><b>16</b> What’s next?</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="whats-next.html"><a href="whats-next.html#homepage"><i class="fa fa-check"></i><b>16.1</b> Homepage</a>
@@ -460,12 +464,12 @@ div.csl-indent {
 <p>Before we get too deep into formatting possibilities, let’s cover the basics of markdown formatting options.</p>
 <div id="bold" class="section level3 unnumbered hasAnchor">
 <h3>Bold<a href="markdown.html#bold" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="markdown.html#cb17-1" tabindex="-1"></a>**bolded text**</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="markdown.html#cb18-1" tabindex="-1"></a>**bolded text**</span></code></pre></div>
 <p><strong>bolded text</strong></p>
 </div>
 <div id="italics" class="section level3 unnumbered hasAnchor">
 <h3>Italics<a href="markdown.html#italics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="markdown.html#cb18-1" tabindex="-1"></a>*italicized text*</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="markdown.html#cb19-1" tabindex="-1"></a>*italicized text*</span></code></pre></div>
 <p><em>italicized text</em></p>
 </div>
 <div id="subscript" class="section level3 unnumbered hasAnchor">
@@ -492,9 +496,9 @@ div.csl-indent {
 </div>
 <div id="blockquote" class="section level3 unnumbered hasAnchor">
 <h3>Blockquote<a href="markdown.html#blockquote" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="markdown.html#cb23-1" tabindex="-1"></a><span class="at">&gt; blockquote</span></span>
-<span id="cb23-2"><a href="markdown.html#cb23-2" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb23-3"><a href="markdown.html#cb23-3" tabindex="-1"></a><span class="at">&gt; --- someone who blockquotes</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1"><a href="markdown.html#cb24-1" tabindex="-1"></a><span class="at">&gt; blockquote</span></span>
+<span id="cb24-2"><a href="markdown.html#cb24-2" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb24-3"><a href="markdown.html#cb24-3" tabindex="-1"></a><span class="at">&gt; --- someone who blockquotes</span></span></code></pre></div>
 <blockquote>
 <p>blockquote</p>
 <p>— someone who blockquotes</p>
@@ -506,10 +510,10 @@ div.csl-indent {
 </div>
 <div id="unordered-list" class="section level3 unnumbered hasAnchor">
 <h3>Unordered List<a href="markdown.html#unordered-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1"><a href="markdown.html#cb24-1" tabindex="-1"></a><span class="ss">- </span>unordered</span>
-<span id="cb24-2"><a href="markdown.html#cb24-2" tabindex="-1"></a><span class="ss">  - </span>list</span>
-<span id="cb24-3"><a href="markdown.html#cb24-3" tabindex="-1"></a><span class="ss">    - </span>element</span>
-<span id="cb24-4"><a href="markdown.html#cb24-4" tabindex="-1"></a><span class="ss">- </span>cool!</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="markdown.html#cb25-1" tabindex="-1"></a><span class="ss">- </span>unordered</span>
+<span id="cb25-2"><a href="markdown.html#cb25-2" tabindex="-1"></a><span class="ss">  - </span>list</span>
+<span id="cb25-3"><a href="markdown.html#cb25-3" tabindex="-1"></a><span class="ss">    - </span>element</span>
+<span id="cb25-4"><a href="markdown.html#cb25-4" tabindex="-1"></a><span class="ss">- </span>cool!</span></code></pre></div>
 <ul>
 <li>unordered
 <ul>
@@ -526,11 +530,11 @@ div.csl-indent {
 </div>
 <div id="ordered-list" class="section level3 unnumbered hasAnchor">
 <h3>Ordered List<a href="markdown.html#ordered-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="markdown.html#cb25-1" tabindex="-1"></a><span class="ss">1. </span>First item</span>
-<span id="cb25-2"><a href="markdown.html#cb25-2" tabindex="-1"></a><span class="ss">    1. </span>a <span class="co">&lt;!-- For nesting inside a list, put 2 tabs before the element --&gt;</span></span>
-<span id="cb25-3"><a href="markdown.html#cb25-3" tabindex="-1"></a><span class="ss">    2. </span>b</span>
-<span id="cb25-4"><a href="markdown.html#cb25-4" tabindex="-1"></a><span class="ss">2. </span>Second item</span>
-<span id="cb25-5"><a href="markdown.html#cb25-5" tabindex="-1"></a><span class="ss">3. </span>Third item</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb26-1"><a href="markdown.html#cb26-1" tabindex="-1"></a><span class="ss">1. </span>First item</span>
+<span id="cb26-2"><a href="markdown.html#cb26-2" tabindex="-1"></a><span class="ss">    1. </span>a <span class="co">&lt;!-- For nesting inside a list, put 2 tabs before the element --&gt;</span></span>
+<span id="cb26-3"><a href="markdown.html#cb26-3" tabindex="-1"></a><span class="ss">    2. </span>b</span>
+<span id="cb26-4"><a href="markdown.html#cb26-4" tabindex="-1"></a><span class="ss">2. </span>Second item</span>
+<span id="cb26-5"><a href="markdown.html#cb26-5" tabindex="-1"></a><span class="ss">3. </span>Third item</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>First
 <ol style="list-style-type: decimal">
@@ -654,19 +658,19 @@ div.csl-indent {
 <div id="citations" class="section level2 hasAnchor" number="17.7">
 <h2><span class="header-section-number">17.7</span> Citations<a href="markdown.html#citations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, tell bookdown your sources.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="markdown.html#cb36-1" tabindex="-1"></a><span class="co"># automatically create a bib database for R packages</span></span>
-<span id="cb36-2"><a href="markdown.html#cb36-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(</span>
-<span id="cb36-3"><a href="markdown.html#cb36-3" tabindex="-1"></a>  <span class="fu">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span></span>
-<span id="cb36-4"><a href="markdown.html#cb36-4" tabindex="-1"></a>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="markdown.html#cb37-1" tabindex="-1"></a><span class="co"># automatically create a bib database for R packages</span></span>
+<span id="cb37-2"><a href="markdown.html#cb37-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(</span>
+<span id="cb37-3"><a href="markdown.html#cb37-3" tabindex="-1"></a>  <span class="fu">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;rmarkdown&#39;</span></span>
+<span id="cb37-4"><a href="markdown.html#cb37-4" tabindex="-1"></a>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
 <p>This R code created a file called ‘packages.bib’ (in the bookdown template) which is now filled with a bunch of bibliography entries. ‘book.bib’ also has a manually entered bibliography entry. We must tell bookdown the files with bibliography information via the YAML <code>bibliography</code> key in index.Rmd. A bibliography entry looks like:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="markdown.html#cb37-1" tabindex="-1"></a><span class="sc">@</span>type{key,</span>
-<span id="cb37-2"><a href="markdown.html#cb37-2" tabindex="-1"></a>  title <span class="ot">=</span> {...},</span>
-<span id="cb37-3"><a href="markdown.html#cb37-3" tabindex="-1"></a>  author <span class="ot">=</span> {...},</span>
-<span id="cb37-4"><a href="markdown.html#cb37-4" tabindex="-1"></a>  organization <span class="ot">=</span> {...},</span>
-<span id="cb37-5"><a href="markdown.html#cb37-5" tabindex="-1"></a>  year <span class="ot">=</span> {...},</span>
-<span id="cb37-6"><a href="markdown.html#cb37-6" tabindex="-1"></a>  url <span class="ot">=</span> {...},</span>
-<span id="cb37-7"><a href="markdown.html#cb37-7" tabindex="-1"></a>  ... <span class="co"># see more possible fields at https://en.wikipedia.org/wiki/BibTeX</span></span>
-<span id="cb37-8"><a href="markdown.html#cb37-8" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="markdown.html#cb38-1" tabindex="-1"></a><span class="sc">@</span>type{key,</span>
+<span id="cb38-2"><a href="markdown.html#cb38-2" tabindex="-1"></a>  title <span class="ot">=</span> {...},</span>
+<span id="cb38-3"><a href="markdown.html#cb38-3" tabindex="-1"></a>  author <span class="ot">=</span> {...},</span>
+<span id="cb38-4"><a href="markdown.html#cb38-4" tabindex="-1"></a>  organization <span class="ot">=</span> {...},</span>
+<span id="cb38-5"><a href="markdown.html#cb38-5" tabindex="-1"></a>  year <span class="ot">=</span> {...},</span>
+<span id="cb38-6"><a href="markdown.html#cb38-6" tabindex="-1"></a>  url <span class="ot">=</span> {...},</span>
+<span id="cb38-7"><a href="markdown.html#cb38-7" tabindex="-1"></a>  ... <span class="co"># see more possible fields at https://en.wikipedia.org/wiki/BibTeX</span></span>
+<span id="cb38-8"><a href="markdown.html#cb38-8" tabindex="-1"></a>}</span></code></pre></div>
 <p><code>@type</code> refers to what type of source it is (ex. an article, book, manual, …). <code>@key</code> refers to the name we refer to it by in in-text citations.</p>
 <p>For example, <code>@R-bookdown</code> renders to <span class="citation">Xie (<a href="#ref-R-bookdown">2025</a>)</span>. Adding square brackets also adds parentheses once it’s rendered: so <code>[@R-bookdown]</code> becomes <span class="citation">(<a href="#ref-R-bookdown">Xie 2025</a>)</span>.</p>
 <p><strong>Note:</strong> The <a href="markdown.html#visual-r-md">RStudio Visual Markdown Editor</a> can also make it easier to insert citations!</p>
@@ -676,10 +680,10 @@ div.csl-indent {
 <div id="equations" class="section level2 hasAnchor" number="17.8">
 <h2><span class="header-section-number">17.8</span> Equations<a href="markdown.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Equations are written in latex. You can refer to them with a label you specify after writing it out.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb38-1"><a href="markdown.html#cb38-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
-<span id="cb38-2"><a href="markdown.html#cb38-2" tabindex="-1"></a><span class="ss">  f</span><span class="sc">\left</span><span class="ss">(k</span><span class="sc">\right</span><span class="ss">) = </span><span class="sc">\binom</span><span class="ss">{n}{k} p^k</span><span class="sc">\left</span><span class="ss">(1-p</span><span class="sc">\right</span><span class="ss">)^{n-k}</span></span>
-<span id="cb38-3"><a href="markdown.html#cb38-3" tabindex="-1"></a><span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:binom) # the label!</span></span>
-<span id="cb38-4"><a href="markdown.html#cb38-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb39-1"><a href="markdown.html#cb39-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}</span>
+<span id="cb39-2"><a href="markdown.html#cb39-2" tabindex="-1"></a><span class="ss">  f</span><span class="sc">\left</span><span class="ss">(k</span><span class="sc">\right</span><span class="ss">) = </span><span class="sc">\binom</span><span class="ss">{n}{k} p^k</span><span class="sc">\left</span><span class="ss">(1-p</span><span class="sc">\right</span><span class="ss">)^{n-k}</span></span>
+<span id="cb39-3"><a href="markdown.html#cb39-3" tabindex="-1"></a><span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:binom) # the label!</span></span>
+<span id="cb39-4"><a href="markdown.html#cb39-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>}</span></code></pre></div>
 <p><span class="math display" id="eq:binom">\[\begin{equation}
   f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
   \tag{17.1}

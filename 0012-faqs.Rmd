@@ -11,7 +11,7 @@ There are a few things that could be the cause:
 
 ## What are the unusual symbols I'm seeing? {#comments}
 
-**<-- -->**  
+**<!-- --!>**  
 These are comment tags - they prevent the contents inside them from being displayed. You can either type/delete them manually or use the shortcuts `Command + Shift + C` (Mac) or `Ctrl + Shift + C` (Windows).
 
 **\[ ]( )**  

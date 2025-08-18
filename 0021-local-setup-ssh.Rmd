@@ -59,7 +59,15 @@ We need to download the homepage repo for the website, since you'll be linking y
 Go to the folder you just created using your Terminal or PowerShell. You can do this using the [command line](#command-line) or the shortcuts [listed here](#handy-shortcuts). Once you're there, run the following command:
 
 ```
-git@github.com:bioinformaticsdotca/bioinformaticsdotca.github.io.git
+git clone git@github.com:bioinformaticsdotca/bioinformaticsdotca.github.io.git
 ```
 
 You can use `ls` to see the contents of your folder; you should now see a subfolder named bioinformaticsdotca.github.io.
+
+### Clone the travel logistics repo
+
+In the same folder, run:
+
+```
+git clone git@github.com:bioinformaticsdotca/travel_logistics.git
+```

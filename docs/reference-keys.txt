@@ -21,6 +21,7 @@ add-your-ssh-key-to-your-github-account
 github-folder
 create-your-folder
 clone-the-github-homepage
+clone-the-travel-logistics-repo
 create-repo
 option-1-new-repo
 option-2-duplicate-existing-repo
@@ -38,6 +39,7 @@ add-to-github-homepage
 add-to-github-sitemap
 update-the-website
 logistics
+create-logistics
 whats-next
 homepage
 pre-work

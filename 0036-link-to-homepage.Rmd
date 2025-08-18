@@ -12,8 +12,7 @@ For the best experience, we **strongly recommend** setting up the local validati
 
 1.  Use the below widget to generate your metadata entries for the website.
 
-    :::: {.callout type="gray" title="Metadata generator" style="plain" collapsible="true"}
-
+    :::: {.callout type="blue" title="Metadata generator" collapsible="true" style="plain" icon="fa-solid fa-gear"}
 
     ```{r, echo=FALSE}
     htmltools::tags$iframe(

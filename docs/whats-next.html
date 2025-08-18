@@ -196,6 +196,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="local-setup.html"><a href="local-setup.html#create-your-folder"><i class="fa fa-check"></i><b>7.2.1</b> Create your folder</a></li>
 <li class="chapter" data-level="7.2.2" data-path="local-setup.html"><a href="local-setup.html#clone-the-github-homepage"><i class="fa fa-check"></i><b>7.2.2</b> Clone the GitHub homepage</a></li>
+<li class="chapter" data-level="7.2.3" data-path="local-setup.html"><a href="local-setup.html#clone-the-travel-logistics-repo"><i class="fa fa-check"></i><b>7.2.3</b> Clone the travel logistics repo</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Set Up Workshop Site</b></span></li>
@@ -226,7 +227,10 @@ div.csl-indent {
 <li class="chapter" data-level="14.3" data-path="link-to-homepage.html"><a href="link-to-homepage.html#add-to-github-sitemap"><i class="fa fa-check"></i><b>14.3</b> Add to GitHub sitemap</a></li>
 <li class="chapter" data-level="14.4" data-path="link-to-homepage.html"><a href="link-to-homepage.html#update-the-website"><i class="fa fa-check"></i><b>14.4</b> Update the website</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a></li>
+<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="logistics.html"><a href="logistics.html#create-logistics"><i class="fa fa-check"></i><b>15.1</b> Create your logistics page</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="whats-next.html"><a href="whats-next.html"><i class="fa fa-check"></i><b>16</b> What’s next?</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="whats-next.html"><a href="whats-next.html#homepage"><i class="fa fa-check"></i><b>16.1</b> Homepage</a>
@@ -427,10 +431,11 @@ div.csl-indent {
 <details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/copy-schedule.png"
 alt="Image showing schedule file contents to copy" /><br />
 <br></p></div></details></li>
-<li><p>Go to the <a href="https://cbw-dev.github.io/smart-scheduler/">smart scheduler utility</a>. Select the time zone corresponding to your copied data in the dropdown. If this is a distributed (or virtual) workshop, select other relevant time zones.</p></li>
+<li><p>Open the smart scheduler utility below. Select the time zone corresponding to your copied data in the dropdown. If this is a distributed (or virtual) workshop, select other relevant time zones.</p></li>
 <li><p>Select the date of day 1 and paste your copied schedule data.</p></li>
 <li><p>For all other days, click “Add Another Day” and repeat.</p></li>
-<li><p>Click Generate CSV and then Copy to Clipboard.</p></li>
+<li><p>Click Generate CSV and then Copy to Clipboard.</p>
+<details class="callout-dropdown callout-plain callout-blue"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Smart Scheduler utility</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><iframe src="smart_scheduler.html" height="850" style="width: 100%; min-width: 650px; border: none;"></iframe></div></details></li>
 <li><p>Open schedule.csv, delete all contents, and paste your newly formatted schedule.</p></li>
 <li><p>After your next build, the schedule will be visible on the landing page.</p></li>
 </ol>
@@ -455,17 +460,17 @@ alt="Image showing how to get the embed code" /><br />
 <div id="faculty-pages" class="section level2 hasAnchor" number="16.2">
 <h2><span class="header-section-number">16.2</span> Faculty pages<a href="whats-next.html#faculty-pages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Copy the below code into the 001-faculty.Rmd file and complete for each faculty member. You’ll need to upload their headshots to the <code>img/faculty</code> folder.</p>
-<div class="sourceCode" id="cb11" eval="FALSE," echo="TRUE"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="whats-next.html#cb11-1" tabindex="-1"></a><span class="do">#### NAME</span></span>
-<span id="cb11-2"><a href="whats-next.html#cb11-2" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="whats-next.html#cb11-3" tabindex="-1"></a><span class="sc">&lt;</span>img src<span class="ot">=</span><span class="st">&quot;./img/faculty/MISSINGHEADSHOT.PNG&quot;</span> width<span class="ot">=</span><span class="st">&quot;200&quot;</span> alt<span class="ot">=</span><span class="st">&quot;Photo of NAME&quot;</span><span class="sc">&gt;</span></span>
-<span id="cb11-4"><a href="whats-next.html#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="whats-next.html#cb11-5" tabindex="-1"></a><span class="er">&gt;</span>JOB TITLE <span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
-<span id="cb11-6"><a href="whats-next.html#cb11-6" tabindex="-1"></a>INSTITUTION <span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
-<span id="cb11-7"><a href="whats-next.html#cb11-7" tabindex="-1"></a>LOCATION</span>
-<span id="cb11-8"><a href="whats-next.html#cb11-8" tabindex="-1"></a><span class="sc">&gt;</span></span>
-<span id="cb11-9"><a href="whats-next.html#cb11-9" tabindex="-1"></a><span class="er">&gt;</span> <span class="sc">---</span> CONTACT INFO, IF PROVIDED</span>
-<span id="cb11-10"><a href="whats-next.html#cb11-10" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="whats-next.html#cb11-11" tabindex="-1"></a>BIO GOES HERE</span></code></pre></div>
+<div class="sourceCode" id="cb12" eval="FALSE," echo="TRUE"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="whats-next.html#cb12-1" tabindex="-1"></a><span class="do">#### NAME</span></span>
+<span id="cb12-2"><a href="whats-next.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="whats-next.html#cb12-3" tabindex="-1"></a><span class="sc">&lt;</span>img src<span class="ot">=</span><span class="st">&quot;./img/faculty/MISSINGHEADSHOT.PNG&quot;</span> width<span class="ot">=</span><span class="st">&quot;200&quot;</span> alt<span class="ot">=</span><span class="st">&quot;Photo of NAME&quot;</span><span class="sc">&gt;</span></span>
+<span id="cb12-4"><a href="whats-next.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="whats-next.html#cb12-5" tabindex="-1"></a><span class="er">&gt;</span>JOB TITLE <span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
+<span id="cb12-6"><a href="whats-next.html#cb12-6" tabindex="-1"></a>INSTITUTION <span class="sc">&lt;</span>br<span class="sc">&gt;</span></span>
+<span id="cb12-7"><a href="whats-next.html#cb12-7" tabindex="-1"></a>LOCATION</span>
+<span id="cb12-8"><a href="whats-next.html#cb12-8" tabindex="-1"></a><span class="sc">&gt;</span></span>
+<span id="cb12-9"><a href="whats-next.html#cb12-9" tabindex="-1"></a><span class="er">&gt;</span> <span class="sc">---</span> CONTACT INFO, IF PROVIDED</span>
+<span id="cb12-10"><a href="whats-next.html#cb12-10" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="whats-next.html#cb12-11" tabindex="-1"></a>BIO GOES HERE</span></code></pre></div>
 </div>
 <div id="computing" class="section level2 hasAnchor" number="16.3">
 <h2><span class="header-section-number">16.3</span> Computing<a href="whats-next.html#computing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -475,11 +480,10 @@ alt="Image showing how to get the embed code" /><br />
 </div>
 <div id="modules" class="section level2 hasAnchor" number="16.4">
 <h2><span class="header-section-number">16.4</span> Modules<a href="whats-next.html#modules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each of the following files includes module material for the workshop.</p>
 <div id="embedding-slides" class="section level3 hasAnchor" number="16.4.1">
 <h3><span class="header-section-number">16.4.1</span> Embedding slides<a href="whats-next.html#embedding-slides" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Copy the below code chunk and paste into your slide. Replace <code>GOOGLE SLIDES LINK</code> with the URL of your slides <em>up to the word edit/</em>. The <code>/preview</code> in the code chunk will ensure that the slides are formatted for optimal viewing.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="whats-next.html#cb12-1" tabindex="-1"></a><span class="sc">&lt;</span>iframe src<span class="ot">=</span><span class="st">&quot;GOOGLE SLIDES LINK/preview&quot;</span> width<span class="ot">=</span><span class="st">&quot;640&quot;</span> height<span class="ot">=</span><span class="st">&quot;480&quot;</span> allow<span class="ot">=</span><span class="st">&quot;autoplay&quot;</span><span class="sc">&gt;</span><span class="er">&lt;/</span>iframe<span class="sc">&gt;</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="whats-next.html#cb13-1" tabindex="-1"></a><span class="sc">&lt;</span>iframe src<span class="ot">=</span><span class="st">&quot;GOOGLE SLIDES LINK/preview&quot;</span> width<span class="ot">=</span><span class="st">&quot;640&quot;</span> height<span class="ot">=</span><span class="st">&quot;480&quot;</span> allow<span class="ot">=</span><span class="st">&quot;autoplay&quot;</span><span class="sc">&gt;</span><span class="er">&lt;/</span>iframe<span class="sc">&gt;</span>  </span></code></pre></div>
 <p>Ensure the share settings for your slides are set to Everyone Can View.</p>
 <p>Google Slides allows users to download slide decks in PPTX and PDF formats from the embed view.</p>
 </div>

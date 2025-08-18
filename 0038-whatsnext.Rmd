@@ -20,24 +20,38 @@ Your schedule will be created using a special tool. To update the schedule, you'
 1.  Open your schedule file in Google Drive. Copy the times and contents of Day 1, excluding headers. If you have multiple time zones, only include one - the utility will auto-calculate other time zones.
 
     ::: {.callout type="gray" title="See image" collapsible="true" style="plain" icon="fa-solid fa-image"}
+
     ![Image showing schedule file contents to copy](img/template/copy-schedule.png)\
     <br>
+    
     :::
 
-2.  Go to the [smart scheduler utility](https://cbw-dev.github.io/smart-scheduler/). Select the time zone corresponding to your copied data in the dropdown. If this is a distributed (or virtual) workshop, select other relevant time zones.
+2.  Open the smart scheduler utility below. Select the time zone corresponding to your copied data in the dropdown. If this is a distributed (or virtual) workshop, select other relevant time zones.
 
 3.  Select the date of day 1 and paste your copied schedule data. 
 
-4. For all other days, click "Add Another Day" and repeat. 
+4.  For all other days, click "Add Another Day" and repeat. 
 
-5. Click Generate CSV and then Copy to Clipboard.
+5.  Click Generate CSV and then Copy to Clipboard.
 
-6. Open schedule.csv, delete all contents, and paste your newly formatted schedule.
+    ::: {.callout type="blue" title="Smart Scheduler utility" collapsible="true" style="plain" icon="fa-solid fa-gear"}
+    
+    ```{r, echo=FALSE}
+    htmltools::tags$iframe(
+      src = "smart_scheduler.html",
+      height = "850",
+      style = "width: 100%; min-width: 650px; border: none;"
+    )
+    ```
+    
+    :::
 
-7. After your next build, the schedule will be visible on the landing page.
+6.  Open schedule.csv, delete all contents, and paste your newly formatted schedule.
+
+7.  After your next build, the schedule will be visible on the landing page.
 
 ### Class photo
-1. After you take your class photos, upload them into your Google Drive's PostWorkshop/ClassPhoto folder. Choose the best one and name it CODE_ClassPhoto (e.g. INR_Mon-2510_ClassPhoto). Make sure its permissions are set to Everyone Can View.
+1.  After you take your class photos, upload them into your Google Drive's PostWorkshop/ClassPhoto folder. Choose the best one and name it CODE_ClassPhoto (e.g. INR_Mon-2510_ClassPhoto). Make sure its permissions are set to Everyone Can View.
 
 2.  Double-click the photo, use the three-dot menu, and click "Open In New Window".
 
@@ -84,7 +98,6 @@ If your workshop does not use compute, remove "And Compute Setup" from the top-l
 
 
 ## Modules
-Each of the following files includes module material for the workshop. 
 
 ### Embedding slides
 Copy the below code chunk and paste into your slide. Replace `GOOGLE SLIDES LINK` with the URL of your slides *up to the word edit/*. The `/preview` in the code chunk will ensure that the slides are formatted for optimal viewing.

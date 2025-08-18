@@ -196,6 +196,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="local-setup.html"><a href="local-setup.html#create-your-folder"><i class="fa fa-check"></i><b>7.2.1</b> Create your folder</a></li>
 <li class="chapter" data-level="7.2.2" data-path="local-setup.html"><a href="local-setup.html#clone-the-github-homepage"><i class="fa fa-check"></i><b>7.2.2</b> Clone the GitHub homepage</a></li>
+<li class="chapter" data-level="7.2.3" data-path="local-setup.html"><a href="local-setup.html#clone-the-travel-logistics-repo"><i class="fa fa-check"></i><b>7.2.3</b> Clone the travel logistics repo</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Set Up Workshop Site</b></span></li>
@@ -226,7 +227,10 @@ div.csl-indent {
 <li class="chapter" data-level="14.3" data-path="link-to-homepage.html"><a href="link-to-homepage.html#add-to-github-sitemap"><i class="fa fa-check"></i><b>14.3</b> Add to GitHub sitemap</a></li>
 <li class="chapter" data-level="14.4" data-path="link-to-homepage.html"><a href="link-to-homepage.html#update-the-website"><i class="fa fa-check"></i><b>14.4</b> Update the website</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a></li>
+<li class="chapter" data-level="15" data-path="logistics.html"><a href="logistics.html"><i class="fa fa-check"></i><b>15</b> Logistics page</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="logistics.html"><a href="logistics.html#create-logistics"><i class="fa fa-check"></i><b>15.1</b> Create your logistics page</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="whats-next.html"><a href="whats-next.html"><i class="fa fa-check"></i><b>16</b> What’s next?</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="whats-next.html"><a href="whats-next.html#homepage"><i class="fa fa-check"></i><b>16.1</b> Homepage</a>
@@ -516,19 +520,19 @@ div.csl-indent {
 <div id="example-entry" class="section level3 hasAnchor" number="23.2.3">
 <h3><span class="header-section-number">B.2.3</span> Example Entry:<a href="homepage-guide.html#example-entry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This example demonstrates a workshop with multiple instructors, tags, and regions.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb77-1"><a href="homepage-guide.html#cb77-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb77-2"><a href="homepage-guide.html#cb77-2" tabindex="-1"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;#&quot;</span><span class="fu">,</span></span>
-<span id="cb77-3"><a href="homepage-guide.html#cb77-3" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Introduction to R for Biologists&quot;</span><span class="fu">,</span></span>
-<span id="cb77-4"><a href="homepage-guide.html#cb77-4" tabindex="-1"></a>    <span class="dt">&quot;instructors&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Dr. Hadley Wickham&quot;</span><span class="ot">,</span> <span class="st">&quot;Dr. Jenny Bryan&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb77-5"><a href="homepage-guide.html#cb77-5" tabindex="-1"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;r&quot;</span><span class="ot">,</span> <span class="st">&quot;development&quot;</span><span class="ot">,</span> <span class="st">&quot;introduction&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb77-6"><a href="homepage-guide.html#cb77-6" tabindex="-1"></a>    <span class="dt">&quot;regions&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;BC&quot;</span><span class="ot">,</span> <span class="st">&quot;Alberta&quot;</span><span class="ot">,</span> <span class="st">&quot;Prairies&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb77-7"><a href="homepage-guide.html#cb77-7" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2025</span><span class="fu">,</span></span>
-<span id="cb77-8"><a href="homepage-guide.html#cb77-8" tabindex="-1"></a>    <span class="dt">&quot;startDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-18&quot;</span><span class="fu">,</span></span>
-<span id="cb77-9"><a href="homepage-guide.html#cb77-9" tabindex="-1"></a>    <span class="dt">&quot;endDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-22&quot;</span><span class="fu">,</span></span>
-<span id="cb77-10"><a href="homepage-guide.html#cb77-10" tabindex="-1"></a>    <span class="dt">&quot;image&quot;</span><span class="fu">:</span> <span class="st">&quot;img/intro-r.png&quot;</span><span class="fu">,</span></span>
-<span id="cb77-11"><a href="homepage-guide.html#cb77-11" tabindex="-1"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span><span class="fu">,</span></span>
-<span id="cb77-12"><a href="homepage-guide.html#cb77-12" tabindex="-1"></a>    <span class="dt">&quot;format&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span></span>
-<span id="cb77-13"><a href="homepage-guide.html#cb77-13" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb78-1"><a href="homepage-guide.html#cb78-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb78-2"><a href="homepage-guide.html#cb78-2" tabindex="-1"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;#&quot;</span><span class="fu">,</span></span>
+<span id="cb78-3"><a href="homepage-guide.html#cb78-3" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Introduction to R for Biologists&quot;</span><span class="fu">,</span></span>
+<span id="cb78-4"><a href="homepage-guide.html#cb78-4" tabindex="-1"></a>    <span class="dt">&quot;instructors&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Dr. Hadley Wickham&quot;</span><span class="ot">,</span> <span class="st">&quot;Dr. Jenny Bryan&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb78-5"><a href="homepage-guide.html#cb78-5" tabindex="-1"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;r&quot;</span><span class="ot">,</span> <span class="st">&quot;development&quot;</span><span class="ot">,</span> <span class="st">&quot;introduction&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb78-6"><a href="homepage-guide.html#cb78-6" tabindex="-1"></a>    <span class="dt">&quot;regions&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;BC&quot;</span><span class="ot">,</span> <span class="st">&quot;Alberta&quot;</span><span class="ot">,</span> <span class="st">&quot;Prairies&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb78-7"><a href="homepage-guide.html#cb78-7" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2025</span><span class="fu">,</span></span>
+<span id="cb78-8"><a href="homepage-guide.html#cb78-8" tabindex="-1"></a>    <span class="dt">&quot;startDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-18&quot;</span><span class="fu">,</span></span>
+<span id="cb78-9"><a href="homepage-guide.html#cb78-9" tabindex="-1"></a>    <span class="dt">&quot;endDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-22&quot;</span><span class="fu">,</span></span>
+<span id="cb78-10"><a href="homepage-guide.html#cb78-10" tabindex="-1"></a>    <span class="dt">&quot;image&quot;</span><span class="fu">:</span> <span class="st">&quot;img/intro-r.png&quot;</span><span class="fu">,</span></span>
+<span id="cb78-11"><a href="homepage-guide.html#cb78-11" tabindex="-1"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span><span class="fu">,</span></span>
+<span id="cb78-12"><a href="homepage-guide.html#cb78-12" tabindex="-1"></a>    <span class="dt">&quot;format&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span></span>
+<span id="cb78-13"><a href="homepage-guide.html#cb78-13" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 </div>
 </div>
 <div id="local-validation" class="section level2 hasAnchor" number="23.3">
@@ -553,7 +557,7 @@ When you open the project folder in VS Code, the editor automatically uses the <
 <div id="manual-validation-via-command-line" class="section level3 hasAnchor" number="23.3.2">
 <h3><span class="header-section-number">B.3.2</span> Manual Validation via Command Line<a href="homepage-guide.html#manual-validation-via-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>After installing the project dependencies with <code>npm install</code>, you can validate the data from your terminal at any time:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb78-1"><a href="homepage-guide.html#cb78-1" tabindex="-1"></a><span class="ex">npm</span> run validate</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="homepage-guide.html#cb79-1" tabindex="-1"></a><span class="ex">npm</span> run validate</span></code></pre></div>
 <p>This will immediately tell you if your data is valid or print specific errors.</p>
 </div>
 </div>
