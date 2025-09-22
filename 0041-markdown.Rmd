@@ -384,7 +384,7 @@ Learn more about styling and syntax for theorems and proofs [here](https://bookd
 
 Recall from this diagram that all files are rendered into .html files for the final official website.
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=237"/>
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQNLBySqW7Z1YC-a35s0rJo4V4ZAn6WumpGKxngB5Md6pW97MC3ERqkiuSw-rrdmn423YXlXPkVky8I/pub?w=792&amp;h=147">
 
 Both Knitr and Pandoc will ignore HTML code, so if a certain part of Markdown's formatting isn't working, or you're not satisfied with Markdown's formatting options, use HTML/CSS formatting instead.
 

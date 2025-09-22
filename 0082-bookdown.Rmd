@@ -4,7 +4,7 @@
 
 Here is a general summary of how Bookdown creates html websites from .Rmd files when you hit Build.
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=147">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQNLBySqW7Z1YC-a35s0rJo4V4ZAn6WumpGKxngB5Md6pW97MC3ERqkiuSw-rrdmn423YXlXPkVky8I/pub?w=792&amp;h=147">
 
 Essentially, **Knitr renders and runs all the code**, and the outputs are converted into markdown. After knitr, we essentially have a bunch of only markdown files.
 

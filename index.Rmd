@@ -24,12 +24,12 @@ Please note: this is the documentation to create a workshop using *bookdown*. If
 
 If you don't know which one to use, use the following flowchart to help decide:
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSZaIjEG1ebE4EpmajloUcBcG304StHdlC53Uio9obBFmxK5j190fcgpiNhx5p5p-FYILaoWz9Y5ZXb/pub?w=1663&amp;h=1044">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vT6nhnL2deZ_iW9yjfjMkyFu7S6rA4dCP0lk6bBI5bC7_fuASKa6Znf40DeIPA_47i-AltXUrtG1Zpt/pub?w=1663&amp;h=1044">
 
 # How Bookdown Works: A Primer
 Here is a general summary of how Bookdown creates html websites from .Rmd files when you hit Build.
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=147">
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQNLBySqW7Z1YC-a35s0rJo4V4ZAn6WumpGKxngB5Md6pW97MC3ERqkiuSw-rrdmn423YXlXPkVky8I/pub?w=792&amp;h=147">
 
 **Knitr renders and runs all the code**, and the outputs are converted into markdown. After knitr, we  have a bunch of markdown files. **Pandoc translates this markdown into HTML**, so that we get a website! It can be helpful to know when and how these packages work to help debug later on. 
 

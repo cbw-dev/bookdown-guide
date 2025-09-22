@@ -55,8 +55,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +67,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -464,7 +465,7 @@ plot(pressure, type = &#39;b&#39;, pch = 19)
 <span id="cb59-2"><a href="render-code.html#cb59-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/fig-1.png" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%" style="display: block; margin: auto;" /></p>
 <p>You can run these “code chunks” without previewing or building the book. To the right of your code chunk, there are 3 symbols (as seen below).</p>
-<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSAWwloWK_sYRV44BYYCC2lhBpxLQQvkSYlJECfHnlYTwg7aPSPgOWuUfp_ybZQkAQ8QYSwUpH378Hv/pub?w=3763&amp;h=1237" alt="Picture of a R code chunk in RStudio"></p>
+<p><img src="img/git-instruct/code-chunksymbols.png" alt="Picture of a R code chunk in RStudio" /> </p>
 <p>The <span style="color:#FF0000;">gear symbol</span> opens chunk options.</p>
 <p>The <span style="color:#ff9900;">down arrow symbol</span> runs all previous chunks and the current chunk. This is helpful if previous chunks define a variable that you will need in your current chunk.</p>
 <blockquote>

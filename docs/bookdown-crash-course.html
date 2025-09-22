@@ -55,8 +55,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +67,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -409,7 +410,7 @@ div.csl-indent {
 <div id="how-bookdown-works" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> How Bookdown works<a href="bookdown-crash-course.html#how-bookdown-works" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here is a general summary of how Bookdown creates html websites from .Rmd files when you hit Build.</p>
-<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vSf5dxJdl-7PAlIBqdqPiSxdtzFVWOUnbbPzhrTu9POTXnzJ3NvoNUPwZHh8vDQRJ3p99FTST4uXUa7/pub?w=792&amp;h=147"></p>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQNLBySqW7Z1YC-a35s0rJo4V4ZAn6WumpGKxngB5Md6pW97MC3ERqkiuSw-rrdmn423YXlXPkVky8I/pub?w=792&amp;h=147"></p>
 <p>Essentially, <strong>Knitr renders and runs all the code</strong>, and the outputs are converted into markdown. After knitr, we essentially have a bunch of only markdown files.</p>
 <p><strong>Pandoc translates this markdown into HTML</strong>, so that we get a website! It can be helpful to know when and how these packages work, to help debug later on.</p>
 <div class="callout-blue-subtle">

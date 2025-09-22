@@ -79,9 +79,11 @@ par(mar = c(4, 4, .1, .1))
 plot(pressure, type = 'b', pch = 19)
 ```
 
-You can run these "code chunks" without previewing or building the book. To the right of your code chunk, there are 3 symbols (as seen below). 
+You can run these "code chunks" without previewing or building the book. To the right of your code chunk, there are 3 symbols (as seen below).   
 
-<img src="https://docs.google.com/drawings/d/e/2PACX-1vSAWwloWK_sYRV44BYYCC2lhBpxLQQvkSYlJECfHnlYTwg7aPSPgOWuUfp_ybZQkAQ8QYSwUpH378Hv/pub?w=3763&amp;h=1237" alt="Picture of a R code chunk in RStudio">
+![Picture of a R code chunk in RStudio](img/git-instruct/code-chunksymbols.png)\  
+
+
 
 The <span style="color:#FF0000;">gear symbol</span> opens chunk options.
 
