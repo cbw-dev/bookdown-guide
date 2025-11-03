@@ -31,7 +31,9 @@ For the best experience, we **strongly recommend** setting up the local validati
 
 3.  Run `git pull`. You can do this in Terminal/PowerShell, or if you prefer, you can use an integrated Git system in your code editor.
 
-4.  If it's not already present, add your workshop image to the `img/` folder. If it is present, make note of the filename.
+4.  Open the `img/` folder and look to see if your workshop icon is present. 
+  - If it is, make note of the filename. 
+  - If not, add your icon to that folder. The naming convention is CODE_icon.[extension] (e.g. INR_icon.png, GPO_icon.jpg)
 
 5.  Open the `workshops.json` file and paste the **first** output from the widget **below the first square bracket**. 
 
@@ -49,5 +51,17 @@ For the best experience, we **strongly recommend** setting up the local validati
     git commit -m "YOUR MESSAGE HERE"
     git push
     ```
+    
+    ::: {.callout type="blue" title="Why don't I need to run a Build step like I did for my Bookdown workshop website?" collapsible="true" style="plain"}
+  
+    The logistics pages and homepage use a different site generator than your workshop pages do. For updates to appear on the logistics and home pages, all you need to do is save your changes and push them to GitHub. The sites will automatically update.
+
+    :::
 
 8.  Go to the [actions page](https://github.com/bioinformaticsdotca/bioinformaticsdotca.github.io/actions) and confirm that your update deploys successfully. This page has built-in validation: if your data does not match the expected format, deployment will fail.
+
+    ::: {.callout type="blue" title="Why is the homepage displaying a picture of a laptop instead of my workshop icon?" collapsible="true" style="plain"}
+  
+    This is a generic 404 image - the website cannot find your icon. Double-check the filename and filepath in the `workshops.json` file, and double-check that your icon is named correctly.
+
+    :::

@@ -30,8 +30,13 @@ If your workshop has an in-person location, you'll need to create a travel logis
 
 4.  Git add, commit, and push your changes.
 
-5.  Your workshop will be available at `bioinformaticsdotca.github.io/travel_logistics/[city]/[code]`. In the example above, the URL would be `bioinformaticsdotca.github.io/travel_logistics/montreal/INR_Mon-2511`
+    ::: {.callout type="blue" title="Why don't I need to run a Build step like I did for my Bookdown workshop website?" collapsible="true" style="plain"}
+  
+    The logistics pages and homepage use a different site generator than your workshop pages do. For updates to appear on the logistics and home pages, all you need to do is save your changes and push them to GitHub. The sites will automatically update.
 
+    :::
+
+5.  Your workshop will be available at `bioinformaticsdotca.github.io/travel_logistics/[city]/[code]`. In the example above, the URL would be `bioinformaticsdotca.github.io/travel_logistics/montreal/INR_Mon-2511`
 
 ::: {.callout type="yellow" title="Looking for previous examples?" collapsible="true" style="subtle"}
 

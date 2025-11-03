@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Editing Your Workshop | CBW Bookdown Guide</title>
+  <title>4 Exercises | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Editing Your Workshop | CBW Bookdown Guide" />
+  <meta property="og:title" content="4 Exercises | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Editing Your Workshop | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="4 Exercises | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="how-bookdown-works-a-primer.html"/>
-<link rel="next" href="exercises.html"/>
+<link rel="prev" href="editing-cheatsheet.html"/>
+<link rel="next" href="solutions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -431,71 +431,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="editing-cheatsheet" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Editing Your Workshop<a href="editing-cheatsheet.html#editing-cheatsheet" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="callout-yellow">
-<span class="callout-icon"><i class="fas fa-bell" aria-hidden="true"></i></span>
-<div class="callout-content">
-<div class="callout-title-static">
-<p>Two Notes</p>
+<div id="exercises" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Exercises<a href="exercises.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="create-a-file" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 1. Create a file<a href="exercises.html#create-a-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Create a new .R script in R studio. Save it as <code>Script01</code> in the <code>IntroToR</code> folder.</p>
 </div>
-<p>This cheatsheet assumes that you’ve already cloned your repo to your computer. For instructions on that process, <a href="clone.html#clone">look here</a>.</p>
-<p>For more details on how Bookdown works, see the <a href="bookdown-crash-course.html#bookdown-crash-course">Bookdown Crash Course</a>.</p>
+<div id="install-base-packages" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 2. Install base packages<a href="exercises.html#install-base-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In <code>Script01</code>, install the following packages: <code>"data.table"</code>,<code>"datasets"</code>,<code>"devtools"</code>,<code>"dplyr"</code>,<code>"ggplot2"</code>,<code>"plyr"</code>,<code>"medicaldata"</code>,<code>"gapminder"</code>,<code>"RColorBrewer"</code>,<code>"rmarkdown"</code>,<code>"stringr"</code>,<code>"tidyr"</code>,<code>"tidyverse"</code>,<code>"viridis"</code>.</p>
 </div>
-</div>
-<ol style="list-style-type: decimal">
-<li><p>Navigate to your repo using File Explorer.</p></li>
-<li><p>Open your repo in RStudio by double-clicking the .Rproj file. <strong>Remember to always run <code>git pull</code> before making changes</strong>. Once you’ve done so, make any edits you like.</p></li>
-<li><p><a href="finishing-touches.html#finishing-touches">Click <strong>Build</strong> to create the HTML files that make up the website</a>.</p></li>
-<li><p><a href="finishing-touches.html#finishing-touches"><strong>Commit and push</strong></a> to send your changes to GitHub.</p></li>
-<li><p>Your website will be ready in 1-2 minutes!</p></li>
-</ol>
-<div id="r-markdown-file" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> R Markdown File<a href="editing-cheatsheet.html#r-markdown-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>R Markdown files act as notebooks which can make it easier to document and share code. All the results from the code as well as your comments and descriptions can be combined into one, tidy document. This makes it easy to combine insights, protocols and figures in a practical and organized fashion.</p>
-</div>
-<div id="setting-up" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Setting up:<a href="editing-cheatsheet.html#setting-up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="installing-a-package" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Installing a package<a href="editing-cheatsheet.html#installing-a-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To install a package, we simply use the function <code>install.packages()</code> with the name of the desired package in quotation marks (i.e. as a string!)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="editing-cheatsheet.html#cb1-1" tabindex="-1"></a><span class="co"># install.packages(&quot;packageName1&quot;)</span></span>
-<span id="cb1-2"><a href="editing-cheatsheet.html#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="editing-cheatsheet.html#cb1-3" tabindex="-1"></a><span class="co"># for multiple packages:</span></span>
-<span id="cb1-4"><a href="editing-cheatsheet.html#cb1-4" tabindex="-1"></a><span class="co"># install.packages(c(&quot;packageName1&quot;, &quot;packageName2&quot;))</span></span></code></pre></div>
-</div>
-<div id="loading-packages" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Loading packages<a href="editing-cheatsheet.html#loading-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To load a package you simply use the <code>library()</code> function. Note function takes the name of an installed library without quotation marks.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="editing-cheatsheet.html#cb2-1" tabindex="-1"></a><span class="co">#library(packageName1)</span></span></code></pre></div>
-</div>
-</div>
-<div id="r-basics" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> R Basics:<a href="editing-cheatsheet.html#r-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="variable-names" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Variable names<a href="editing-cheatsheet.html#variable-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There are several naming conventions in coding: <code>snake_case</code> and <code>CamelCase</code> are the most common. There is no particular preference in R for naming, but make sure you are <strong>consistent</strong> and that your variable names are <strong>meaningful</strong>.</p>
-</div>
-<div id="case-sensitivity" class="section level3 hasAnchor" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Case sensitivity<a href="editing-cheatsheet.html#case-sensitivity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>R is case sensitive. This means that <code>var1</code> and <code>Var1</code> represent two different objects.</p>
-</div>
-<div id="based-indexing" class="section level3 hasAnchor" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> 1 based indexing<a href="editing-cheatsheet.html#based-indexing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Indexing (calling elements in a list) in R starts with 1. The first element has index 1, the second 2, etc..</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="editing-cheatsheet.html#cb3-1" tabindex="-1"></a><span class="co"># Initialising a vector</span></span>
-<span id="cb3-2"><a href="editing-cheatsheet.html#cb3-2" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>) <span class="co"># note &#39; and &quot; are the same in R :)</span></span>
-<span id="cb3-3"><a href="editing-cheatsheet.html#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="editing-cheatsheet.html#cb3-4" tabindex="-1"></a><span class="co"># Here we call elements 1 and 2 of var1</span></span>
-<span id="cb3-5"><a href="editing-cheatsheet.html#cb3-5" tabindex="-1"></a>var1[<span class="dv">1</span>]</span></code></pre></div>
-<pre><code>## [1] &quot;a&quot;</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="editing-cheatsheet.html#cb5-1" tabindex="-1"></a>var1[<span class="dv">2</span>]</span></code></pre></div>
-<pre><code>## [1] &quot;b&quot;</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="editing-cheatsheet.html#cb7-1" tabindex="-1"></a><span class="co">#Now we look at how long var1 is using the length() function</span></span>
-<span id="cb7-2"><a href="editing-cheatsheet.html#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="editing-cheatsheet.html#cb7-3" tabindex="-1"></a><span class="fu">length</span>(var1)</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
-</div>
+<div id="load-a-package" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> 3. Load a package<a href="exercises.html#load-a-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Load all packages.</p>
 </div>
 </div>
             </section>
@@ -503,8 +451,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="how-bookdown-works-a-primer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="editing-cheatsheet.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
