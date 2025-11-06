@@ -12,6 +12,7 @@ commenting
 faq
 changes-not-appearing
 comments
+externallink
 installs
 local-setup
 ssh-connection

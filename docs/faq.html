@@ -182,6 +182,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.1" data-path="faq.html"><a href="faq.html#changes-not-appearing"><i class="fa fa-check"></i><b>5.1</b> Why aren’t my changes appearing on the website?</a></li>
 <li class="chapter" data-level="5.2" data-path="faq.html"><a href="faq.html#comments"><i class="fa fa-check"></i><b>5.2</b> What are the unusual symbols I’m seeing?</a></li>
+<li class="chapter" data-level="5.3" data-path="faq.html"><a href="faq.html#externallink"><i class="fa fa-check"></i><b>5.3</b> Why aren’t my links to external sites working?</a></li>
 </ul></li>
 <li class="part"><span><b>III Setup and Installations</b></span></li>
 <li class="chapter" data-level="6" data-path="installs.html"><a href="installs.html"><i class="fa fa-check"></i><b>6</b> Installations</a></li>
@@ -422,6 +423,10 @@ div.csl-indent {
 These are comment tags - they prevent the contents inside them from being displayed. You can either type/delete them manually or use the shortcuts <code>Command + Shift + C</code> (Mac) or <code>Ctrl + Shift + C</code> (Windows).</p>
 <p><strong>[ ]( )</strong><br />
 This is the markdown syntax for a hyperlink. The contents of the square brackets indicate the text to be displayed, and the round brackets contain the link itself.</p>
+</div>
+<div id="externallink" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Why aren’t my links to external sites working?<a href="faq.html#externallink" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You’ve probably forgotten to include the <a href="http://" class="uri">http://</a> or <a href="https://" class="uri">https://</a> at the beginning of the URL. By default, Bookdown assumes that you’re trying to link to another part of your Bookdown site. The <a href="http://" class="uri">http://</a> tells Bookdown that you are linking to an external site.</p>
 
 </div>
 </div>

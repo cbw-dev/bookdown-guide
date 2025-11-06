@@ -215,6 +215,8 @@ Click [here](https://bioinformatics.ca/) to see the bioinformatics.ca main page!
 
 Click [here](https://bioinformatics.ca/) to see the bioinformatics.ca main page!
 
+Be sure to include the http:// at the beginning of the URL, otherwise the Bookdown will not know to send your user to an external site.
+
 ### Other sections within your workshop website {.unnumbered}
 
 Note these steps work for all headers, not just main (`#`) headers:

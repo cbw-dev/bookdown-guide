@@ -16,3 +16,7 @@ These are comment tags - they prevent the contents inside them from being displa
 
 **\[ ]( )**  
 This is the markdown syntax for a hyperlink. The contents of the square brackets indicate the text to be displayed, and the round brackets contain the link itself.
+
+## Why aren't my links to external sites working? {#externallink}
+
+You've probably forgotten to include the http:// or https:// at the beginning of the URL. By default, Bookdown assumes that you're trying to link to another part of your Bookdown site. The http:// tells Bookdown that you are linking to an external site.
