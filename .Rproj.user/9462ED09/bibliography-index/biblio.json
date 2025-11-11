@@ -60,7 +60,7 @@
                     ]
                 ]
             },
-            "note": "R package version 0.43",
+            "note": "R package version 0.45",
             "title": "Bookdown: Authoring books and technical documents with r markdown",
             "title-short": "Bookdown",
             "type": "book"
@@ -138,11 +138,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2024
+                        2025
                     ]
                 ]
             },
-            "note": "R package version 2.29",
+            "note": "R package version 2.30",
             "title": "Rmarkdown: Dynamic documents for r",
             "title-short": "Rmarkdown",
             "type": "book"

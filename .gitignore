@@ -1,4 +1,36 @@
-.Rproj.user
+# -------------------------------------------------------------------
+# Bookdown Output
+# -------------------------------------------------------------------
+# Ignore the rendered book. 
+docs/
+# Ignore all bookdown cache and intermediate files
+_bookdown_files/
+*_cache/
+# Ignore intermediate files from rendering
+*.utf8.md
+*.knit.md
+
+
+# -------------------------------------------------------------------
+# R / RStudio Files
+# -------------------------------------------------------------------
+# Ignore RStudio's user-specific state files
+.Rproj.user/
+
+# Ignore R environment and history files
 .Rhistory
 .RData
+.RDataTmp
 .Ruserdata
+
+# Ignore files with sensitive credentials
+.Renviron
+.httr-oauth
+
+
+# -------------------------------------------------------------------
+# General OS Files
+# -------------------------------------------------------------------
+# Ignore Mac and Windows system files
+.DS_Store
+Thumbs.db
