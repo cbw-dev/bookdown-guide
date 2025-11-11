@@ -2,7 +2,7 @@
 # Bookdown Output
 # -------------------------------------------------------------------
 # Ignore the rendered book. 
-docs/
+# docs/
 # Ignore all bookdown cache and intermediate files
 _bookdown_files/
 *_cache/
