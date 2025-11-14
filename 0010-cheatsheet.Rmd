@@ -12,10 +12,42 @@ For more details on how Bookdown works, see the [Bookdown Crash Course](#bookdow
 
 1.  Navigate to your repo using File Explorer.
 
-2.  Open your repo in RStudio by double-clicking the .Rproj file. **Remember to always run `git pull` before making changes**. Once you've done so, make any edits you like.
+2.  Open your repo in RStudio by double-clicking the .Rproj file. 
 
-3.  [Click **Build** to create the HTML files that make up the website](#finishing-touches).
+3.  **Important**: run `git pull` before making any changes. 
 
-4.  [**Commit and push**](#finishing-touches) to send your changes to GitHub.
+4.  Make any edits you like.
 
-5.  Your website will be ready in 1-2 minutes!
+5.  [Click **Build** to create the HTML files that make up the website](#finishing-touches).
+
+6.  [**Commit and push**](#finishing-touches) to send your changes to GitHub.
+
+7.  Your website will be ready in 1-2 minutes!
+
+
+
+# Resolving Merge Conflicts {#merge-cheatsheet}
+
+::: {.callout type="yellow" title="Two Notes"}
+
+This cheatsheet assumes that you've already set your preferred Git conflict strategy to *merge*. For instructions on that process, [look here](#merge-prefs).  
+
+For more details on merge conflicts, see the [Merge Conflicts section](#mergeconflicts).
+
+:::
+
+1. Open and fix the **`.Rmd` files** (delete markers, save). **Do NOT** touch the HTML files. Git's merge markers are as follows:
+
+    * `<<<<<<< HEAD`: Marks the beginning of *your* local changes.
+
+    * `=======`: Separates your changes from the incoming changes.
+
+    * `>>>>>>> a1b2...`: Marks the end of the *incoming* changes.
+
+2. Rebuild the book
+
+3. git add
+
+4. git commit
+
+5. git push

@@ -5,6 +5,7 @@ tab:nice-tab
 cbws-bookdown-documentation
 how-bookdown-works-a-primer
 editing-cheatsheet
+merge-cheatsheet
 handy-shortcuts
 getting-to-your-folder-in-the-terminal
 opening-your-folder-from-the-terminal
@@ -13,6 +14,7 @@ faq
 changes-not-appearing
 comments
 externallink
+setgitpull
 installs
 local-setup
 ssh-connection
@@ -23,6 +25,7 @@ github-folder
 create-your-folder
 clone-the-github-homepage
 clone-the-travel-logistics-repo
+merge-prefs
 create-repo
 option-1-new-repo
 option-2-duplicate-existing-repo
@@ -84,6 +87,20 @@ syntax-highlighting
 running-code
 code-chunk-options
 code-chunks-for-code-generated-figures-and-tables
+mergeconflicts
+what-is-a-merge-conflict
+what-does-a-merge-conflict-look-like
+fixing-the-conflict
+part-1-fix-conflicts-in-.rmd-files
+part-2-fix-conflicts-in-the-docs-folder
+branches
+what-are-branches
+using-branches
+create-a-new-branch
+make-your-changes
+push-your-branch
+creating-a-pull-request
+managing-pull-requests
 command-line
 terminal-command-prompt-and-windows-powershell
 common-commands-for-us

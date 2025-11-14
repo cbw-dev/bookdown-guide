@@ -20,3 +20,22 @@ This is the markdown syntax for a hyperlink. The contents of the square brackets
 ## Why aren't my links to external sites working? {#externallink}
 
 You've probably forgotten to include the http:// or https:// at the beginning of the URL. By default, Bookdown assumes that you're trying to link to another part of your Bookdown site. The http:// tells Bookdown that you are linking to an external site.
+
+## Why aren't my `git pull` commands working? {#setgitpull}
+
+If you receive this output when running `git pull`:
+
+```
+hint: You have divergent branches and need to specify how to reconcile them.
+[...]
+fatal: Need to specify how to reconcile divergent branches.
+
+```
+
+This is not a merge conflict. It's a one-time setup question from Git asking you to choose your preferred strategy for dealing with merge conflicts. We recommend running the below in any folder: 
+
+```
+git config --global pull.rebase false 
+```
+
+You can then `git pull`.

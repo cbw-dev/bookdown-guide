@@ -71,3 +71,13 @@ In the same folder, run:
 ```
 git clone git@github.com:bioinformaticsdotca/travel_logistics.git
 ```
+
+## Set merge preferences {#merge-prefs}
+Run this command in your terminal (the folder doesn't matter). We are using `--global` to set this preference for *all* your Git projects, so you never have to do this again.
+
+   ```
+   git config --global pull.rebase false
+   
+   ```
+
+   *(If you only want this setting for a given repo, you can run this command in that repo leaving out `--global`, but it's safe to set globally.)*

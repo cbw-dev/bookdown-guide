@@ -1,0 +1,112 @@
+# (PART) Working with Git and GitHub {-}
+
+# Merge conflicts {#mergeconflicts}
+
+## What is a Merge Conflict?
+
+A merge conflict happens when Git can't automatically combine two different changes. This occurs when two people edit the same lines in the same file before pulling the latest changes from the shared repository.
+
+Git will stop and say, "I see two different changes to the same line. I don't know which one is correct. You're the human - this is your problem."
+
+With a Bookdown project, you will experience two filetypes with merge conflicts:
+
+1. **Source Conflicts:** In your `.Rmd` files (e.g., `01-intro.Rmd`). These are easy to fix.
+
+2. **Output Conflicts:** In your `docs/` folder (e.g., `docs/index.html`). These are impossible to fix by hand, but there is a simple rule to resolve them.
+
+:::: {.callout type="yellow" title="The Golden Rule"}
+
+Always fix the `.Rmd` file manually, then re-build the book to fix the `.html` file.
+
+::::
+
+## What does a merge conflict look like?
+
+If you run `git pull` and see a similar message to this, you have a conflict:
+
+```
+Auto-merging docs/index.html
+CONFLICT (content): Merge conflict in docs/index.html
+Auto-merging 01-intro.Rmd
+CONFLICT (content): Merge conflict in 01-intro.Rmd
+Automatic merge failed; fix conflicts and then commit the result.
+
+```
+
+This message shows conflicts in both the source (`.Rmd`) and output (`.html`) files.
+
+:::: {.callout type="red" collapsible="true" style="subtle" title="But I got a different error message after running `git pull`!"}
+
+The first time you have a local commit and try to pull a remote commit, you may see this message instead of a merge conflict:
+
+```
+hint: You have divergent branches and need to specify how to reconcile them.
+[...]
+fatal: Need to specify how to reconcile divergent branches.
+
+```
+
+This is not a merge conflict. It's a one-time setup question from Git asking you to choose your preferred strategy for dealing with merge conflicts. We recommend running the below in any folder: 
+
+```
+git config --global pull.rebase false 
+```
+
+You can then `git pull`.
+
+
+::::
+## Fixing the conflict
+### Part 1: Fix Conflicts in `.Rmd` Files
+
+1. Open the conflicted `.Rmd` file (e.g., `01-intro.Rmd`). You will see the conflict markers:
+
+   ```
+   Here is a paragraph that we both agree on.
+   
+   <<<<<<< HEAD
+   This is the sentence I wrote on my local computer.
+   =======
+   This is the different sentence my collaborator wrote and pushed.
+   >>>>>>> a1b2c3d4e5f6g7h8i9j0
+   
+   ```
+
+   * `<<<<<<< HEAD`: Marks the beginning of your local changes.
+
+   * `=======`: Separates your changes from the incoming changes.
+
+   * `>>>>>>> a1b2...`: Marks the end of the incoming changes.
+
+2. Edit this block of text to contain the material you want.
+
+   * Delete all three conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
+
+   * Edit the text to be what you want the final version to be. This could mean keeping only your version, keeping only their version, or combining both.
+
+   **Fixed Example:**
+
+   ```
+   Here is a paragraph that we both agree on.
+   
+   This is our new combined sentence that we both agree is correct.
+   
+   ```
+
+3. Save the file.
+
+4. Repeat for any other `.Rmd` files that have conflicts.
+
+### Part 2: Fix Conflicts in the `docs/` Folder
+
+After fixing the `.Rmd` file, you still have a conflict in `docs/index.html`.
+
+**Do NOT open or edit the `.html` file!** It is a machine-generated file and will be thousands of lines of unreadable code. The solution is to rebuild the book from your fixed `.Rmd` file(s).
+
+1. Rebuild the entire book
+
+2. git add **all files**
+
+3. git commit
+
+4. git push

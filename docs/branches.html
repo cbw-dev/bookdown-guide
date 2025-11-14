@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B Appendix B: homepage guide | CBW Bookdown Guide</title>
+  <title>22 Branches | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B Appendix B: homepage guide | CBW Bookdown Guide" />
+  <meta property="og:title" content="22 Branches | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B Appendix B: homepage guide | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="22 Branches | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="dev-guide.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="mergeconflicts.html"/>
+<link rel="next" href="command-line.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -432,216 +432,90 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="homepage-guide" class="section level1 hasAnchor" number="26">
-<h1><span class="header-section-number">B</span> Appendix B: homepage guide<a href="homepage-guide.html#homepage-guide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="homepage-structure" class="section level2 hasAnchor" number="26.1">
-<h2><span class="header-section-number">B.1</span> Project Structure<a href="homepage-guide.html#homepage-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<pre><code>your-project-folder/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # GitHub Action for validation and deployment.
-├── img/                    # Directory for all workshop images.
-│   └── example-image.jpg
-├── .vscode/
-│   └── settings.json       # VS Code settings for live validation.
-├── index.html              # The main and only HTML file for the website.
-├── package.json            # Defines Node.js project dependencies for validation.
-├── workshops.json          # The data source for all workshop content.
-├── schema.json             # The rulebook that defines a valid workshop entry.
-└── README.md               # This documentation file.</code></pre>
+<div id="branches" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">22</span> Branches<a href="branches.html#branches" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-are-branches" class="section level2 hasAnchor" number="22.1">
+<h2><span class="header-section-number">22.1</span> What are branches?<a href="branches.html#what-are-branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Think of the <code>main</code> branch as the official, published version of the book.</p>
+<p>A <strong>branch</strong> is a separate copy where you can make changes (like adding a new chapter or fixing typos) without affecting the <code>main</code> version.</p>
+<p>We use branches to:<br />
+* Keep the <code>main</code> branch clean and working<br />
+* Allow multiple people to work on different things at the same time<br />
+* Review changes <em>before</em> they are officially added (merged) into the main book and published to the internet</p>
 </div>
-<div id="content-homepage" class="section level2 hasAnchor" number="26.2">
-<h2><span class="header-section-number">B.2</span> How to Update Content<a href="homepage-guide.html#content-homepage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>All workshop information is managed in the <strong><code>workshops.json</code></strong> file. To add, remove, or modify a workshop, you only need to edit this file.</p>
-<div id="add-your-image" class="section level3 hasAnchor" number="26.2.1">
-<h3><span class="header-section-number">B.2.1</span> Add Your Image<a href="homepage-guide.html#add-your-image" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Place your new workshop image inside the <code>/img</code> folder.</p>
-</div>
-<div id="workshops-json" class="section level3 hasAnchor" number="26.2.2">
-<h3><span class="header-section-number">B.2.2</span> Edit workshops.json<a href="homepage-guide.html#workshops-json" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Each workshop is a JSON object with the following fields:</p>
-<table>
-<colgroup>
-<col width="8%" />
-<col width="5%" />
-<col width="79%" />
-<col width="6%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-<th align="left">Required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>url</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">A valid URL for the workshop’s info page. Use <code>"#"</code> if none exists.</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="even">
-<td align="left"><code>title</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">The official title of the workshop.</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>instructors</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">A list of instructor names. This is searchable but not displayed on the card.</td>
-<td align="left">No</td>
-</tr>
-<tr class="even">
-<td align="left"><code>tags</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">A list of strings for relevant topics (e.g., <code>"genomics"</code>, <code>"r"</code>).</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>regions</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">A list of one or more regions. <strong>Must</strong> be from the allowed list: <code>"BC"</code>, <code>"Alberta"</code>, <code>"Prairies"</code>, <code>"Ontario"</code>, <code>"Quebec"</code>, <code>"Atlantic"</code>, <code>"Online"</code>.</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="even">
-<td align="left"><code>year</code></td>
-<td align="left"><code>number</code></td>
-<td align="left">The four-digit year the workshop takes place in.</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>startDate</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">The workshop’s start date in <strong><code>YYYY-MM-DD</code></strong> format.</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="even">
-<td align="left"><code>endDate</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">The workshop’s end date in <strong><code>YYYY-MM-DD</code></strong> format.</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>image</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">The relative path to the image. The file <strong>must</strong> be in the <code>img/</code> folder (e.g., <code>img/my-image.png</code>).</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="even">
-<td align="left"><code>location</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">The physical location or platform (e.g., <code>"Toronto, ON"</code>, <code>"Online"</code>).</td>
-<td align="left">Yes</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>format</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">The delivery format. <strong>Must</strong> be one of: <code>"Online"</code>, <code>"In-person"</code>, <code>"Distributed"</code>, <code>"Flipped"</code>, <code>"Asynchronous"</code>.</td>
-<td align="left">Yes</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="example-entry" class="section level3 hasAnchor" number="26.2.3">
-<h3><span class="header-section-number">B.2.3</span> Example Entry:<a href="homepage-guide.html#example-entry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This example demonstrates a workshop with multiple instructors, tags, and regions.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb84-1"><a href="homepage-guide.html#cb84-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb84-2"><a href="homepage-guide.html#cb84-2" tabindex="-1"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;#&quot;</span><span class="fu">,</span></span>
-<span id="cb84-3"><a href="homepage-guide.html#cb84-3" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Introduction to R for Biologists&quot;</span><span class="fu">,</span></span>
-<span id="cb84-4"><a href="homepage-guide.html#cb84-4" tabindex="-1"></a>    <span class="dt">&quot;instructors&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Dr. Hadley Wickham&quot;</span><span class="ot">,</span> <span class="st">&quot;Dr. Jenny Bryan&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb84-5"><a href="homepage-guide.html#cb84-5" tabindex="-1"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;r&quot;</span><span class="ot">,</span> <span class="st">&quot;development&quot;</span><span class="ot">,</span> <span class="st">&quot;introduction&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb84-6"><a href="homepage-guide.html#cb84-6" tabindex="-1"></a>    <span class="dt">&quot;regions&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;BC&quot;</span><span class="ot">,</span> <span class="st">&quot;Alberta&quot;</span><span class="ot">,</span> <span class="st">&quot;Prairies&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb84-7"><a href="homepage-guide.html#cb84-7" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2025</span><span class="fu">,</span></span>
-<span id="cb84-8"><a href="homepage-guide.html#cb84-8" tabindex="-1"></a>    <span class="dt">&quot;startDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-18&quot;</span><span class="fu">,</span></span>
-<span id="cb84-9"><a href="homepage-guide.html#cb84-9" tabindex="-1"></a>    <span class="dt">&quot;endDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-22&quot;</span><span class="fu">,</span></span>
-<span id="cb84-10"><a href="homepage-guide.html#cb84-10" tabindex="-1"></a>    <span class="dt">&quot;image&quot;</span><span class="fu">:</span> <span class="st">&quot;img/intro-r.png&quot;</span><span class="fu">,</span></span>
-<span id="cb84-11"><a href="homepage-guide.html#cb84-11" tabindex="-1"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span><span class="fu">,</span></span>
-<span id="cb84-12"><a href="homepage-guide.html#cb84-12" tabindex="-1"></a>    <span class="dt">&quot;format&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span></span>
-<span id="cb84-13"><a href="homepage-guide.html#cb84-13" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
-</div>
-</div>
-<div id="local-validation" class="section level2 hasAnchor" number="26.3">
-<h2><span class="header-section-number">B.3</span> Local Development &amp; Validation<a href="homepage-guide.html#local-validation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>While not required for simple edits, a local setup provides a much better editing experience.</p>
-<p><strong>Prerequisites:</strong></p>
-<ul>
-<li><a href="https://nodejs.org/">Node.js</a> (LTS version)</li>
-<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> (Recommended Editor)</li>
-</ul>
-<div id="live-validation-in-vs-code-recommended" class="section level3 hasAnchor" number="26.3.1">
-<h3><span class="header-section-number">B.3.1</span> Live Validation in VS Code (Recommended)<a href="homepage-guide.html#live-validation-in-vs-code-recommended" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This repository includes a configuration file (<code>.vscode/settings.json</code>) that enables automatic, real-time validation within Visual Studio Code.</p>
-<p><strong>How it Works:</strong>
-When you open the project folder in VS Code, the editor automatically uses the <code>schema.json</code> to check the <code>workshops.json</code> file as you type.</p>
-<ul>
-<li><strong>Error Highlighting:</strong> Any mistake, such as an invalid <code>format</code> value or a misspelled field name, will be immediately underlined in red. Hovering over the error will show a detailed explanation.</li>
-<li><strong>Autocomplete:</strong> For fields with a predefined list of options (like <code>format</code> and <code>regions</code>), VS Code will provide autocomplete suggestions, making it easier to enter valid data.</li>
-</ul>
-<p>To take advantage of this feature, simply clone the repository and open the project folder in VS Code.</p>
-</div>
-<div id="manual-validation-via-command-line" class="section level3 hasAnchor" number="26.3.2">
-<h3><span class="header-section-number">B.3.2</span> Manual Validation via Command Line<a href="homepage-guide.html#manual-validation-via-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>After installing the project dependencies with <code>npm install</code>, you can validate the data from your terminal at any time:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb85-1"><a href="homepage-guide.html#cb85-1" tabindex="-1"></a><span class="ex">npm</span> run validate</span></code></pre></div>
-<p>This will immediately tell you if your data is valid or print specific errors.</p>
-</div>
-</div>
-<div id="deployment" class="section level2 hasAnchor" number="26.4">
-<h2><span class="header-section-number">B.4</span> Deployment<a href="homepage-guide.html#deployment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This project uses a CI/CD pipeline. <strong>Pushing changes to the <code>main</code> branch is equivalent to deploying to production.</strong></p>
+<div id="using-branches" class="section level2 hasAnchor" number="22.2">
+<h2><span class="header-section-number">22.2</span> Using branches<a href="branches.html#using-branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="create-a-new-branch" class="section level3 hasAnchor" number="22.2.1">
+<h3><span class="header-section-number">22.2.1</span> Create a new branch<a href="branches.html#create-a-new-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
-<li>When a change is pushed to the <code>main</code> branch, the GitHub Action in <code>.github/workflows/deploy.yml</code> is automatically triggered.</li>
-<li>The Action first runs the <code>validate</code> job. If validation fails, the workflow stops, and the site is not deployed.</li>
-<li>If validation succeeds, the <code>deploy</code> job runs, which pushes the static content (including the <code>/img</code> folder) to the GitHub Pages environment.</li>
-<li>You can monitor the progress and see the logs for any run by clicking the <strong>“Actions”</strong> tab in the GitHub repository.</li>
+<li>In RStudio, go to the <strong>Git</strong> pane.</li>
+<li>Click the <strong>Pull</strong> button (blue down arrow) to make sure you have the latest version of the <code>main</code> branch.</li>
+<li>Click the <strong>New Branch</strong> icon (a purple branching icon).</li>
+<li>Give your branch a short, descriptive name (e.g., <code>update-chapter-2</code> or <code>fix-typos-ch4</code>).</li>
+<li>Click OK. You are now working on your new, separate branch!</li>
 </ol>
 </div>
-<div id="homepage-debug" class="section level2 hasAnchor" number="26.5">
-<h2><span class="header-section-number">B.5</span> Common Debugging Steps<a href="homepage-guide.html#homepage-debug" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Follow these diagnostic steps if the live site is not working as expected.</p>
-<div id="symptom-the-page-is-blank-or-workshops-are-not-displaying." class="section level3 hasAnchor" number="26.5.1">
-<h3><span class="header-section-number">B.5.1</span> Symptom: The page is blank or workshops are not displaying.<a href="homepage-guide.html#symptom-the-page-is-blank-or-workshops-are-not-displaying." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Diagnosis:</strong> This indicates a client-side JavaScript error.</li>
-<li><strong>Solution:</strong> Open the live website in your browser. Open the <strong>Developer Tools</strong> (<code>F12</code> or <code>Ctrl+Shift+I</code>) and click on the <strong>Console</strong> tab. Look for any error messages printed in red. The error will point to the cause of the failure.</li>
-</ul>
+<div id="make-your-changes" class="section level3 hasAnchor" number="22.2.2">
+<h3><span class="header-section-number">22.2.2</span> Make your changes<a href="branches.html#make-your-changes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, work as you normally would:
+1. Edit your Rmd files and save them.
+2. In the Git pane, check the <strong>Staged</strong> box next to the files you changed.
+3. Click <strong>Commit</strong>.
+4. Write a brief commit message describing your change. Click Commit.</p>
 </div>
-<div id="symptom-my-recent-changes-are-not-appearing-on-the-live-site." class="section level3 hasAnchor" number="26.5.2">
-<h3><span class="header-section-number">B.5.2</span> Symptom: My recent changes are not appearing on the live site.<a href="homepage-guide.html#symptom-my-recent-changes-are-not-appearing-on-the-live-site." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Diagnosis:</strong> The deployment either failed or is still in progress, or you are seeing a cached version.</li>
-<li><strong>Solution:</strong>
-<ol style="list-style-type: decimal">
-<li><strong>Check the Action Log:</strong> Go to the <strong>“Actions”</strong> tab of the repository. A <strong>red ‘X’</strong> on the latest run means the validation or deployment failed; click into the log to see why. A <strong>yellow circle</strong> means it is still running.</li>
-<li><strong>Clear Your Cache:</strong> If the deployment was successful (green checkmark), you are likely seeing an old version. First, try a “hard refresh” (<code>Ctrl+Shift+R</code> or <code>Cmd+Shift+R</code>). If that fails, try opening the site in a private/incognito window.</li>
-</ol></li>
-</ul>
+<div id="push-your-branch" class="section level3 hasAnchor" number="22.2.3">
+<h3><span class="header-section-number">22.2.3</span> Push your branch<a href="branches.html#push-your-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Click the <strong>Push</strong> button (green up arrow). This sends your new branch and your commits from your computer up to GitHub. <strong>You won’t see these changes on the website.</strong></p>
 </div>
-<div id="symptom-a-workshop-card-is-showing-a-broken-image." class="section level3 hasAnchor" number="26.5.3">
-<h3><span class="header-section-number">B.5.3</span> Symptom: A workshop card is showing a broken image.<a href="homepage-guide.html#symptom-a-workshop-card-is-showing-a-broken-image." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>Diagnosis:</strong> The path in the <code>image</code> field of <code>workshops.json</code> is incorrect, or the image file was not pushed to the repository.</li>
-<li><strong>Solution:</strong>
+</div>
+<div id="creating-a-pull-request" class="section level2 hasAnchor" number="22.3">
+<h2><span class="header-section-number">22.3</span> Creating a Pull Request<a href="branches.html#creating-a-pull-request" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When your changes are ready for review, you create a Pull Request (PR). This is the formal way to ask coordinators to merge your branch into the <code>main</code> branch.</p>
 <ol style="list-style-type: decimal">
-<li>Verify that the image file exists inside the <code>/img</code> folder in your repository.</li>
-<li>Check the <code>workshops.json</code> entry for that workshop and ensure the value of the <code>image</code> field is the correct relative path (e.g., <code>img/your-image-name.jpg</code>).</li>
-<li>Remember that filenames are case-sensitive. <code>img/MyImage.JPG</code> is different from <code>img/myimage.jpg</code>.</li>
-</ol></li>
-</ul>
+<li>Best Practice (Sync with <code>main</code>): Before creating your PR, update your branch with the latest changes from <code>main</code>. This helps you find and fix conflicts <em>before</em> the coordinators see them.
+<ul>
+<li>In the RStudio Git pane, switch to the <strong><code>main</code></strong> branch.</li>
+<li>Click the <strong>Pull</strong> button (blue down arrow) to get the latest updates for <code>main</code>.</li>
+<li>Switch back to your feature branch (e.g., <strong><code>update-chapter-2</code></strong>).</li>
+<li>Now, merge the <code>main</code> changes into your branch. Go to the RStudio <strong>Terminal</strong> tab and type <code>git merge main</code>, then press Enter.</li>
+<li>If any conflicts appear, RStudio will show you. Fix them as described in the <a href="mergeconflicts.html#mergeconflicts">Merge Conflicts section.</a></li>
+<li>Once all conflicts are fixed, <strong>Commit</strong> the “Merge” commit, and <strong>Push</strong> (green up arrow) your updated branch.</li>
+</ul></li>
+<li>Go to the project’s GitHub repository page in your web browser.</li>
+<li>You should see a yellow bar near the top: “Your branch [branch-name] had recent pushes.”</li>
+<li>Click the green <strong>Compare &amp; pull request</strong> button.</li>
+<li>Make sure the <code>base</code> branch is <code>main</code> and the <code>compare</code> branch is your new branch.</li>
+<li>Add a clear title (e.g., “Updates Chapter 2 with new examples”) and a brief description of your changes.</li>
+<li>Click <strong>Create pull request</strong>. Your branch is now fully up-to-date and conflict-free.</li>
+</ol>
+<p>Your work is now ready for the coordinators to review.</p>
+</div>
+<div id="managing-pull-requests" class="section level2 hasAnchor" number="22.4">
+<h2><span class="header-section-number">22.4</span> Managing Pull Requests<a href="branches.html#managing-pull-requests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Coordinators are responsible for reviewing and merging all PRs.</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to the <strong>Pull requests</strong> tab in the GitHub repository. Click on the PR you want to review.</p></li>
+<li><p>[Optional] Click the <strong>Files changed</strong> tab. This shows every line that was added or removed. You can leave comments on specific lines if revisions are needed.</p></li>
+<li><p>Wait for the automated checks (Actions) to run. A green checkmark means the book still builds successfully. If you see a red X, the PR should not be merged until the error is fixed.</p>
+<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><i class="fas fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">I see a red X! What now?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>There is a merge conflict. Notify the person who created the pull
+request - it is their responsibility to fix it and issue another pull
+request.</p></div></details></li>
+<li><p>If the changes look good and the checks pass, go back to the <strong>Conversation</strong> tab. Click the green <strong>Merge pull request</strong> button, and then <strong>Confirm merge</strong>.</p></li>
+<li><p>After merging, GitHub will offer to delete the branch. It is safe and good practice to do this.</p></li>
+</ol>
 
 </div>
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="dev-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="mergeconflicts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="command-line.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -672,7 +546,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0091-homepage-guide.Rmd",
+    "link": "https://github.com/cbw-dev/bookdown-guide/blob/main/0051-branches.Rmd",
     "text": "Edit"
   },
   "history": {

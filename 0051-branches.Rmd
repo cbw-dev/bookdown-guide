@@ -1,0 +1,69 @@
+# Branches {#branches}
+## What are branches?
+
+Think of the `main` branch as the official, published version of the book.
+
+A **branch** is a separate copy where you can make changes (like adding a new chapter or fixing typos) without affecting the `main` version.
+
+We use branches to:  
+*  Keep the `main` branch clean and working  
+*  Allow multiple people to work on different things at the same time  
+*  Review changes *before* they are officially added (merged) into the main book and published to the internet  
+
+
+## Using branches
+
+### Create a new branch
+
+1.  In RStudio, go to the **Git** pane.
+2.  Click the **Pull** button (blue down arrow) to make sure you have the latest version of the `main` branch.
+3.  Click the **New Branch** icon (a purple branching icon).
+4.  Give your branch a short, descriptive name (e.g., `update-chapter-2` or `fix-typos-ch4`).
+5.  Click OK. You are now working on your new, separate branch!
+
+### Make your changes
+Now, work as you normally would:
+1.  Edit your Rmd files and save them.
+2.  In the Git pane, check the **Staged** box next to the files you changed.
+3.  Click **Commit**.
+4.  Write a brief commit message describing your change. Click Commit.
+
+### Push your branch
+Click the **Push** button (green up arrow). This sends your new branch and your commits from your computer up to GitHub. **You won't see these changes on the website.**
+
+## Creating a Pull Request
+
+When your changes are ready for review, you create a Pull Request (PR). This is the formal way to ask coordinators to merge your branch into the `main` branch.
+
+1.  Best Practice (Sync with `main`): Before creating your PR, update your branch with the latest changes from `main`. This helps you find and fix conflicts *before* the coordinators see them.
+    * In the RStudio Git pane, switch to the **`main`** branch.
+    * Click the **Pull** button (blue down arrow) to get the latest updates for `main`.
+    * Switch back to your feature branch (e.g., **`update-chapter-2`**).
+    * Now, merge the `main` changes into your branch. Go to the RStudio **Terminal** tab and type `git merge main`, then press Enter.
+    * If any conflicts appear, RStudio will show you. Fix them as described in the [Merge Conflicts section.](#mergeconflicts)
+    * Once all conflicts are fixed, **Commit** the "Merge" commit, and **Push** (green up arrow) your updated branch.
+
+2.  Go to the project's GitHub repository page in your web browser.
+3.  You should see a yellow bar near the top: "Your branch [branch-name] had recent pushes."
+4.  Click the green **Compare & pull request** button.
+5.  Make sure the `base` branch is `main` and the `compare` branch is your new branch.
+6.  Add a clear title (e.g., "Updates Chapter 2 with new examples") and a brief description of your changes.
+7.  Click **Create pull request**. Your branch is now fully up-to-date and conflict-free.
+
+Your work is now ready for the coordinators to review.
+
+## Managing Pull Requests
+
+Coordinators are responsible for reviewing and merging all PRs.
+
+1.  Go to the **Pull requests** tab in the GitHub repository. Click on the PR you want to review.
+2.  [Optional] Click the **Files changed** tab. This shows every line that was added or removed. You can leave comments on specific lines if revisions are needed.
+3.  Wait for the automated checks (Actions) to run. A green checkmark means the book still builds successfully. If you see a red X, the PR should not be merged until the error is fixed.  
+
+    :::: {.callout type="yellow" collapsible="true" style="subtle" title="I see a red X! What now?"}
+    
+    There is a merge conflict. Notify the person who created the pull request - it is their responsibility to fix it and issue another pull request.
+    
+    ::::
+4.  If the changes look good and the checks pass, go back to the **Conversation** tab. Click the green **Merge pull request** button, and then **Confirm merge**.
+5.  After merging, GitHub will offer to delete the branch. It is safe and good practice to do this.
