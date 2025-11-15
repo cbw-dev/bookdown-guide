@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -434,235 +435,370 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="callouts" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">19</span> Callouts<a href="callouts.html#callouts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="basic-syntax" class="section level2 hasAnchor" number="19.1">
-<h2><span class="header-section-number">19.1</span> Basic Syntax<a href="callouts.html#basic-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Callouts are created using a fenced div block starting with <code>::::</code>.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb46-1"><a href="callouts.html#cb46-1" tabindex="-1"></a>:::: {.callout type=&quot;blue&quot; title=&quot;My First Callout&quot;}</span>
-<span id="cb46-2"><a href="callouts.html#cb46-2" tabindex="-1"></a></span>
-<span id="cb46-3"><a href="callouts.html#cb46-3" tabindex="-1"></a>This is the content of the callout. You can write any Markdown here.</span>
-<span id="cb46-4"><a href="callouts.html#cb46-4" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="callouts.html#cb46-5" tabindex="-1"></a>::::</span></code></pre></div>
+<div id="callout-generator" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Callout generator<a href="callouts.html#callout-generator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Want to skip all the technical stuff? Use the widget below to create your callouts instantly.</p>
+<details class="callout-dropdown callout-plain callout-red"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-gear" aria-hidden="true"></i></span><span class="callout-dropdown-title">Callout generator</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><iframe src="callout_generator.html" style="width: 100%; height: 100vh; min-width: 650px; border: none;"></iframe></div></details>
+</div>
+<div id="about-callouts" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> About callouts<a href="callouts.html#about-callouts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="callout-blue">
 <span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
-<p>My First Callout</p>
+<p>What’s a callout?</p>
 </div>
-<p>This is the content of the callout. You can write any Markdown here.</p>
-</div>
-</div>
-<p><strong>Important:</strong> Always leave a <strong>blank line</strong> after the opening <code>:::: {....}</code> line and before the final closing <code>::::</code> line.</p>
+<p>This is a callout! So is the Callout Generator above - that one has a different <em>type</em>, <em>style</em>, and is <em>collapsible</em>. You can customize callouts in many different ways.</p>
 <p>The content area inside a callout is standard Markdown. You can include:</p>
 <ul>
-<li>Paragraphs and line breaks.</li>
-<li>Bulleted (<code>-</code>) or numbered (<code>1.</code>) lists.</li>
-<li><strong>Bold</strong> and <em>italic</em> text.</li>
-<li><code>inline code</code>.</li>
-<li>Fenced code blocks.</li>
-<li>Links and images.</li>
+<li>Paragraphs and line breaks</li>
+<li>Bulleted (<code>-</code>) or numbered (<code>1.</code>) lists</li>
+<li><strong>Bold</strong> and <em>italic</em> text</li>
+<li><code>inline code</code></li>
+<li>Fenced code blocks</li>
+<li>Links and images</li>
 <li>Even other nested callouts!</li>
 </ul>
 </div>
-<div id="attribute-reference" class="section level2 hasAnchor" number="19.2">
-<h2><span class="header-section-number">19.2</span> Attribute Reference<a href="callouts.html#attribute-reference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<p>Callouts are created using a custom code block using the following syntax. Options are listed in the sections below. Note that there must be a blank line after the opening <code>:::: {....}</code> line and before the final closing <code>::::</code> line.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb46-1"><a href="callouts.html#cb46-1" tabindex="-1"></a>:::: {.callout <span class="dt">&lt;</span><span class="kw">options</span><span class="dt">&gt;</span>}</span>
+<span id="cb46-2"><a href="callouts.html#cb46-2" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="callouts.html#cb46-3" tabindex="-1"></a>This is the content of the callout. You can write any Markdown here.</span>
+<span id="cb46-4"><a href="callouts.html#cb46-4" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="callouts.html#cb46-5" tabindex="-1"></a>::::</span></code></pre></div>
+</div>
+<div id="callout-options" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Callout options<a href="callouts.html#callout-options" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Customize each callout by adding attributes inside the curly braces <code>{}</code>.</p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left">Attribute</th>
-<th align="left">Required?</th>
-<th align="left">Description</th>
-<th align="left">Example Values</th>
+<tr>
+<th style="text-align:left;">
+Attribute
+</th>
+<th style="text-align:left;">
+Required?
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Example Values
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"><code>type</code></td>
-<td align="left"><strong>Yes</strong></td>
-<td align="left">Sets the color scheme.</td>
-<td align="left"><code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, <code>"yellow"</code>, <code>"purple"</code>, <code>"orange"</code>, <code>"gray"</code></td>
+<tr>
+<td style="text-align:left;width: 10%; ">
+<code>type</code>
+</td>
+<td style="text-align:left;width: 5%; text-align: center;">
+<strong>Yes</strong>
+</td>
+<td style="text-align:left;width: 35%; ">
+Sets the color scheme.
+</td>
+<td style="text-align:left;width: 50%; ">
+<code>"red"</code>, <code>"blue"</code>, <code>"green"</code>, <code>"yellow"</code>, <code>"purple"</code>, <code>"orange"</code>, <code>"gray"</code>
+</td>
 </tr>
-<tr class="even">
-<td align="left"><code>style</code></td>
-<td align="left">No</td>
-<td align="left">Defines the visual style.</td>
-<td align="left"><code>"regular"</code> (default), <code>"important"</code>, <code>"subtle"</code>, <code>"plain"</code></td>
+<tr>
+<td style="text-align:left;width: 10%; ">
+<code>style</code>
+</td>
+<td style="text-align:left;width: 5%; text-align: center;">
+No
+</td>
+<td style="text-align:left;width: 35%; ">
+Defines the visual style.
+</td>
+<td style="text-align:left;width: 50%; ">
+<code>"regular"</code> (default), <code>"important"</code>, <code>"subtle"</code>, <code>"plain"</code>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><code>title</code></td>
-<td align="left">No</td>
-<td align="left">Text for the callout’s title. Can include Markdown.</td>
-<td align="left"><code>"Important Note!"</code>, <code>"**Action Required**"</code></td>
+<tr>
+<td style="text-align:left;width: 10%; ">
+<code>title</code>
+</td>
+<td style="text-align:left;width: 5%; text-align: center;">
+No
+</td>
+<td style="text-align:left;width: 35%; ">
+Text for the callout’s title. Can include Markdown.
+</td>
+<td style="text-align:left;width: 50%; ">
+<code>"Important Note!"</code>, <code>"**Action Required**"</code>
+</td>
 </tr>
-<tr class="even">
-<td align="left"><code>icon</code></td>
-<td align="left">No</td>
-<td align="left">Controls the icon next to the title.</td>
-<td align="left"><code>"true"</code> (default), <code>"false"</code>, <code>"fas fa-rocket"</code></td>
+<tr>
+<td style="text-align:left;width: 10%; ">
+<code>icon</code>
+</td>
+<td style="text-align:left;width: 5%; text-align: center;">
+No
+</td>
+<td style="text-align:left;width: 35%; ">
+Controls the icon next to the title.
+</td>
+<td style="text-align:left;width: 50%; ">
+<code>"true"</code> (default), <code>"false"</code>, <code>"fas fa-rocket"</code>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><code>collapsible</code></td>
-<td align="left">No</td>
-<td align="left">Makes the callout a dropdown.</td>
-<td align="left"><code>"true"</code>, <code>"false"</code> (default)</td>
+<tr>
+<td style="text-align:left;width: 10%; ">
+<code>collapsible</code>
+</td>
+<td style="text-align:left;width: 5%; text-align: center;">
+No
+</td>
+<td style="text-align:left;width: 35%; ">
+Makes the callout a dropdown.
+</td>
+<td style="text-align:left;width: 50%; ">
+<code>"true"</code>, <code>"false"</code> (default)
+</td>
 </tr>
-<tr class="even">
-<td align="left"><code>center_title</code></td>
-<td align="left">No</td>
-<td align="left">Centers the title (static callouts only).</td>
-<td align="left"><code>"true"</code>, <code>"false"</code> (default)</td>
+<tr>
+<td style="text-align:left;width: 10%; ">
+<code>center_title</code>
+</td>
+<td style="text-align:left;width: 5%; text-align: center;">
+No
+</td>
+<td style="text-align:left;width: 35%; ">
+Centers the title (static callouts only).
+</td>
+<td style="text-align:left;width: 50%; ">
+<code>"true"</code>, <code>"false"</code> (default)
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="default-icons" class="section level2 hasAnchor" number="19.3">
-<h2><span class="header-section-number">19.3</span> Default Icons<a href="callouts.html#default-icons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="default-icons" class="section level2 hasAnchor" number="19.4">
+<h2><span class="header-section-number">19.4</span> Default Icons<a href="callouts.html#default-icons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you set <code>icon="true"</code> or omit the <code>icon</code> attribute, a default icon will be shown based on the <code>type</code> you’ve chosen. Here are the defaults:</p>
-<table>
-<colgroup>
-<col width="30%" />
-<col width="38%" />
-<col width="30%" />
-</colgroup>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="left"><code>type</code> (Color)</th>
-<th align="center">Default Icon</th>
-<th align="left">Icon Class (<code>fas fa-...</code>)</th>
+<tr>
+<th style="text-align:left;">
+<code>type</code> (Color)
+</th>
+<th style="text-align:left;">
+Default Icon
+</th>
+<th style="text-align:left;">
+Icon Class (<code>fas fa-...</code>)
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left"><code>red</code></td>
-<td align="center"><i class="fas fa-triangle-exclamation" style="color: #C0392B;"></i></td>
-<td align="left"><code>triangle-exclamation</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>red</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-triangle-exclamation" style="color: #C0392B;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>triangle-exclamation</code>
+</td>
 </tr>
-<tr class="even">
-<td align="left"><code>blue</code></td>
-<td align="center"><i class="fas fa-circle-info" style="color: #2980B9;"></i></td>
-<td align="left"><code>circle-info</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>blue</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-circle-info" style="color: #2980B9;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>circle-info</code>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><code>green</code></td>
-<td align="center"><i class="fas fa-circle-check" style="color: #229954;"></i></td>
-<td align="left"><code>circle-check</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>green</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-circle-check" style="color: #229954;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>circle-check</code>
+</td>
 </tr>
-<tr class="even">
-<td align="left"><code>yellow</code></td>
-<td align="center"><i class="fas fa-bell" style="color: #FFC107;"></i></td>
-<td align="left"><code>bell</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>yellow</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-bell" style="color: #FFC107;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>bell</code>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><code>purple</code></td>
-<td align="center"><i class="fas fa-star" style="color: #8E24AA;"></i></td>
-<td align="left"><code>star</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>purple</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-star" style="color: #8E24AA;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>star</code>
+</td>
 </tr>
-<tr class="even">
-<td align="left"><code>orange</code></td>
-<td align="center"><i class="fas fa-fire" style="color: #FB8C00;"></i></td>
-<td align="left"><code>fire</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>orange</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-fire" style="color: #FB8C00;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>fire</code>
+</td>
 </tr>
-<tr class="odd">
-<td align="left"><code>gray</code></td>
-<td align="center"><i class="fas fa-comment-dots" style="color: #757575;"></i></td>
-<td align="left"><code>comment-dots</code></td>
+<tr>
+<td style="text-align:left;width: 20%; ">
+<code>gray</code>
+</td>
+<td style="text-align:left;width: 20%; text-align: center;">
+<i class="fas fa-comment-dots" style="color: #757575;"></i>
+</td>
+<td style="text-align:left;width: 60%; ">
+<code>comment-dots</code>
+</td>
 </tr>
 </tbody>
 </table>
 <p>You can override any of these defaults by specifying a different icon class, for example: <code>icon="fas fa-lightbulb"</code>. Find more icons on the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free&amp;s=solid">Font Awesome website</a>.</p>
-<hr />
 </div>
-<div id="examples" class="section level2 hasAnchor" number="19.4">
-<h2><span class="header-section-number">19.4</span> Examples<a href="callouts.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here are some practical examples you can copy and adapt.</p>
-<div id="example-1-informational-note" class="section level3 hasAnchor" number="19.4.1">
-<h3><span class="header-section-number">19.4.1</span> Example 1: Informational Note<a href="callouts.html#example-1-informational-note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A subtle blue callout for providing information.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb47-1"><a href="callouts.html#cb47-1" tabindex="-1"></a>:::: {.callout type=&quot;blue&quot; title=&quot;Information&quot; style=&quot;subtle&quot;}</span>
-<span id="cb47-2"><a href="callouts.html#cb47-2" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="callouts.html#cb47-3" tabindex="-1"></a>This is a blue informational callout using the Subtle styling.</span>
-<span id="cb47-4"><a href="callouts.html#cb47-4" tabindex="-1"></a>The default icon for &#39;blue&#39; will be used.</span>
-<span id="cb47-5"><a href="callouts.html#cb47-5" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="callouts.html#cb47-6" tabindex="-1"></a>::::</span></code></pre></div>
-<div class="callout-blue-subtle">
+<div id="styles" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Styles<a href="callouts.html#styles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Note that the colors chosen below are arbitrary: colors and styles can be mixed and matched.</p>
+<div id="regular" class="section level3 hasAnchor" number="19.5.1">
+<h3><span class="header-section-number">19.5.1</span> Regular<a href="callouts.html#regular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="callout-blue">
 <span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
-<p>Information</p>
+<p>Regular, Blue</p>
 </div>
-<p>This is a blue informational callout using the Subtle styling.
-The default icon for ‘blue’ will be used.</p>
-</div>
+<p>This is a blue callout with Regular styling.</p>
 </div>
 </div>
-<div id="example-2-collapsible-plain-answer-box" class="section level3 hasAnchor" number="19.4.2">
-<h3><span class="header-section-number">19.4.2</span> Example 2: Collapsible “Plain” Answer Box<a href="callouts.html#example-2-collapsible-plain-answer-box" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A minimal dropdown, perfect for hiding answers to questions.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb48-1"><a href="callouts.html#cb48-1" tabindex="-1"></a>:::: {.callout type=&quot;green&quot; style=&quot;plain&quot; title=&quot;What is the answer?&quot; icon=&quot;fas fa-question-circle&quot; collapsible=&quot;true&quot;}</span>
-<span id="cb48-2"><a href="callouts.html#cb48-2" tabindex="-1"></a></span>
-<span id="cb48-3"><a href="callouts.html#cb48-3" tabindex="-1"></a>The answer is revealed here. This plain dropdown uses a green icon because we set <span class="in">`type=&quot;green&quot;`</span>.</span>
-<span id="cb48-4"><a href="callouts.html#cb48-4" tabindex="-1"></a></span>
-<span id="cb48-5"><a href="callouts.html#cb48-5" tabindex="-1"></a>::::</span></code></pre></div>
-<details class="callout-dropdown callout-plain callout-green"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-question-circle" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">What is the answer?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>The answer is revealed here. This plain dropdown uses a green icon
-because we set <code>type="green"</code>.</p></div></details>
+<details class="callout-dropdown callout-blue"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span><span class="callout-dropdown-title">Regular, Blue, Collapsible</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>This is a blue collapsible callout with Regular styling.</p></div></details>
 </div>
-<div id="example-3-important-red-warning" class="section level3 hasAnchor" number="19.4.3">
-<h3><span class="header-section-number">19.4.3</span> Example 3: Important Red Warning<a href="callouts.html#example-3-important-red-warning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A high-visibility static callout for critical information.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb49-1"><a href="callouts.html#cb49-1" tabindex="-1"></a>:::: {.callout type=&quot;red&quot; style=&quot;important&quot; title=&quot;CRITICAL WARNING&quot; icon=&quot;fas fa-triangle-exclamation&quot;}</span>
-<span id="cb49-2"><a href="callouts.html#cb49-2" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="callouts.html#cb49-3" tabindex="-1"></a>System integrity is compromised. Immediate action required.</span>
-<span id="cb49-4"><a href="callouts.html#cb49-4" tabindex="-1"></a>Please check the <span class="in">`error_log.txt`</span> file for details.</span>
-<span id="cb49-5"><a href="callouts.html#cb49-5" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="callouts.html#cb49-6" tabindex="-1"></a>::::</span></code></pre></div>
-<div class="callout-red-important">
+<div id="important" class="section level3 hasAnchor" number="19.5.2">
+<h3><span class="header-section-number">19.5.2</span> Important<a href="callouts.html#important" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="callout-purple">
+<span class="callout-icon"><i class="fas fa-star" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>Important, Purple</p>
+</div>
+<p>This is a purple callout with Important styling.</p>
+</div>
+</div>
+<details class="callout-dropdown callout-purple"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fas fa-star" aria-hidden="true"></i></span><span class="callout-dropdown-title">Important, Purple, Collapsible</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>This is a purple collapsible callout with Important styling.</p></div></details>
+</div>
+<div id="subtle" class="section level3 hasAnchor" number="19.5.3">
+<h3><span class="header-section-number">19.5.3</span> Subtle<a href="callouts.html#subtle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="callout-subtle callout-red-subtle">
 <span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
-<p>CRITICAL WARNING</p>
+<p>Subtle, Red</p>
 </div>
-<p>System integrity is compromised. Immediate action required.
-Please check the <code>error_log.txt</code> file for details.</p>
-</div>
+<p>This is a red callout with Subtle styling.</p>
 </div>
 </div>
-<div id="example-4-comprehensive-dropdown" class="section level3 hasAnchor" number="19.4.4">
-<h3><span class="header-section-number">19.4.4</span> Example 4: Comprehensive Dropdown<a href="callouts.html#example-4-comprehensive-dropdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<details class="callout-dropdown callout-subtle callout-red-subtle"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span><span class="callout-dropdown-title">Subtle, Red, Collapsible</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>This is a red collapsible callout with Subtle styling.</p></div></details>
+</div>
+<div id="plain" class="section level3 hasAnchor" number="19.5.4">
+<h3><span class="header-section-number">19.5.4</span> Plain<a href="callouts.html#plain" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="callout-plain callout-orange">
+<span class="callout-icon"><i class="fas fa-fire" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>Plain, Orange</p>
+</div>
+<p>This is an orange callout with Plain styling.</p>
+</div>
+</div>
+<details class="callout-dropdown callout-plain callout-orange"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-fire" aria-hidden="true"></i></span><span class="callout-dropdown-title">Plain, Orange, Collapsible</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>This is an orange collapsible callout with Plain styling.</p></div></details>
+</div>
+</div>
+<div id="nesting-callouts-in-lists" class="section level2 hasAnchor" number="19.6">
+<h2><span class="header-section-number">19.6</span> Nesting callouts in lists<a href="callouts.html#nesting-callouts-in-lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can nest callouts inside other elements, such as lists, by indenting the entire callout block. The option In-List Nesting Level in the Callout Generator above will do this for you.</p>
+<p><strong>To place a callout inside a list item or indent the callout, indent the entire <code>::::</code> block (including its opening and closing fences and all of its content) by four spaces.</strong></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb47-1"><a href="callouts.html#cb47-1" tabindex="-1"></a><span class="ss">1.  </span>This is the first item in the list.</span>
+<span id="cb47-2"><a href="callouts.html#cb47-2" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="callouts.html#cb47-3" tabindex="-1"></a><span class="ss">2.  </span>This is the second item, which will contain a callout.</span>
+<span id="cb47-4"><a href="callouts.html#cb47-4" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="callouts.html#cb47-5" tabindex="-1"></a>    :::: {.callout type=&quot;green&quot; style=&quot;subtle&quot; title=&quot;This is an indented callout&quot;}</span>
+<span id="cb47-6"><a href="callouts.html#cb47-6" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="callouts.html#cb47-7" tabindex="-1"></a>    This entire callout block is indented, making it part of the second list item.</span>
+<span id="cb47-8"><a href="callouts.html#cb47-8" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="callouts.html#cb47-9" tabindex="-1"></a><span class="ss">    - </span>You can have other Markdown elements inside, like this list.</span>
+<span id="cb47-10"><a href="callouts.html#cb47-10" tabindex="-1"></a><span class="ss">    - </span>They must also be indented to be part of the callout.</span>
+<span id="cb47-11"><a href="callouts.html#cb47-11" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="callouts.html#cb47-12" tabindex="-1"></a>    ::::</span>
+<span id="cb47-13"><a href="callouts.html#cb47-13" tabindex="-1"></a></span>
+<span id="cb47-14"><a href="callouts.html#cb47-14" tabindex="-1"></a><span class="ss">3.  </span>This is the third item in the list, appearing after the callout.</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>This is the first item in the list.</p></li>
+<li><p>This is the second item, which will contain a callout.</p>
+<div class="callout-subtle callout-green-subtle">
+<span class="callout-icon"><i class="fas fa-circle-check" aria-hidden="true"></i></span>
+<div class="callout-content">
+<div class="callout-title-static">
+<p>This is an indented callout</p>
+</div>
+<p>This entire callout block is indented, making it part of the second list item.</p>
+<ul>
+<li>You can have other Markdown elements inside, like this list.</li>
+<li>They must also be indented to be part of the callout.</li>
+</ul>
+</div>
+</div></li>
+<li><p>This is the third item in the list, appearing after the callout.</p></li>
+</ol>
+</div>
+<div id="advanced-example" class="section level2 hasAnchor" number="19.7">
+<h2><span class="header-section-number">19.7</span> Advanced example<a href="callouts.html#advanced-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This example uses multiple attributes and contains rich Markdown content, including a fenced code block. <strong>To prevent rendering issues when nesting code blocks, use a longer fence (e.g., five colons <code>:::::</code>) for the outer callout block.</strong></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb50-1"><a href="callouts.html#cb50-1" tabindex="-1"></a>:::: {.callout type=&quot;orange&quot; style=&quot;important&quot; title=&quot;**Action Needed**: Review Workflow&quot; icon=&quot;fas fa-clipboard-check&quot; collapsible=&quot;true&quot;}</span>
-<span id="cb50-2"><a href="callouts.html#cb50-2" tabindex="-1"></a></span>
-<span id="cb50-3"><a href="callouts.html#cb50-3" tabindex="-1"></a><span class="fu">### Step 1: Data Ingestion</span></span>
-<span id="cb50-4"><a href="callouts.html#cb50-4" tabindex="-1"></a></span>
-<span id="cb50-5"><a href="callouts.html#cb50-5" tabindex="-1"></a>Please ensure your data from <span class="in">`source_data/experiment_A.csv`</span> has been correctly loaded.</span>
-<span id="cb50-6"><a href="callouts.html#cb50-6" tabindex="-1"></a></span>
-<span id="cb50-7"><a href="callouts.html#cb50-7" tabindex="-1"></a><span class="ss">- </span>Check for missing values.</span>
-<span id="cb50-8"><a href="callouts.html#cb50-8" tabindex="-1"></a><span class="ss">- </span>Verify data types.</span>
-<span id="cb50-9"><a href="callouts.html#cb50-9" tabindex="-1"></a></span>
-<span id="cb50-10"><a href="callouts.html#cb50-10" tabindex="-1"></a><span class="fu">### Step 2: Pre-processing</span></span>
-<span id="cb50-11"><a href="callouts.html#cb50-11" tabindex="-1"></a></span>
-<span id="cb50-12"><a href="callouts.html#cb50-12" tabindex="-1"></a>The pre-processing script <span class="in">`scripts/01_preprocess.R`</span> must be run before analysis.</span>
-<span id="cb50-13"><a href="callouts.html#cb50-13" tabindex="-1"></a></span>
-<span id="cb50-14"><a href="callouts.html#cb50-14" tabindex="-1"></a></span>
-<span id="cb50-15"><a href="callouts.html#cb50-15" tabindex="-1"></a><span class="in">``` r</span></span>
-<span id="cb50-16"><a href="callouts.html#cb50-16" tabindex="-1"></a><span class="co"># Example snippet from the script</span></span>
-<span id="cb50-17"><a href="callouts.html#cb50-17" tabindex="-1"></a><span class="co"># source(&quot;scripts/01_preprocess.R&quot;)</span></span>
-<span id="cb50-18"><a href="callouts.html#cb50-18" tabindex="-1"></a><span class="co"># processed_data &lt;- preprocess_data(raw_data)</span></span>
-<span id="cb50-19"><a href="callouts.html#cb50-19" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb50-20"><a href="callouts.html#cb50-20" tabindex="-1"></a></span>
-<span id="cb50-21"><a href="callouts.html#cb50-21" tabindex="-1"></a><span class="fu">### Step 3: Analysis &amp; Reporting</span></span>
-<span id="cb50-22"><a href="callouts.html#cb50-22" tabindex="-1"></a></span>
-<span id="cb50-23"><a href="callouts.html#cb50-23" tabindex="-1"></a>Confirm that the final report <span class="in">`output/final_report.html`</span> has been generated.</span>
-<span id="cb50-24"><a href="callouts.html#cb50-24" tabindex="-1"></a></span>
-<span id="cb50-25"><a href="callouts.html#cb50-25" tabindex="-1"></a>If you encounter any issues, please refer to the *Troubleshooting Guide* section.</span>
-<span id="cb50-26"><a href="callouts.html#cb50-26" tabindex="-1"></a></span>
-<span id="cb50-27"><a href="callouts.html#cb50-27" tabindex="-1"></a>::::</span></code></pre></div>
-<details class="callout-dropdown callout-orange-important"><summary class="callout-dropdown-summary"><i class="fas fa-clipboard-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title"><strong>Action Needed</strong>: Review Workflow</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><h3 class="hasAnchor" id="step-1-data-ingestion">Step 1: Data
+<div class="sourceCode" id="cb48"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb48-1"><a href="callouts.html#cb48-1" tabindex="-1"></a>:::: {.callout type=&quot;gray&quot; style=&quot;important&quot; title=&quot;*Action Needed:* Review Workflow&quot; icon=&quot;fas fa-clipboard-check&quot; collapsible=&quot;true&quot;}</span>
+<span id="cb48-2"><a href="callouts.html#cb48-2" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="callouts.html#cb48-3" tabindex="-1"></a><span class="fu">### Step 1: Data Ingestion</span></span>
+<span id="cb48-4"><a href="callouts.html#cb48-4" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="callouts.html#cb48-5" tabindex="-1"></a>Please ensure your data from <span class="in">`source_data/experiment_A.csv`</span> has been correctly loaded.</span>
+<span id="cb48-6"><a href="callouts.html#cb48-6" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="callouts.html#cb48-7" tabindex="-1"></a><span class="ss">- </span>Check for missing values.</span>
+<span id="cb48-8"><a href="callouts.html#cb48-8" tabindex="-1"></a><span class="ss">- </span>Verify data types.</span>
+<span id="cb48-9"><a href="callouts.html#cb48-9" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="callouts.html#cb48-10" tabindex="-1"></a><span class="fu">### Step 2: Pre-processing</span></span>
+<span id="cb48-11"><a href="callouts.html#cb48-11" tabindex="-1"></a></span>
+<span id="cb48-12"><a href="callouts.html#cb48-12" tabindex="-1"></a>The pre-processing script <span class="in">`scripts/01_preprocess.R`</span> must be run before analysis.</span>
+<span id="cb48-13"><a href="callouts.html#cb48-13" tabindex="-1"></a></span>
+<span id="cb48-14"><a href="callouts.html#cb48-14" tabindex="-1"></a></span>
+<span id="cb48-15"><a href="callouts.html#cb48-15" tabindex="-1"></a><span class="in">``` r</span></span>
+<span id="cb48-16"><a href="callouts.html#cb48-16" tabindex="-1"></a><span class="co"># Example snippet from the script</span></span>
+<span id="cb48-17"><a href="callouts.html#cb48-17" tabindex="-1"></a><span class="co"># source(&quot;scripts/01_preprocess.R&quot;)</span></span>
+<span id="cb48-18"><a href="callouts.html#cb48-18" tabindex="-1"></a><span class="co"># processed_data &lt;- preprocess_data(raw_data)</span></span>
+<span id="cb48-19"><a href="callouts.html#cb48-19" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb48-20"><a href="callouts.html#cb48-20" tabindex="-1"></a></span>
+<span id="cb48-21"><a href="callouts.html#cb48-21" tabindex="-1"></a><span class="fu">### Step 3: Analysis &amp; Reporting</span></span>
+<span id="cb48-22"><a href="callouts.html#cb48-22" tabindex="-1"></a></span>
+<span id="cb48-23"><a href="callouts.html#cb48-23" tabindex="-1"></a>Confirm that the final report <span class="in">`output/final_report.html`</span> has been generated.</span>
+<span id="cb48-24"><a href="callouts.html#cb48-24" tabindex="-1"></a></span>
+<span id="cb48-25"><a href="callouts.html#cb48-25" tabindex="-1"></a>If you encounter any issues, please refer to the *Troubleshooting Guide* section.</span>
+<span id="cb48-26"><a href="callouts.html#cb48-26" tabindex="-1"></a></span>
+<span id="cb48-27"><a href="callouts.html#cb48-27" tabindex="-1"></a>::::</span></code></pre></div>
+<details class="callout-dropdown callout-gray-important"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></span><span class="callout-dropdown-title"><em>Action Needed:</em> Review Workflow</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><h3 class="hasAnchor" id="step-1-data-ingestion">Step 1: Data
 Ingestion<a href="callouts.html#step-1-data-ingestion" class="anchor-section"
 aria-label="Anchor link to header"></a></h3>
 <p>Please ensure your data from
@@ -686,48 +822,7 @@ class="anchor-section" aria-label="Anchor link to header"></a></h3>
 has been generated.</p>
 <p>If you encounter any issues, please refer to the <em>Troubleshooting
 Guide</em> section.</p></div></details>
-</div>
-</div>
-<div id="nesting-callouts" class="section level2 hasAnchor" number="19.5">
-<h2><span class="header-section-number">19.5</span> Nesting Callouts<a href="callouts.html#nesting-callouts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can nest callouts inside other elements, such as lists, by indenting the entire callout block.</p>
-<p><strong>To place a callout inside a list item, indent the entire <code>::::</code> block (including its opening and closing fences and all of its content) by four spaces.</strong></p>
-<div id="example-of-a-nested-callout" class="section level3 hasAnchor" number="19.5.1">
-<h3><span class="header-section-number">19.5.1</span> Example of a Nested Callout<a href="callouts.html#example-of-a-nested-callout" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb51"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb51-1"><a href="callouts.html#cb51-1" tabindex="-1"></a><span class="ss">1.  </span>This is the first item in the list.</span>
-<span id="cb51-2"><a href="callouts.html#cb51-2" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="callouts.html#cb51-3" tabindex="-1"></a><span class="ss">2.  </span>This is the second item, which will contain a callout.</span>
-<span id="cb51-4"><a href="callouts.html#cb51-4" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="callouts.html#cb51-5" tabindex="-1"></a>    :::: {.callout type=&quot;blue&quot; title=&quot;This is an indented callout&quot;}</span>
-<span id="cb51-6"><a href="callouts.html#cb51-6" tabindex="-1"></a></span>
-<span id="cb51-7"><a href="callouts.html#cb51-7" tabindex="-1"></a>    This entire callout block is indented, making it part of the second list item.</span>
-<span id="cb51-8"><a href="callouts.html#cb51-8" tabindex="-1"></a></span>
-<span id="cb51-9"><a href="callouts.html#cb51-9" tabindex="-1"></a><span class="ss">    - </span>You can have other Markdown elements inside, like this list.</span>
-<span id="cb51-10"><a href="callouts.html#cb51-10" tabindex="-1"></a><span class="ss">    - </span>They must also be indented to be part of the callout.</span>
-<span id="cb51-11"><a href="callouts.html#cb51-11" tabindex="-1"></a></span>
-<span id="cb51-12"><a href="callouts.html#cb51-12" tabindex="-1"></a>    ::::</span>
-<span id="cb51-13"><a href="callouts.html#cb51-13" tabindex="-1"></a></span>
-<span id="cb51-14"><a href="callouts.html#cb51-14" tabindex="-1"></a><span class="ss">3.  </span>This is the third item in the list, appearing after the callout.</span></code></pre></div>
-<ol style="list-style-type: decimal">
-<li><p>This is the first item in the list.</p></li>
-<li><p>This is the second item, which will contain a callout.</p>
-<div class="callout-blue">
-<span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
-<div class="callout-content">
-<div class="callout-title-static">
-<p>This is an indented callout</p>
-</div>
-<p>This entire callout block is indented, making it part of the second list item.</p>
-<ul>
-<li>You can have other Markdown elements inside, like this list.</li>
-<li>They must also be indented to be part of the callout.</li>
-</ul>
-</div>
-</div></li>
-<li><p>This is the third item in the list, appearing after the callout.</p></li>
-</ol>
 
-</div>
 </div>
 </div>
             </section>

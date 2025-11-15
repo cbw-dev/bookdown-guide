@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookdown Callout Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .generator-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .controls {
+            padding: 20px;
+            background: #fdfdfd;
+        }
+        .output {
+            padding: 20px;
+            padding-top: 0;
+            min-width: 0;
+        }
+
+        #callout-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        h3 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        .form-group {
+            margin-bottom: 0;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+
+        /* --- NEW: Wrapper for label and link --- */
+        .label-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px; /* Replaces the label's margin-bottom */
+        }
+        .label-wrapper label {
+            margin-bottom: 0; /* Handled by wrapper */
+        }
+        .fa-link {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #007bff;
+            white-space: nowrap;
+        }
+        .fa-link:hover {
+            text-decoration: underline;
+        }
+        .fa-link i {
+            font-size: 0.7rem;
+            margin-left: 2px;
+        }
+        /* --- End New Styles --- */
+
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+        }
+
+        .form-group input[readonly] {
+            background-color: #eee;
+            color: #555;
+            cursor: not-allowed;
+        }
+        #callout-icon-custom[readonly] {
+            color: transparent;
+        }
+        #callout-icon-custom[readonly]::placeholder {
+            color: transparent;
+        }
+
+        .form-group.span-all {
+            grid-column: 1 / -1;
+        }
+
+        /* --- NEW: Wrapper for Icon Select + its Preview --- */
+        .icon-select-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between dropdown and preview */
+        }
+        .icon-select-wrapper select {
+            flex-grow: 1; /* Dropdown takes available space */
+            width: auto;
+        }
+        #default-icon-preview {
+            display: none; /* Hidden by default, shown by JS */
+            padding: 0;
+            border: none;
+            background: none;
+            width: 1.2em; /* Just enough space for the icon */
+        }
+        /* --- End New Styles --- */
+
+
+        .icon-input-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-input-wrapper input[type="text"] {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+            flex-grow: 1;
+        }
+
+        .icon-preview {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+            min-width: 38px;
+        }
+
+        .icon-preview i {
+            font-size: 1.1rem;
+            color: #333; /* Default icon color */
+            width: 1.2em;
+            text-align: center;
+        }
+
+        .icon-input-wrapper input[readonly] + .icon-preview {
+            background-color: #eee;
+        }
+
+        /* Dynamic colors for default icons */
+        .icon-preview.icon-blue i { color: #007bff; }
+        .icon-preview.icon-red i { color: #dc3545; }
+        .icon-preview.icon-green i { color: #28a745; }
+        .icon-preview.icon-yellow i { color: #ffc107; }
+        .icon-preview.icon-purple i { color: #6f42c1; }
+        .icon-preview.icon-orange i { color: #fd7e14; }
+        .icon-preview.icon-gray i { color: #6c757d; }
+
+
+        .content-group textarea {
+            min-height: 100px;
+            font-family: inherit;
+            resize: vertical;
+        }
+        .form-group-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0;
+            align-self: end;
+            padding-bottom: 4px;
+        }
+        .form-group-checkbox label {
+            margin: 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .form-group-checkbox input[type="checkbox"] {
+            width: 1em;
+            height: 1em;
+        }
+        #custom-icon-group {
+            display: none; /* Hidden by default, shown by JS */
+        }
+
+        /* Code Output */
+        #code-output {
+            position: relative;
+        }
+        #generated-code {
+            background-color: #2d2d2d;
+            color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre;
+            word-wrap: normal;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            height: 180px;
+            overflow-y: scroll;
+            overflow-x: auto;
+            max-width: 100%;
+            box-sizing: border-box;
+            scrollbar-width: auto;
+            scrollbar-color: #555 #2d2d2d;
+        }
+
+        #generated-code::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        #generated-code::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+        #generated-code::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 5px;
+        }
+        #generated-code::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+        #copy-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+        #copy-button:hover {
+            background: #0056b3;
+        }
+        #copy-button.copied {
+            background: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="generator-container">
+        <div class="controls">
+            <form id="callout-form">
+
+                <div class="form-group">
+                    <label for="callout-type">Color</label>
+                    <select id="callout-type">
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="purple">Purple</option>
+                        <option value="orange">Orange</option>
+                        <option value="gray">Gray</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="callout-style">Style</label>
+                    <select id="callout-style">
+                        <option value="regular">Regular</option>
+                        <option value="important">Important</option>
+                        <option value="subtle">Subtle</option>
+                        <option value="plain">Plain</option>
+                    </select>
+                </div>
+
+                <!-- UPDATED: Icon Dropdown and its preview are now grouped -->
+                <div class="form-group">
+                    <label for="callout-icon-mode">Icon</label>
+                    <div class="icon-select-wrapper">
+                        <select id="callout-icon-mode">
+                            <option value="default">Default Icon</option>
+                            <option value="none">No Icon</option>
+                            <option value="custom">Custom Icon</option>
+                        </select>
+                        <!-- NEW: Preview just for the default icon -->
+                        <span id="default-icon-preview" class="icon-preview" aria-hidden="true">
+                            <i id="default-icon-preview-i" class=""></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="callout-nesting">In-List Nesting Level</label>
+                    <input type="number" id="callout-nesting" value="0" min="0" max="5">
+                </div>
+
+                <!-- This is now the "Custom Icon" field, it spans both columns -->
+                <div class="form-group span-all" id="custom-icon-group">
+                    <!-- NEW: Wrapper for label and link -->
+                    <div class="label-wrapper">
+                        <label for="callout-icon-custom">Custom Icon Class</label>
+                        <a href="https://fontawesome.com/icons" target="_blank" class="fa-link">
+                            Find Icons <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <!-- END New Wrapper -->
+                    <div class="icon-input-wrapper">
+                        <input type="text" id="callout-icon-custom" placeholder="e.g., fas fa-rocket">
+                        <!-- This preview is for the custom text input -->
+                        <span id="custom-icon-preview" class="icon-preview" aria-hidden="true">
+                            <i id="custom-icon-preview-i" class=""></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="callout-collapsible">
+                    <label for="callout-collapsible">Collapsible</label>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="callout-center-title">
+                    <label for="callout-center-title">Center Title</label>
+                </div>
+
+                <div class="form-group span-all">
+                    <label for="callout-title">Title (supports Markdown)</label>
+                    <input type="text" id="callout-title" placeholder="My Callout Title">
+                </div>
+
+                <div class="form-group content-group span-all">
+                    <label for="callout-content">Content (supports Markdown)</label>
+                    <textarea id="callout-content" placeholder="This is the content of the callout."></textarea>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="output">
+            <h3>Generated Code</h3>
+            <div id="code-output">
+                <pre id="generated-code"></pre>
+            </div>
+            <button id="copy-button">Copy Code</button>
+        </div>
+    </div>
+
+    <script>
+        const defaultIcons = {
+            "red": "fas fa-triangle-exclamation",
+            "blue": "fas fa-circle-info",
+            "green": "fas fa-circle-check",
+            "yellow": "fas fa-bell",
+            "purple": "fas fa-star",
+            "orange": "fas fa-fire",
+            "gray": "fas fa-comment-dots"
+        };
+
+        const controls = {
+            type: document.getElementById('callout-type'),
+            style: document.getElementById('callout-style'),
+            title: document.getElementById('callout-title'),
+            iconMode: document.getElementById('callout-icon-mode'),
+
+            // Custom Icon Field
+            customIconGroup: document.getElementById('custom-icon-group'),
+            customIconInput: document.getElementById('callout-icon-custom'),
+            customIconPreviewSpan: document.getElementById('custom-icon-preview'),
+            customIconPreviewI: document.getElementById('custom-icon-preview-i'),
+
+            // Default Icon Preview
+            defaultIconPreviewSpan: document.getElementById('default-icon-preview'),
+            defaultIconPreviewI: document.getElementById('default-icon-preview-i'),
+
+            collapsible: document.getElementById('callout-collapsible'),
+            centerTitle: document.getElementById('callout-center-title'),
+            content: document.getElementById('callout-content'),
+            nesting: document.getElementById('callout-nesting'),
+        };
+
+        const output = {
+            code: document.getElementById('generated-code'),
+            copyButton: document.getElementById('copy-button'),
+        };
+
+        function updateGenerator() {
+            const type = controls.type.value;
+            let style = controls.style.value;
+            const title = controls.title.value;
+            const iconMode = controls.iconMode.value;
+            const customIcon = controls.customIconInput.value;
+            const isCollapsible = controls.collapsible.checked;
+            const isCentered = controls.centerTitle.checked;
+            const content = controls.content.value || 'This is the content of the callout.';
+            const nestingLevel = parseInt(controls.nesting.value, 10) || 0;
+            const indent = '    '.repeat(nestingLevel);
+
+            let attributes = ['.callout', `type="${type}"`];
+
+            if (style !== 'regular') {
+                attributes.push(`style="${style}"`);
+            }
+            if (style === 'plain' && !isCollapsible) {
+                 // Plain style is only for collapsible.
+            }
+
+            if (title) {
+                attributes.push(`title="${title}"`);
+            }
+
+            if (iconMode === 'none') {
+                attributes.push('icon="false"');
+            } else if (iconMode === 'custom' && customIcon) {
+                attributes.push(`icon="${customIcon}"`);
+            }
+
+            if (isCollapsible) {
+                attributes.push('collapsible="true"');
+            }
+            if (isCentered && !isCollapsible) {
+                attributes.push('center_title="true"');
+            }
+
+            const header = `${indent}:::: {${attributes.join(' ')}}`;
+            let body = '';
+            if (content.trim() === '') {
+                body = indent;
+            } else {
+                body = content.split('\n').map(line => `${indent}${line}`).join('\n');
+            }
+            const footer = `${indent}::::`;
+            const finalCode = `${header}\n\n${body}\n\n${footer}`;
+            output.code.textContent = finalCode;
+        }
+
+        // This function is for the "Custom Icon" text field's preview
+        function updateCustomIconPreview() {
+            const customValue = controls.customIconInput.value;
+            const type = controls.type.value; // Get current color
+
+            // Set the icon class on the <i> tag
+            controls.customIconPreviewI.className = customValue;
+
+            // Set the color class on the parent <span> tag
+            controls.customIconPreviewSpan.className = `icon-preview icon-${type}`;
+        }
+
+        // This function controls all the UI visibility
+        function updateIconField(e) { // Accept event object
+            const mode = controls.iconMode.value;
+            const type = controls.type.value;
+            const triggerElement = e ? e.target : null; // Get the element that triggered the change
+
+            if (mode === 'custom') {
+                // Show custom field, hide default preview
+                controls.customIconGroup.style.display = 'block';
+                controls.defaultIconPreviewSpan.style.display = 'none';
+
+                // --- MODIFICATION ---
+                // Only clear the input if the iconMode dropdown itself was changed
+                // or on the initial page load (no trigger).
+                // Do NOT clear it if the Color dropdown was changed.
+                if (triggerElement === controls.iconMode || !triggerElement) {
+                    controls.customIconInput.value = '';
+                }
+                // --- END MODIFICATION ---
+
+                controls.customIconInput.readOnly = false;
+                controls.customIconInput.placeholder = 'e.g., fas fa-rocket';
+
+                // Call custom preview update to set initial color and icon
+                updateCustomIconPreview(); // This will apply color and icon
+
+            } else if (mode === 'default') {
+                // Hide custom field, show default preview
+                controls.customIconGroup.style.display = 'none';
+                controls.defaultIconPreviewSpan.style.display = 'inline-flex';
+
+                // Set default preview icon and color
+                const iconClass = defaultIcons[type] || 'fas fa-circle-info';
+                controls.defaultIconPreviewI.className = iconClass;
+                controls.defaultIconPreviewSpan.className = `icon-preview icon-${type}`;
+
+            } else { // mode === 'none'
+                // Hide both
+                controls.customIconGroup.style.display = 'none';
+                controls.defaultIconPreviewSpan.style.display = 'none';
+            }
+
+            updateGenerator();
+        }
+
+        // --- Event Listeners ---
+
+        // General listener for all inputs
+        document.getElementById('callout-form').addEventListener('input', (e) => {
+            // Always update the generated code
+            updateGenerator();
+
+            // If the user is typing in the custom icon field, update its specific preview
+            if (e.target.id === 'callout-icon-custom') {
+                updateCustomIconPreview();
+            }
+        });
+
+        // Specific listeners for dropdowns that change the UI layout
+        controls.iconMode.addEventListener('change', updateIconField); // Pass event implicitly
+        controls.type.addEventListener('change', updateIconField); // Pass event implicitly
+
+        // --- Copy Button ---
+        output.copyButton.addEventListener('click', () => {
+            const codeToCopy = output.code.textContent;
+            try {
+                navigator.clipboard.writeText(codeToCopy).then(() => {
+                    setCopyButtonState();
+                }).catch((e) => {
+                    console.error('Clipboard write failed:', e);
+                    fallbackCopyTextToClipboard(codeToCopy);
+                });
+            } catch (err) {
+                console.error('Initial clipboard access failed:', err);
+                fallbackCopyTextToClipboard(codeToCopy);
+            }
+        });
+
+        function setCopyButtonState() {
+            output.copyButton.textContent = 'Copied!';
+            output.copyButton.classList.add('copied');
+            setTimeout(() => {
+                output.copyButton.textContent = 'Copy Code';
+                output.copyButton.classList.remove('copied');
+            }, 2000);
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    setCopyButtonState();
+                } else {
+                    console.error('Fallback: Unable to copy');
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Initial call to set the correct UI state on load
+        updateIconField(); // No event passed (triggerElement will be null)
+
+    </script>
+</body>
+</html>

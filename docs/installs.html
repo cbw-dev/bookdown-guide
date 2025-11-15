@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -437,7 +438,7 @@ div.csl-indent {
 <p>You’ll only need to run these steps once.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Download and install R</strong> <a href="https://cran.rstudio.com/" target="_blank">here</a>, version 3.6.0 or higher. Follow the instructions for your operating system (Linux/macOS/Windows).</p>
-<details class="callout-dropdown callout-plain callout-green"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-circle-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Check your R install</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><strong><em>MacOS</em></strong></p>
+<details class="callout-dropdown callout-plain callout-green"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-circle-check" aria-hidden="true"></i></span><span class="callout-dropdown-title">Check your R install</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><strong><em>MacOS</em></strong></p>
 <p>Open the program Terminal (installed on Macs by default) and run the
 command <code>"R"</code>. An R Console should start and you should be
 able to start running R commands. If not, your install was
@@ -477,7 +478,7 @@ operable program or batch file.</code></pre>
 <li>Go to the <a href="https://posit.co/download/rstudio-desktop/#:~:text=AND%20INSTALL%20R-,2%3A%20Install%20RStudio,-DOWNLOAD%20RSTUDIO%20DESKTOP" target="_blank">Git for Windows installer</a> and download Git. Then, install it with all the default settings. <br></li>
 </ul>
 <p>Click here for instructions on <a href="https://github.com/git-guides/install-git#install-git-on-windows" target="_blank"><strong>installing Git on Linux</strong></a>.</p>
-<details class="callout-dropdown callout-plain callout-green"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-circle-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Check your Git install</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>Re-run “git –version” and check that it returns your expected
+<details class="callout-dropdown callout-plain callout-green"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-circle-check" aria-hidden="true"></i></span><span class="callout-dropdown-title">Check your Git install</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>Re-run “git –version” and check that it returns your expected
 version. (On Windows, this may look like “git version
 2.47.1.windows.1”).</p>
 <p><strong>Note:</strong> If you installed Git while having a Command

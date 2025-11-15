@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -435,7 +436,7 @@ div.csl-indent {
 <div id="whats-next" class="section level1 hasAnchor" number="17">
 <h1><span class="header-section-number">17</span> What’s next?<a href="whats-next.html#whats-next" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Now that you have your repo set up, you can start filling it out! Some of the details you’ll need to include are below.</p>
-<div class="callout-red-subtle">
+<div class="callout-subtle callout-red-subtle">
 <span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -456,14 +457,14 @@ div.csl-indent {
 <p>Your schedule will be created using a special tool. To update the schedule, you’ll update the schedule.csv file. You do not need to edit anything in index.html - the R chunk will create the schedule for you.</p>
 <ol style="list-style-type: decimal">
 <li><p>Open your schedule file in Google Drive. Copy the times and contents of Day 1, excluding headers. If you have multiple time zones, only include one - the utility will auto-calculate other time zones.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/copy-schedule.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/copy-schedule.png"
 alt="Image showing schedule file contents to copy" /><br />
 <br></p></div></details></li>
 <li><p>Open the smart scheduler utility below. Select the time zone corresponding to your copied data in the dropdown. If this is a distributed (or virtual) workshop, select other relevant time zones.</p></li>
 <li><p>Select the date of day 1 and paste your copied schedule data.</p></li>
 <li><p>For all other days, click “Add Another Day” and repeat.</p></li>
 <li><p>Click Generate CSV and then Copy to Clipboard.</p>
-<details class="callout-dropdown callout-plain callout-blue"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Smart Scheduler utility</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><iframe src="smart_scheduler.html" height="850" style="width: 100%; min-width: 650px; border: none;"></iframe></div></details></li>
+<details class="callout-dropdown callout-plain callout-blue"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></span><span class="callout-dropdown-title">Smart Scheduler utility</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><iframe src="smart_scheduler.html" height="850" style="width: 100%; min-width: 650px; border: none;"></iframe></div></details></li>
 <li><p>Open schedule.csv, delete all contents, and paste your newly formatted schedule.</p></li>
 <li><p>After your next build, the schedule will be visible on the landing page.</p></li>
 </ol>
@@ -473,11 +474,11 @@ alt="Image showing schedule file contents to copy" /><br />
 <ol style="list-style-type: decimal">
 <li><p>After you take your class photos, upload them into your Google Drive’s PostWorkshop/ClassPhoto folder. Choose the best one and name it CODE_ClassPhoto (e.g. INR_Mon-2510_ClassPhoto). Make sure its permissions are set to Everyone Can View.</p></li>
 <li><p>Double-click the photo, use the three-dot menu, and click “Open In New Window”.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/photo-new-window.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/photo-new-window.png"
 alt="Image showing how to open a Google Drive photo in a new window" /><br />
 <br></p></div></details></li>
 <li><p>Use the three-dot menu and select Embed Item.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/photo-embed-code.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/photo-embed-code.png"
 alt="Image showing how to get the embed code" /><br />
 <br></p></div></details></li>
 <li><p>Copy the embed code and paste it below the Class Photo header in your index.Rmd.</p></li>
@@ -519,11 +520,11 @@ alt="Image showing how to get the embed code" /><br />
 <h3><span class="header-section-number">17.4.2</span> Embedding YouTube videos<a href="whats-next.html#embedding-youtube-videos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>On your YouTube video, click <strong>Share</strong> then <strong>Embed</strong>.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/find-embed.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/find-embed.png"
 alt="Image showing how to find a YouTube embed code" /><br />
 <br></p></div></details></li>
 <li><p>Copy the embed code provided.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/copy-embed.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/copy-embed.png"
 alt="Image showing how to copy a YouTube embed code" /><br />
 <br></p></div></details></li>
 <li><p>Paste into your Bookdown project. Edit code to set <em>width</em> to 640 and <em>height</em> to 360.</p></li>

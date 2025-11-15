@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -437,23 +438,23 @@ div.csl-indent {
 <p>These steps will auto-configure your workshop with certain variables. Note that this is a one-time process and the configure_workshop.json file will disappear afterwards. Don’t worry - if you have changes (e.g. new faculty) later on, you can always change the website.</p>
 <ol style="list-style-type: decimal">
 <li><p>Open your new repo’s configure_workshop.json file in your browser.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/find-workshop_config.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/find-workshop_config.png"
 alt="Image showing how to open the configure_workshop.json file" /><br />
 </p></div></details></li>
 <li><p>Click Edit.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/edit-workshop_config.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/edit-workshop_config.png"
 alt="Image showing how to edit configure_workshop.json" /><br />
 </p></div></details></li>
 <li><p>Replace all the variables, then click Commit.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-1.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-1.png"
 alt="Image showing how to find the commit button" /><br />
 </p></div></details></li>
 <li><p>Click commit changes.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-2.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/commit-workshop_config-2.png"
 alt="Image showing how to confirm commit" /><br />
 </p></div></details></li>
 <li><p>To check the progress of this configuration, click Actions in the top bar.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/actions-menu.png"
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/actions-menu.png"
 alt="Image showing how to find actions" /><br />
 </p></div></details></li>
 </ol>
@@ -462,7 +463,7 @@ alt="Image showing how to find actions" /><br />
 <p>An important distinction:</p>
 <p><strong>GitHub</strong> (ex. <a href="https://github.com/cbw-dev/bookdown-template" class="uri">https://github.com/cbw-dev/bookdown-template</a>) holds your repo, which has version control for all your files.<br />
 The deployed <strong>website</strong> (ex. <a href="https://cbw-dev.github.io/bookdown-template/" class="uri">https://cbw-dev.github.io/bookdown-template/</a>) has the workshop online. It looks in the <code>docs</code> folder of your repo for HTML files to display.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">More details</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ve made a <em>repository</em> that holds what GitHub needs to
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></span><span class="callout-dropdown-title">More details</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ve made a <em>repository</em> that holds what GitHub needs to
 make our <em>website</em>. When updating the site you’ll edit the
 markdown (.md) files in the main folder; they’ll be turned into HTML
 files by the Build action later on. The template has been configured so

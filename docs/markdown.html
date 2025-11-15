@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -441,7 +442,7 @@ div.csl-indent {
 <p>All our files are made up of code and markdown syntax that becomes formatted into our website. However, if you do not feel comfortable using Markdown (or you just want an easier way to write your pages), see this guide on using <a href="https://rstudio.github.io/visual-markdown-editing/#/citations" target="_blank">Visual R Markdown</a>.</p>
 <p>It can be significantly easier to use Visual R Markdown, especially for those who are used to working in Google Docs!</p>
 <p>If you want to use Markdown, a basic syntax guide is provided below.</p>
-<div class="callout-blue-subtle">
+<div class="callout-subtle callout-blue-subtle">
 <span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -457,7 +458,7 @@ div.csl-indent {
 <p>Headers are defined by a # before the title. Subheaders get increasingly more nested as add more # symbols before it. For example,</p>
 <pre><code># Hello</code></pre>
 <p>would create a chapter title like <strong>Markdown Options</strong> above. Since there is only one <code>#</code> symbol, this would also create a new page.</p>
-<div class="callout-yellow-subtle">
+<div class="callout-subtle callout-yellow-subtle">
 <span class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -640,7 +641,7 @@ div.csl-indent {
 <p><img src="img/bioinformatics_logo.png" alt="bioinformatics.ca logo" /><br />
 </p>
 <p>Without the backslash “\” after the last round bracket, the alt text is displayed as a caption. <a href="https://pandoc.org/MANUAL.html#extension-implicit_figures">More info is available in the Pandoc documentation here.</a></p>
-<div class="callout-yellow-subtle">
+<div class="callout-subtle callout-yellow-subtle">
 <span class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -658,7 +659,7 @@ div.csl-indent {
 <pre><code>![insert alt text for pdf here](content-files/sample-pdf.pdf){width=100% height=900}\</code></pre>
 <p><embed src="content-files/sample-pdf.pdf" style="width:100.0%" height="900" /><br />
 </p>
-<div class="callout-yellow-subtle">
+<div class="callout-subtle callout-yellow-subtle">
 <span class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">

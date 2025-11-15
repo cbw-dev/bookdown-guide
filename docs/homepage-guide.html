@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -548,19 +549,19 @@ div.csl-indent {
 <div id="example-entry" class="section level3 hasAnchor" number="26.2.3">
 <h3><span class="header-section-number">B.2.3</span> Example Entry:<a href="homepage-guide.html#example-entry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This example demonstrates a workshop with multiple instructors, tags, and regions.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb84-1"><a href="homepage-guide.html#cb84-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb84-2"><a href="homepage-guide.html#cb84-2" tabindex="-1"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;#&quot;</span><span class="fu">,</span></span>
-<span id="cb84-3"><a href="homepage-guide.html#cb84-3" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Introduction to R for Biologists&quot;</span><span class="fu">,</span></span>
-<span id="cb84-4"><a href="homepage-guide.html#cb84-4" tabindex="-1"></a>    <span class="dt">&quot;instructors&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Dr. Hadley Wickham&quot;</span><span class="ot">,</span> <span class="st">&quot;Dr. Jenny Bryan&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb84-5"><a href="homepage-guide.html#cb84-5" tabindex="-1"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;r&quot;</span><span class="ot">,</span> <span class="st">&quot;development&quot;</span><span class="ot">,</span> <span class="st">&quot;introduction&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb84-6"><a href="homepage-guide.html#cb84-6" tabindex="-1"></a>    <span class="dt">&quot;regions&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;BC&quot;</span><span class="ot">,</span> <span class="st">&quot;Alberta&quot;</span><span class="ot">,</span> <span class="st">&quot;Prairies&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb84-7"><a href="homepage-guide.html#cb84-7" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2025</span><span class="fu">,</span></span>
-<span id="cb84-8"><a href="homepage-guide.html#cb84-8" tabindex="-1"></a>    <span class="dt">&quot;startDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-18&quot;</span><span class="fu">,</span></span>
-<span id="cb84-9"><a href="homepage-guide.html#cb84-9" tabindex="-1"></a>    <span class="dt">&quot;endDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-22&quot;</span><span class="fu">,</span></span>
-<span id="cb84-10"><a href="homepage-guide.html#cb84-10" tabindex="-1"></a>    <span class="dt">&quot;image&quot;</span><span class="fu">:</span> <span class="st">&quot;img/intro-r.png&quot;</span><span class="fu">,</span></span>
-<span id="cb84-11"><a href="homepage-guide.html#cb84-11" tabindex="-1"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span><span class="fu">,</span></span>
-<span id="cb84-12"><a href="homepage-guide.html#cb84-12" tabindex="-1"></a>    <span class="dt">&quot;format&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span></span>
-<span id="cb84-13"><a href="homepage-guide.html#cb84-13" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb81-1"><a href="homepage-guide.html#cb81-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb81-2"><a href="homepage-guide.html#cb81-2" tabindex="-1"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;#&quot;</span><span class="fu">,</span></span>
+<span id="cb81-3"><a href="homepage-guide.html#cb81-3" tabindex="-1"></a>    <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Introduction to R for Biologists&quot;</span><span class="fu">,</span></span>
+<span id="cb81-4"><a href="homepage-guide.html#cb81-4" tabindex="-1"></a>    <span class="dt">&quot;instructors&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Dr. Hadley Wickham&quot;</span><span class="ot">,</span> <span class="st">&quot;Dr. Jenny Bryan&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb81-5"><a href="homepage-guide.html#cb81-5" tabindex="-1"></a>    <span class="dt">&quot;tags&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;r&quot;</span><span class="ot">,</span> <span class="st">&quot;development&quot;</span><span class="ot">,</span> <span class="st">&quot;introduction&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb81-6"><a href="homepage-guide.html#cb81-6" tabindex="-1"></a>    <span class="dt">&quot;regions&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;BC&quot;</span><span class="ot">,</span> <span class="st">&quot;Alberta&quot;</span><span class="ot">,</span> <span class="st">&quot;Prairies&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb81-7"><a href="homepage-guide.html#cb81-7" tabindex="-1"></a>    <span class="dt">&quot;year&quot;</span><span class="fu">:</span> <span class="dv">2025</span><span class="fu">,</span></span>
+<span id="cb81-8"><a href="homepage-guide.html#cb81-8" tabindex="-1"></a>    <span class="dt">&quot;startDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-18&quot;</span><span class="fu">,</span></span>
+<span id="cb81-9"><a href="homepage-guide.html#cb81-9" tabindex="-1"></a>    <span class="dt">&quot;endDate&quot;</span><span class="fu">:</span> <span class="st">&quot;2025-08-22&quot;</span><span class="fu">,</span></span>
+<span id="cb81-10"><a href="homepage-guide.html#cb81-10" tabindex="-1"></a>    <span class="dt">&quot;image&quot;</span><span class="fu">:</span> <span class="st">&quot;img/intro-r.png&quot;</span><span class="fu">,</span></span>
+<span id="cb81-11"><a href="homepage-guide.html#cb81-11" tabindex="-1"></a>    <span class="dt">&quot;location&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span><span class="fu">,</span></span>
+<span id="cb81-12"><a href="homepage-guide.html#cb81-12" tabindex="-1"></a>    <span class="dt">&quot;format&quot;</span><span class="fu">:</span> <span class="st">&quot;Distributed&quot;</span></span>
+<span id="cb81-13"><a href="homepage-guide.html#cb81-13" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 </div>
 </div>
 <div id="local-validation" class="section level2 hasAnchor" number="26.3">
@@ -585,7 +586,7 @@ When you open the project folder in VS Code, the editor automatically uses the <
 <div id="manual-validation-via-command-line" class="section level3 hasAnchor" number="26.3.2">
 <h3><span class="header-section-number">B.3.2</span> Manual Validation via Command Line<a href="homepage-guide.html#manual-validation-via-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>After installing the project dependencies with <code>npm install</code>, you can validate the data from your terminal at any time:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb85-1"><a href="homepage-guide.html#cb85-1" tabindex="-1"></a><span class="ex">npm</span> run validate</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="homepage-guide.html#cb82-1" tabindex="-1"></a><span class="ex">npm</span> run validate</span></code></pre></div>
 <p>This will immediately tell you if your data is valid or print specific errors.</p>
 </div>
 </div>

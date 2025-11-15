@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -435,7 +436,7 @@ div.csl-indent {
 <div id="logistics" class="section level1 hasAnchor" number="16">
 <h1><span class="header-section-number">16</span> Logistics page<a href="logistics.html#logistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>If your workshop has an in-person location, you’ll need to create a travel logistics page for your participants.</p>
-<div class="callout-orange-subtle">
+<div class="callout-subtle callout-orange-subtle">
 <span class="callout-icon"><i class="fas fa-fire" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -450,7 +451,7 @@ div.csl-indent {
 <li><p>Navigate to the <code>travel_logistics</code> folder you cloned as part of your <a href="local-setup.html#github-folder">local setup</a>.</p></li>
 <li><p>Make a copy of template.md named <code>[CODE].md</code> (e.g. <code>INR_Mon-2511.md</code>) in the folder for the city your workshop will be held in (e.g. <code>montreal</code>). If that folder does not exist, create it.</p></li>
 <li><p>Open the file in your editor, likely VSCode, and fill in each section. Be careful not to miss anything.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><i class="fa-solid fa-image" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Embedding Google Maps</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ll need to embed a Google Maps for your venue. To do this, find
+<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">Embedding Google Maps</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’ll need to embed a Google Maps for your venue. To do this, find
 your venue on Google Maps and click Share, then Embed A Map.</p>
 <p><img src="img/logistics/embed-share.png"
 alt="How to find the embed code for Google Maps" /><br />
@@ -460,14 +461,14 @@ alt="How to find the embed code for Google Maps" /><br />
 alt="How to copy the embed code" /><br />
 </p></div></details></li>
 <li><p>Git add, commit, and push your changes.</p>
-<details class="callout-dropdown callout-plain callout-blue"><summary class="callout-dropdown-summary summary-has-icon"><i class="fas fa-circle-info" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Why don’t I need to run a Build step like I did for my Bookdown
+<details class="callout-dropdown callout-plain callout-blue"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span><span class="callout-dropdown-title">Why don’t I need to run a Build step like I did for my Bookdown
 workshop website?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>The logistics pages and homepage use a different site generator than
 your workshop pages do. For updates to appear on the logistics and home
 pages, all you need to do is save your changes and push them to GitHub.
 The sites will automatically update.</p></div></details></li>
 <li><p>Your workshop will be available at <code>bioinformaticsdotca.github.io/travel_logistics/[city]/[code]</code>. In the example above, the URL would be <code>bioinformaticsdotca.github.io/travel_logistics/montreal/INR_Mon-2511</code></p></li>
 </ol>
-<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><i class="fas fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Looking for previous examples?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’re welcome to review previous years’ logistics pages and copy as
+<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fas fa-bell" aria-hidden="true"></i></span><span class="callout-dropdown-title">Looking for previous examples?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>You’re welcome to review previous years’ logistics pages and copy as
 appropriate - just make sure the info is up to date! Links to legacy
 (pre-Hub) pages are below.</p>
 <ul>

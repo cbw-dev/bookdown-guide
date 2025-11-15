@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -439,7 +440,7 @@ div.csl-indent {
 <div id="terminal-command-prompt-and-windows-powershell" class="section level2 hasAnchor" number="23.1">
 <h2><span class="header-section-number">23.1</span> Terminal, Command Prompt and Windows PowerShell<a href="command-line.html#terminal-command-prompt-and-windows-powershell" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can use the command line using certain tools and applications. Terminal is a Unix-based (meaning Linux and macOS computer already have it) application that allows you to access the command line. Similarly, Command Prompt (CMD) and Windows PowerShell give access to the command line on Windows computers. However, Terminal, Command Prompt and Windows PowerShell differ in what commands are accepted. The same commands we give to Terminal may not work in Command Prompt and/or Windows PowerShell.</p>
-<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><i class="fa-solid fa-question" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">What’s the difference between PowerShell and Command Prompt?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>The Command Prompt is a legacy tool inherited from the days of
+<details class="callout-dropdown callout-subtle callout-yellow-subtle"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fa-solid fa-question" aria-hidden="true"></i></span><span class="callout-dropdown-title">What’s the difference between PowerShell and Command Prompt?</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>The Command Prompt is a legacy tool inherited from the days of
 MS-DOS. It’s a simple shell that’s good for basic system tasks and
 running batch files. It primarily works with text strings as its input
 and output. PowerShell, on the other hand, is a more advanced and
@@ -450,7 +451,7 @@ than Command Prompt.</p></div></details>
 <div id="common-commands-for-us" class="section level2 hasAnchor" number="23.2">
 <h2><span class="header-section-number">23.2</span> Common Commands (for us)<a href="command-line.html#common-commands-for-us" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We won’t need to know that many commands, but for easy navigation and understanding, here is what you (generally) need:</p>
-<div class="callout-green-subtle">
+<div class="callout-subtle callout-green-subtle">
 <span class="callout-icon"><i class="fas fa-circle-check" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -463,13 +464,13 @@ than Command Prompt.</p></div></details>
 <div id="pwd-or-echo-cd" class="section level6 unnumbered hasAnchor">
 <h6>pwd OR echo %cd%<a href="command-line.html#pwd-or-echo-cd" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p>“pwd” stands for “print working directory”. It is a command that works in <strong>Linux</strong> and <strong>Windows PowerShell</strong>. The equivalent in <strong>Command Prompt</strong> is “echo %cd%”. For example, below our output is where in my folders the current .Rmd file that makes up this website is:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb72-1"><a href="command-line.html#cb72-1" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="command-line.html#cb69-1" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
 <pre><code>## /Users/nhughes/Documents/CBWGithub/bookdown-guide</code></pre>
 </div>
 <div id="ls-or-dir" class="section level6 unnumbered hasAnchor">
 <h6>ls OR dir<a href="command-line.html#ls-or-dir" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p>“ls” is a command that works in <strong>Linux</strong> and <strong>Windows PowerShell</strong>. It’s short for “list” and outputs all the files and folders in the directory (folder) you are currently in. (Note: this code only shows 4 files to save space.)</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="command-line.html#cb74-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="command-line.html#cb71-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
 <pre><code>## _404.md
 ## _bookdown_files
 ## _bookdown.yml
@@ -479,14 +480,14 @@ than Command Prompt.</p></div></details>
 <div id="cd" class="section level6 unnumbered hasAnchor">
 <h6>cd<a href="command-line.html#cd" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <p>“cd” stands for “change directory”. The command produces no output, but it allows you to go to a different directory than the one you’re currently in. For example,</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="command-line.html#cb76-1" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># recall: pwd tells us where we currently are</span></span>
-<span id="cb76-2"><a href="command-line.html#cb76-2" tabindex="-1"></a><span class="bu">cd</span> img <span class="co"># img is a folder in bookdown-docs</span></span>
-<span id="cb76-3"><a href="command-line.html#cb76-3" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;now switching directories&quot;</span> <span class="co"># outputs the following string</span></span>
-<span id="cb76-4"><a href="command-line.html#cb76-4" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="command-line.html#cb73-1" tabindex="-1"></a><span class="bu">pwd</span> <span class="co"># recall: pwd tells us where we currently are</span></span>
+<span id="cb73-2"><a href="command-line.html#cb73-2" tabindex="-1"></a><span class="bu">cd</span> img <span class="co"># img is a folder in bookdown-docs</span></span>
+<span id="cb73-3"><a href="command-line.html#cb73-3" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;now switching directories&quot;</span> <span class="co"># outputs the following string</span></span>
+<span id="cb73-4"><a href="command-line.html#cb73-4" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
 <pre><code>## /Users/nhughes/Documents/CBWGithub/bookdown-guide
 ## now switching directories
 ## /Users/nhughes/Documents/CBWGithub/bookdown-guide/img</code></pre>
-<details class="callout-dropdown callout-subtle callout-orange-subtle"><summary class="callout-dropdown-summary"><i class="fa-solid fa-exclamation" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="callout-dropdown-title">Tip: Autocomplete</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>Typing “cd” and then hitting the <code>tab</code> key will give you
+<details class="callout-dropdown callout-subtle callout-orange-subtle"><summary class="callout-dropdown-summary"><span class="callout-icon"><i class="fa-solid fa-exclamation" aria-hidden="true"></i></span><span class="callout-dropdown-title">Tip: Autocomplete</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>Typing “cd” and then hitting the <code>tab</code> key will give you
 the available directories you can go to from where you are, or what you
 have currently typed in. If there is only one option, hitting
 <code>tab</code> will fill in your command with that option. (This works
@@ -497,22 +498,22 @@ fill in potential options, and you can hit tab multiple times untill you
 find your desired file destination.</p></div></details>
 <p><strong>File Location Shorthands</strong> When referring to file addresses, there are helpful shorthands. Here’s a summary: - <code>.</code> = Current Directory - <code>..</code> = Parent Directory - <code>~</code> = Home Directory</p>
 <p>Here’s an example (recall that cd produces no output):</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb78-1"><a href="command-line.html#cb78-1" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb78-2"><a href="command-line.html#cb78-2" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="co"># creates a line</span></span>
-<span id="cb78-3"><a href="command-line.html#cb78-3" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="command-line.html#cb78-4" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Current Directory Example&quot;</span></span>
-<span id="cb78-5"><a href="command-line.html#cb78-5" tabindex="-1"></a><span class="bu">cd</span> .</span>
-<span id="cb78-6"><a href="command-line.html#cb78-6" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb78-7"><a href="command-line.html#cb78-7" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span></span>
-<span id="cb78-8"><a href="command-line.html#cb78-8" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="command-line.html#cb78-9" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Parent Directory Example&quot;</span></span>
-<span id="cb78-10"><a href="command-line.html#cb78-10" tabindex="-1"></a><span class="bu">cd</span> ..</span>
-<span id="cb78-11"><a href="command-line.html#cb78-11" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb78-12"><a href="command-line.html#cb78-12" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span></span>
-<span id="cb78-13"><a href="command-line.html#cb78-13" tabindex="-1"></a></span>
-<span id="cb78-14"><a href="command-line.html#cb78-14" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Home Directory Example&quot;</span></span>
-<span id="cb78-15"><a href="command-line.html#cb78-15" tabindex="-1"></a><span class="bu">cd</span> ~</span>
-<span id="cb78-16"><a href="command-line.html#cb78-16" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="command-line.html#cb75-1" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb75-2"><a href="command-line.html#cb75-2" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="co"># creates a line</span></span>
+<span id="cb75-3"><a href="command-line.html#cb75-3" tabindex="-1"></a></span>
+<span id="cb75-4"><a href="command-line.html#cb75-4" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Current Directory Example&quot;</span></span>
+<span id="cb75-5"><a href="command-line.html#cb75-5" tabindex="-1"></a><span class="bu">cd</span> .</span>
+<span id="cb75-6"><a href="command-line.html#cb75-6" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb75-7"><a href="command-line.html#cb75-7" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span></span>
+<span id="cb75-8"><a href="command-line.html#cb75-8" tabindex="-1"></a></span>
+<span id="cb75-9"><a href="command-line.html#cb75-9" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Parent Directory Example&quot;</span></span>
+<span id="cb75-10"><a href="command-line.html#cb75-10" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb75-11"><a href="command-line.html#cb75-11" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb75-12"><a href="command-line.html#cb75-12" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span></span>
+<span id="cb75-13"><a href="command-line.html#cb75-13" tabindex="-1"></a></span>
+<span id="cb75-14"><a href="command-line.html#cb75-14" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Home Directory Example&quot;</span></span>
+<span id="cb75-15"><a href="command-line.html#cb75-15" tabindex="-1"></a><span class="bu">cd</span> ~</span>
+<span id="cb75-16"><a href="command-line.html#cb75-16" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div>
 <pre><code>## /Users/nhughes/Documents/CBWGithub/bookdown-guide
 ## 
 ## Current Directory Example

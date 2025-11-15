@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
@@ -299,20 +301,19 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="19" data-path="callouts.html"><a href="callouts.html"><i class="fa fa-check"></i><b>19</b> Callouts</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#basic-syntax"><i class="fa fa-check"></i><b>19.1</b> Basic Syntax</a></li>
-<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#attribute-reference"><i class="fa fa-check"></i><b>19.2</b> Attribute Reference</a></li>
-<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.3</b> Default Icons</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#examples"><i class="fa fa-check"></i><b>19.4</b> Examples</a>
+<li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
+<li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
+<li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
 <ul>
-<li class="chapter" data-level="19.4.1" data-path="callouts.html"><a href="callouts.html#example-1-informational-note"><i class="fa fa-check"></i><b>19.4.1</b> Example 1: Informational Note</a></li>
-<li class="chapter" data-level="19.4.2" data-path="callouts.html"><a href="callouts.html#example-2-collapsible-plain-answer-box"><i class="fa fa-check"></i><b>19.4.2</b> Example 2: Collapsible “Plain” Answer Box</a></li>
-<li class="chapter" data-level="19.4.3" data-path="callouts.html"><a href="callouts.html#example-3-important-red-warning"><i class="fa fa-check"></i><b>19.4.3</b> Example 3: Important Red Warning</a></li>
-<li class="chapter" data-level="19.4.4" data-path="callouts.html"><a href="callouts.html#example-4-comprehensive-dropdown"><i class="fa fa-check"></i><b>19.4.4</b> Example 4: Comprehensive Dropdown</a></li>
+<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
+<li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
+<li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
+<li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#nesting-callouts"><i class="fa fa-check"></i><b>19.5</b> Nesting Callouts</a>
-<ul>
-<li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#example-of-a-nested-callout"><i class="fa fa-check"></i><b>19.5.1</b> Example of a Nested Callout</a></li>
-</ul></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
 <ul>
@@ -440,7 +441,7 @@ div.csl-indent {
 <p><img src="https://docs.google.com/drawings/d/e/2PACX-1vQNLBySqW7Z1YC-a35s0rJo4V4ZAn6WumpGKxngB5Md6pW97MC3ERqkiuSw-rrdmn423YXlXPkVky8I/pub?w=792&amp;h=147"></p>
 <p>Essentially, <strong>Knitr renders and runs all the code</strong>, and the outputs are converted into markdown. After knitr, we essentially have a bunch of only markdown files.</p>
 <p><strong>Pandoc translates this markdown into HTML</strong>, so that we get a website! It can be helpful to know when and how these packages work, to help debug later on.</p>
-<div class="callout-blue-subtle">
+<div class="callout-subtle callout-blue-subtle">
 <span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -454,52 +455,52 @@ div.csl-indent {
 <h2><span class="header-section-number">24.2</span> File setup<a href="bookdown-crash-course.html#file-setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All .Rmd files create a page in the produced website. To create more pages, you will be creating more .Rmd files.</p>
 <p>Here is a tree diagram of the bookdown template setup. <strong>Note:</strong> only relevant files or files you might be concerned about are explained in blue. If there is no explanation, you can safely assume you do not have to worry about it.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="bookdown-crash-course.html#cb80-1" tabindex="-1"></a><span class="ex">bookdown-template</span></span>
-<span id="cb80-2"><a href="bookdown-crash-course.html#cb80-2" tabindex="-1"></a><span class="ex">├──</span> _404.md <span class="co"># This becomes your 404 page. This is the only file that can become a page that can also be either a .md or .Rmd file!</span></span>
-<span id="cb80-3"><a href="bookdown-crash-course.html#cb80-3" tabindex="-1"></a><span class="ex">├──</span> _bioschemas.html <span class="co"># contains the Bioschemas metadata used by websites like TeSS ELIXIR</span></span>
-<span id="cb80-4"><a href="bookdown-crash-course.html#cb80-4" tabindex="-1"></a><span class="ex">├──</span> _bookdown.yml <span class="co"># a config file - you most likely won&#39;t have to edit it unless you want additional configuration settings</span></span>
-<span id="cb80-5"><a href="bookdown-crash-course.html#cb80-5" tabindex="-1"></a><span class="ex">├──</span> _bookdown_files</span>
-<span id="cb80-6"><a href="bookdown-crash-course.html#cb80-6" tabindex="-1"></a><span class="ex">├──</span> _main_files</span>
-<span id="cb80-7"><a href="bookdown-crash-course.html#cb80-7" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># output figures for certain formats</span></span>
-<span id="cb80-8"><a href="bookdown-crash-course.html#cb80-8" tabindex="-1"></a><span class="ex">├──</span> _output.yml <span class="co"># a config file - RC will edit it to include sponsors and workshop icon</span></span>
-<span id="cb80-9"><a href="bookdown-crash-course.html#cb80-9" tabindex="-1"></a><span class="ex">├──</span> .github</span>
-<span id="cb80-10"><a href="bookdown-crash-course.html#cb80-10" tabindex="-1"></a>    <span class="ex">└──</span> ...</span>
-<span id="cb80-11"><a href="bookdown-crash-course.html#cb80-11" tabindex="-1"></a><span class="ex">├──</span> .git</span>
-<span id="cb80-12"><a href="bookdown-crash-course.html#cb80-12" tabindex="-1"></a>    <span class="ex">└──</span> ...</span>
-<span id="cb80-13"><a href="bookdown-crash-course.html#cb80-13" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
-<span id="cb80-14"><a href="bookdown-crash-course.html#cb80-14" tabindex="-1"></a><span class="ex">├──</span> .Rhistory</span>
-<span id="cb80-15"><a href="bookdown-crash-course.html#cb80-15" tabindex="-1"></a><span class="ex">├──</span> 001-faculty.Rmd <span class="co"># --&gt; faculty bios</span></span>
-<span id="cb80-16"><a href="bookdown-crash-course.html#cb80-16" tabindex="-1"></a><span class="ex">├──</span> 002-computing.Rmd <span class="co"># --&gt; computing setup and downloads</span></span>
-<span id="cb80-17"><a href="bookdown-crash-course.html#cb80-17" tabindex="-1"></a><span class="ex">├──</span> 010-module 1.Rmd <span class="co"># --&gt; module 1 material</span></span>
-<span id="cb80-18"><a href="bookdown-crash-course.html#cb80-18" tabindex="-1"></a><span class="ex">├──</span> 020-module-2.Rmd </span>
-<span id="cb80-19"><a href="bookdown-crash-course.html#cb80-19" tabindex="-1"></a><span class="ex">├──</span> 030-module-3.Rmd</span>
-<span id="cb80-20"><a href="bookdown-crash-course.html#cb80-20" tabindex="-1"></a><span class="ex">├──</span> 040-module-4.Rmd</span>
-<span id="cb80-21"><a href="bookdown-crash-course.html#cb80-21" tabindex="-1"></a><span class="ex">├──</span> 404.html <span class="co"># Rendered 404 page</span></span>
-<span id="cb80-22"><a href="bookdown-crash-course.html#cb80-22" tabindex="-1"></a><span class="ex">├──</span> README.md <span class="co"># README file - this directs people looking at the GitHub repo to the rendered site</span></span>
-<span id="cb80-23"><a href="bookdown-crash-course.html#cb80-23" tabindex="-1"></a><span class="ex">├──</span> book.bib <span class="co"># citation file</span></span>
-<span id="cb80-24"><a href="bookdown-crash-course.html#cb80-24" tabindex="-1"></a><span class="ex">├──</span> callouts.lua <span class="co"># Lua filter that defines the callout options</span></span>
-<span id="cb80-25"><a href="bookdown-crash-course.html#cb80-25" tabindex="-1"></a><span class="ex">├──</span> cbw-workshop-year.html</span>
-<span id="cb80-26"><a href="bookdown-crash-course.html#cb80-26" tabindex="-1"></a><span class="ex">├──</span> {{CODE}}.Rproj <span class="co"># always open this file in RStudio when starting to edit!</span></span>
-<span id="cb80-27"><a href="bookdown-crash-course.html#cb80-27" tabindex="-1"></a><span class="ex">├──</span> content-files <span class="co"># store all files from your modules here (ex. data sets, empty code worksheets)</span></span>
-<span id="cb80-28"><a href="bookdown-crash-course.html#cb80-28" tabindex="-1"></a>    <span class="ex">└──</span> sample-pdf.pdf</span>
-<span id="cb80-29"><a href="bookdown-crash-course.html#cb80-29" tabindex="-1"></a><span class="ex">├──</span> docs</span>
-<span id="cb80-30"><a href="bookdown-crash-course.html#cb80-30" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># html files &amp; other generated content</span></span>
-<span id="cb80-31"><a href="bookdown-crash-course.html#cb80-31" tabindex="-1"></a><span class="ex">├──</span> fa-header.html</span>
-<span id="cb80-32"><a href="bookdown-crash-course.html#cb80-32" tabindex="-1"></a><span class="ex">├──</span> img <span class="co"># folder where you should store all your images</span></span>
-<span id="cb80-33"><a href="bookdown-crash-course.html#cb80-33" tabindex="-1"></a>    <span class="ex">├──</span> bioinformatics.ca-logo.svg </span>
-<span id="cb80-34"><a href="bookdown-crash-course.html#cb80-34" tabindex="-1"></a>    <span class="ex">├──</span> faculty <span class="co"># store all images of faculty in this folder</span></span>
-<span id="cb80-35"><a href="bookdown-crash-course.html#cb80-35" tabindex="-1"></a>        <span class="ex">├──</span> michelle-brazas.jpg</span>
-<span id="cb80-36"><a href="bookdown-crash-course.html#cb80-36" tabindex="-1"></a>        <span class="ex">└──</span> nia-hughes.jpeg</span>
-<span id="cb80-37"><a href="bookdown-crash-course.html#cb80-37" tabindex="-1"></a>    <span class="ex">├──</span> favicon.ico <span class="co"># thumbnail image for website in tab</span></span>
-<span id="cb80-38"><a href="bookdown-crash-course.html#cb80-38" tabindex="-1"></a>    <span class="ex">└──</span> sponsors <span class="co"># store all sponsor logos/titles in this folder</span></span>
-<span id="cb80-39"><a href="bookdown-crash-course.html#cb80-39" tabindex="-1"></a>         <span class="ex">└──</span> Your-Sponsor-Here.svg</span>
-<span id="cb80-40"><a href="bookdown-crash-course.html#cb80-40" tabindex="-1"></a><span class="ex">├──</span> index.Rmd <span class="co"># landing page</span></span>
-<span id="cb80-41"><a href="bookdown-crash-course.html#cb80-41" tabindex="-1"></a><span class="ex">├──</span> packages.bib <span class="co"># R generated citation file</span></span>
-<span id="cb80-42"><a href="bookdown-crash-course.html#cb80-42" tabindex="-1"></a><span class="ex">├──</span> preamble.tex</span>
-<span id="cb80-43"><a href="bookdown-crash-course.html#cb80-43" tabindex="-1"></a><span class="ex">├──</span> README.html <span class="co"># rendered readme file</span></span>
-<span id="cb80-44"><a href="bookdown-crash-course.html#cb80-44" tabindex="-1"></a><span class="ex">├──</span> schedule.csv <span class="co"># contents of your schedule on the landing page; formatted by smart-scheduler utility</span></span>
-<span id="cb80-45"><a href="bookdown-crash-course.html#cb80-45" tabindex="-1"></a><span class="ex">├──</span> style.css <span class="co"># css styling options are defined here - feel free to add your own styling features</span></span>
-<span id="cb80-46"><a href="bookdown-crash-course.html#cb80-46" tabindex="-1"></a><span class="ex">└──</span> workshop_config.json <span class="co"># used to configure your website. Note that this file will disappear after use</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="bookdown-crash-course.html#cb77-1" tabindex="-1"></a><span class="ex">bookdown-template</span></span>
+<span id="cb77-2"><a href="bookdown-crash-course.html#cb77-2" tabindex="-1"></a><span class="ex">├──</span> _404.md <span class="co"># This becomes your 404 page. This is the only file that can become a page that can also be either a .md or .Rmd file!</span></span>
+<span id="cb77-3"><a href="bookdown-crash-course.html#cb77-3" tabindex="-1"></a><span class="ex">├──</span> _bioschemas.html <span class="co"># contains the Bioschemas metadata used by websites like TeSS ELIXIR</span></span>
+<span id="cb77-4"><a href="bookdown-crash-course.html#cb77-4" tabindex="-1"></a><span class="ex">├──</span> _bookdown.yml <span class="co"># a config file - you most likely won&#39;t have to edit it unless you want additional configuration settings</span></span>
+<span id="cb77-5"><a href="bookdown-crash-course.html#cb77-5" tabindex="-1"></a><span class="ex">├──</span> _bookdown_files</span>
+<span id="cb77-6"><a href="bookdown-crash-course.html#cb77-6" tabindex="-1"></a><span class="ex">├──</span> _main_files</span>
+<span id="cb77-7"><a href="bookdown-crash-course.html#cb77-7" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># output figures for certain formats</span></span>
+<span id="cb77-8"><a href="bookdown-crash-course.html#cb77-8" tabindex="-1"></a><span class="ex">├──</span> _output.yml <span class="co"># a config file - RC will edit it to include sponsors and workshop icon</span></span>
+<span id="cb77-9"><a href="bookdown-crash-course.html#cb77-9" tabindex="-1"></a><span class="ex">├──</span> .github</span>
+<span id="cb77-10"><a href="bookdown-crash-course.html#cb77-10" tabindex="-1"></a>    <span class="ex">└──</span> ...</span>
+<span id="cb77-11"><a href="bookdown-crash-course.html#cb77-11" tabindex="-1"></a><span class="ex">├──</span> .git</span>
+<span id="cb77-12"><a href="bookdown-crash-course.html#cb77-12" tabindex="-1"></a>    <span class="ex">└──</span> ...</span>
+<span id="cb77-13"><a href="bookdown-crash-course.html#cb77-13" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
+<span id="cb77-14"><a href="bookdown-crash-course.html#cb77-14" tabindex="-1"></a><span class="ex">├──</span> .Rhistory</span>
+<span id="cb77-15"><a href="bookdown-crash-course.html#cb77-15" tabindex="-1"></a><span class="ex">├──</span> 001-faculty.Rmd <span class="co"># --&gt; faculty bios</span></span>
+<span id="cb77-16"><a href="bookdown-crash-course.html#cb77-16" tabindex="-1"></a><span class="ex">├──</span> 002-computing.Rmd <span class="co"># --&gt; computing setup and downloads</span></span>
+<span id="cb77-17"><a href="bookdown-crash-course.html#cb77-17" tabindex="-1"></a><span class="ex">├──</span> 010-module 1.Rmd <span class="co"># --&gt; module 1 material</span></span>
+<span id="cb77-18"><a href="bookdown-crash-course.html#cb77-18" tabindex="-1"></a><span class="ex">├──</span> 020-module-2.Rmd </span>
+<span id="cb77-19"><a href="bookdown-crash-course.html#cb77-19" tabindex="-1"></a><span class="ex">├──</span> 030-module-3.Rmd</span>
+<span id="cb77-20"><a href="bookdown-crash-course.html#cb77-20" tabindex="-1"></a><span class="ex">├──</span> 040-module-4.Rmd</span>
+<span id="cb77-21"><a href="bookdown-crash-course.html#cb77-21" tabindex="-1"></a><span class="ex">├──</span> 404.html <span class="co"># Rendered 404 page</span></span>
+<span id="cb77-22"><a href="bookdown-crash-course.html#cb77-22" tabindex="-1"></a><span class="ex">├──</span> README.md <span class="co"># README file - this directs people looking at the GitHub repo to the rendered site</span></span>
+<span id="cb77-23"><a href="bookdown-crash-course.html#cb77-23" tabindex="-1"></a><span class="ex">├──</span> book.bib <span class="co"># citation file</span></span>
+<span id="cb77-24"><a href="bookdown-crash-course.html#cb77-24" tabindex="-1"></a><span class="ex">├──</span> callouts.lua <span class="co"># Lua filter that defines the callout options</span></span>
+<span id="cb77-25"><a href="bookdown-crash-course.html#cb77-25" tabindex="-1"></a><span class="ex">├──</span> cbw-workshop-year.html</span>
+<span id="cb77-26"><a href="bookdown-crash-course.html#cb77-26" tabindex="-1"></a><span class="ex">├──</span> {{CODE}}.Rproj <span class="co"># always open this file in RStudio when starting to edit!</span></span>
+<span id="cb77-27"><a href="bookdown-crash-course.html#cb77-27" tabindex="-1"></a><span class="ex">├──</span> content-files <span class="co"># store all files from your modules here (ex. data sets, empty code worksheets)</span></span>
+<span id="cb77-28"><a href="bookdown-crash-course.html#cb77-28" tabindex="-1"></a>    <span class="ex">└──</span> sample-pdf.pdf</span>
+<span id="cb77-29"><a href="bookdown-crash-course.html#cb77-29" tabindex="-1"></a><span class="ex">├──</span> docs</span>
+<span id="cb77-30"><a href="bookdown-crash-course.html#cb77-30" tabindex="-1"></a>    <span class="ex">└──</span> ... <span class="co"># html files &amp; other generated content</span></span>
+<span id="cb77-31"><a href="bookdown-crash-course.html#cb77-31" tabindex="-1"></a><span class="ex">├──</span> fa-header.html</span>
+<span id="cb77-32"><a href="bookdown-crash-course.html#cb77-32" tabindex="-1"></a><span class="ex">├──</span> img <span class="co"># folder where you should store all your images</span></span>
+<span id="cb77-33"><a href="bookdown-crash-course.html#cb77-33" tabindex="-1"></a>    <span class="ex">├──</span> bioinformatics.ca-logo.svg </span>
+<span id="cb77-34"><a href="bookdown-crash-course.html#cb77-34" tabindex="-1"></a>    <span class="ex">├──</span> faculty <span class="co"># store all images of faculty in this folder</span></span>
+<span id="cb77-35"><a href="bookdown-crash-course.html#cb77-35" tabindex="-1"></a>        <span class="ex">├──</span> michelle-brazas.jpg</span>
+<span id="cb77-36"><a href="bookdown-crash-course.html#cb77-36" tabindex="-1"></a>        <span class="ex">└──</span> nia-hughes.jpeg</span>
+<span id="cb77-37"><a href="bookdown-crash-course.html#cb77-37" tabindex="-1"></a>    <span class="ex">├──</span> favicon.ico <span class="co"># thumbnail image for website in tab</span></span>
+<span id="cb77-38"><a href="bookdown-crash-course.html#cb77-38" tabindex="-1"></a>    <span class="ex">└──</span> sponsors <span class="co"># store all sponsor logos/titles in this folder</span></span>
+<span id="cb77-39"><a href="bookdown-crash-course.html#cb77-39" tabindex="-1"></a>         <span class="ex">└──</span> Your-Sponsor-Here.svg</span>
+<span id="cb77-40"><a href="bookdown-crash-course.html#cb77-40" tabindex="-1"></a><span class="ex">├──</span> index.Rmd <span class="co"># landing page</span></span>
+<span id="cb77-41"><a href="bookdown-crash-course.html#cb77-41" tabindex="-1"></a><span class="ex">├──</span> packages.bib <span class="co"># R generated citation file</span></span>
+<span id="cb77-42"><a href="bookdown-crash-course.html#cb77-42" tabindex="-1"></a><span class="ex">├──</span> preamble.tex</span>
+<span id="cb77-43"><a href="bookdown-crash-course.html#cb77-43" tabindex="-1"></a><span class="ex">├──</span> README.html <span class="co"># rendered readme file</span></span>
+<span id="cb77-44"><a href="bookdown-crash-course.html#cb77-44" tabindex="-1"></a><span class="ex">├──</span> schedule.csv <span class="co"># contents of your schedule on the landing page; formatted by smart-scheduler utility</span></span>
+<span id="cb77-45"><a href="bookdown-crash-course.html#cb77-45" tabindex="-1"></a><span class="ex">├──</span> style.css <span class="co"># css styling options are defined here - feel free to add your own styling features</span></span>
+<span id="cb77-46"><a href="bookdown-crash-course.html#cb77-46" tabindex="-1"></a><span class="ex">└──</span> workshop_config.json <span class="co"># used to configure your website. Note that this file will disappear after use</span></span></code></pre></div>
 <div id="output.yml-_bookdown.yml" class="section level3 unnumbered hasAnchor">
 <h3>_output.yml &amp; _bookdown.yml<a href="bookdown-crash-course.html#output.yml-_bookdown.yml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>2 important files are the <code>_output.yml</code> files and the <code>_bookdown.yml</code> files. They help tell bookdown what we want and what to do, especially when making our website.</p>
@@ -548,7 +549,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 <div id="folders" class="section level3 unnumbered hasAnchor">
 <h3>Folders<a href="bookdown-crash-course.html#folders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We want our workshops to be easy to navigate and understand. Images or files that are required for your lessons should be placed in <code>./img/</code> and <code>./content-files/</code> respectively. Within these files, try creating sub-folders within these folders to help organize groups of files. For example, if you have a bunch of data sets, try creating a “datasets” folder within <code>./content-files/</code>. Subfolders already exist in <code>./img</code>: <code>./img/faculty/</code> and <code>./img/sponsors/</code>.</p>
-<div class="callout-yellow-subtle">
+<div class="callout-subtle callout-yellow-subtle">
 <span class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -565,7 +566,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 <li>_main_files</li>
 <li>docs</li>
 </ul>
-<div class="callout-yellow-subtle">
+<div class="callout-subtle callout-yellow-subtle">
 <span class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -575,7 +576,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 <p><strong>Debugging Tip 2</strong>: Each time we build, we produce a “docs” folder. If we have already built once, we just add new files to it. HTML files that were produced from .Rmd that were deleted are not removed. Hence, if you see errors from files that no longer exist in your root project folder, try deleting the whole docs folder, and rebuilding.</p>
 </div>
 </div>
-<div class="callout-red-subtle">
+<div class="callout-subtle callout-red-subtle">
 <span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -592,7 +593,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 <div id="open-bookdown" class="section level3 hasAnchor" number="24.3.1">
 <h3><span class="header-section-number">24.3.1</span> Opening your Bookdown project<a href="bookdown-crash-course.html#open-bookdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Enter the folder you git cloned using Finder/File Explorer. Right click on the .Rproj file and press “Open in RStudio”. There is only one file with this file extension.</p>
-<div class="callout-orange-subtle">
+<div class="callout-subtle callout-orange-subtle">
 <span class="callout-icon"><i class="fas fa-fire" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -612,7 +613,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 <p>Try opening <code>index.Rmd</code>: a new pane will open in the top left that shows the contents of <code>index.Rmd</code>. This is where we will be editing our files! Notice the “Knit” button.</p>
 <p>In the bottom left, we have our console and other debug related windows. Any code we run will appear in the console. We can access the terminal under the “Terminal” tab - this is just like using the Terminal app.</p>
 <p>In your top right, we have another pane with multiple views. The most relevant windows to us are the “Build” and the “Git” views.</p>
-<div class="callout-gray-subtle">
+<div class="callout-subtle callout-gray-subtle">
 <span class="callout-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -625,7 +626,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 <div id="build-the-book" class="section level2 hasAnchor" number="24.5">
 <h2><span class="header-section-number">24.5</span> Build the Book<a href="bookdown-crash-course.html#build-the-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try pressing “Build Book” within the “Build” window. Your build window is going to fill up with text, and soon, a website is going to pop up in a new window.</p>
-<div class="callout-gray-subtle">
+<div class="callout-subtle callout-gray-subtle">
 <span class="callout-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -635,7 +636,7 @@ You have 6 Rmd input file(s) but only 4 first-level heading(s). Did you forget f
 </div>
 </div>
 <p>By building the book, <strong>all</strong> of these files are compiled and converted to .html files that create a website. Each time we make local changes to our files and we want them to appear in our website, we need to rebuild the book.</p>
-<div class="callout-blue-subtle">
+<div class="callout-subtle callout-blue-subtle">
 <span class="callout-icon"><i class="fas fa-circle-info" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
@@ -651,7 +652,7 @@ You can choose to only produce a gitbook (the first option). This can be helpful
 <ol style="list-style-type: decimal">
 <li>Build the book from the R console:</li>
 </ol>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="bookdown-crash-course.html#cb81-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="bookdown-crash-course.html#cb78-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Press the keyboard buttons: <code>cmd + shift + B</code> (macOS) OR <code>ctrl + shift + B</code> (windows)</li>
 </ol>
@@ -670,7 +671,7 @@ You can choose to only produce a gitbook (the first option). This can be helpful
 <div id="preview-your-book" class="section level3 hasAnchor" number="24.5.4">
 <h3><span class="header-section-number">24.5.4</span> Preview Your Book<a href="bookdown-crash-course.html#preview-your-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you want live updates to your changes, you can preview the page as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book”, or from the R console (in the bottom left window):</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="bookdown-crash-course.html#cb82-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="bookdown-crash-course.html#cb79-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
 </div>
 </div>
 <div id="push-to-github" class="section level2 hasAnchor" number="24.6">
@@ -693,7 +694,7 @@ You can choose to only produce a gitbook (the first option). This can be helpful
 </p></li>
 </ol>
 <p>Git pushing will automatically update the website - you can see the updates and progress in the actions window we saw previously. (Check out your website on the web once it’s done deploying! It takes approximately 1-2 minutes for the website to rebuild.)</p>
-<div class="callout-red-subtle">
+<div class="callout-subtle callout-red-subtle">
 <span class="callout-icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
