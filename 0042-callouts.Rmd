@@ -70,8 +70,8 @@ table_data <- data.frame(
     "`\"red\"`, `\"blue\"`, `\"green\"`, `\"yellow\"`, `\"purple\"`, `\"orange\"`, `\"gray\"`",
     "`\"regular\"` (default), `\"important\"`, `\"subtle\"`, `\"plain\"`",
     "`\"Important Note!\"`, `\"**Action Required**\"`",
-    "`\"true\"` (default), `\"false\"`, `\"fas fa-rocket\"`",
-    "`\"true\"`, `\"false\"` (default)",
+    "`\"true\"` (default), `\"false\"`, or [any free FontAwesome icon class](https://fontawesome.com/icons/) (e.g., `\"fas fa-lightbulb\"`)",
+    "`\"true\"` (default), `\"false\"`",
     "`\"true\"`, `\"false\"` (default)"
   )
 )
@@ -95,7 +95,7 @@ table_data %>%
 ```
 
 
-## Default Icons
+## Default icons
 
 If you set `icon="true"` or omit the `icon` attribute, a default icon will be shown based on the `type` you've chosen. Here are the defaults:
 
@@ -137,7 +137,7 @@ table_data %>%
 
 You can override any of these defaults by specifying a different icon class, for example: `icon="fas fa-lightbulb"`. Find more icons on the [Font Awesome website](https://fontawesome.com/icons?d=gallery&m=free&s=solid).
 
-## Styles
+## Style examples
 
 Note that the colors chosen below are arbitrary: colors and styles can be mixed and matched.
 
@@ -195,7 +195,7 @@ This is an orange collapsible callout with Plain styling.
 
 ::::
 
-## Nesting callouts in lists
+## Indenting callouts/nesting in lists
 
 You can nest callouts inside other elements, such as lists, by indenting the entire callout block. The option In-List Nesting Level in the Callout Generator above will do this for you.
 

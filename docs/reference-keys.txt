@@ -75,12 +75,12 @@ callout-generator
 about-callouts
 callout-options
 default-icons
-styles
+style-examples
 regular
 important
 subtle
 plain
-nesting-callouts-in-lists
+indenting-calloutsnesting-in-lists
 advanced-example
 render-code
 rendering-code

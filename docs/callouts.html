@@ -304,15 +304,15 @@ div.csl-indent {
 <li class="chapter" data-level="19.1" data-path="callouts.html"><a href="callouts.html#callout-generator"><i class="fa fa-check"></i><b>19.1</b> Callout generator</a></li>
 <li class="chapter" data-level="19.2" data-path="callouts.html"><a href="callouts.html#about-callouts"><i class="fa fa-check"></i><b>19.2</b> About callouts</a></li>
 <li class="chapter" data-level="19.3" data-path="callouts.html"><a href="callouts.html#callout-options"><i class="fa fa-check"></i><b>19.3</b> Callout options</a></li>
-<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default Icons</a></li>
-<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#styles"><i class="fa fa-check"></i><b>19.5</b> Styles</a>
+<li class="chapter" data-level="19.4" data-path="callouts.html"><a href="callouts.html#default-icons"><i class="fa fa-check"></i><b>19.4</b> Default icons</a></li>
+<li class="chapter" data-level="19.5" data-path="callouts.html"><a href="callouts.html#style-examples"><i class="fa fa-check"></i><b>19.5</b> Style examples</a>
 <ul>
 <li class="chapter" data-level="19.5.1" data-path="callouts.html"><a href="callouts.html#regular"><i class="fa fa-check"></i><b>19.5.1</b> Regular</a></li>
 <li class="chapter" data-level="19.5.2" data-path="callouts.html"><a href="callouts.html#important"><i class="fa fa-check"></i><b>19.5.2</b> Important</a></li>
 <li class="chapter" data-level="19.5.3" data-path="callouts.html"><a href="callouts.html#subtle"><i class="fa fa-check"></i><b>19.5.3</b> Subtle</a></li>
 <li class="chapter" data-level="19.5.4" data-path="callouts.html"><a href="callouts.html#plain"><i class="fa fa-check"></i><b>19.5.4</b> Plain</a></li>
 </ul></li>
-<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#nesting-callouts-in-lists"><i class="fa fa-check"></i><b>19.6</b> Nesting callouts in lists</a></li>
+<li class="chapter" data-level="19.6" data-path="callouts.html"><a href="callouts.html#indenting-calloutsnesting-in-lists"><i class="fa fa-check"></i><b>19.6</b> Indenting callouts/nesting in lists</a></li>
 <li class="chapter" data-level="19.7" data-path="callouts.html"><a href="callouts.html#advanced-example"><i class="fa fa-check"></i><b>19.7</b> Advanced example</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="render-code.html"><a href="render-code.html"><i class="fa fa-check"></i><b>20</b> Code</a>
@@ -542,7 +542,7 @@ No
 Controls the icon next to the title.
 </td>
 <td style="text-align:left;width: 50%; ">
-<code>"true"</code> (default), <code>"false"</code>, <code>"fas fa-rocket"</code>
+<code>"true"</code> (default), <code>"false"</code>, or <a href="https://fontawesome.com/icons/">any free FontAwesome icon class</a> (e.g., <code>"fas fa-lightbulb"</code>)
 </td>
 </tr>
 <tr>
@@ -556,7 +556,7 @@ No
 Makes the callout a dropdown.
 </td>
 <td style="text-align:left;width: 50%; ">
-<code>"true"</code>, <code>"false"</code> (default)
+<code>"true"</code> (default), <code>"false"</code>
 </td>
 </tr>
 <tr>
@@ -577,7 +577,7 @@ Centers the title (static callouts only).
 </table>
 </div>
 <div id="default-icons" class="section level2 hasAnchor" number="19.4">
-<h2><span class="header-section-number">19.4</span> Default Icons<a href="callouts.html#default-icons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">19.4</span> Default icons<a href="callouts.html#default-icons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you set <code>icon="true"</code> or omit the <code>icon</code> attribute, a default icon will be shown based on the <code>type</code> you’ve chosen. Here are the defaults:</p>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -675,8 +675,8 @@ Icon Class (<code>fas fa-...</code>)
 </table>
 <p>You can override any of these defaults by specifying a different icon class, for example: <code>icon="fas fa-lightbulb"</code>. Find more icons on the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free&amp;s=solid">Font Awesome website</a>.</p>
 </div>
-<div id="styles" class="section level2 hasAnchor" number="19.5">
-<h2><span class="header-section-number">19.5</span> Styles<a href="callouts.html#styles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="style-examples" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Style examples<a href="callouts.html#style-examples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Note that the colors chosen below are arbitrary: colors and styles can be mixed and matched.</p>
 <div id="regular" class="section level3 hasAnchor" number="19.5.1">
 <h3><span class="header-section-number">19.5.1</span> Regular<a href="callouts.html#regular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -731,8 +731,8 @@ Icon Class (<code>fas fa-...</code>)
 <details class="callout-dropdown callout-plain callout-orange"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fas fa-fire" aria-hidden="true"></i></span><span class="callout-dropdown-title">Plain, Orange, Collapsible</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p>This is an orange collapsible callout with Plain styling.</p></div></details>
 </div>
 </div>
-<div id="nesting-callouts-in-lists" class="section level2 hasAnchor" number="19.6">
-<h2><span class="header-section-number">19.6</span> Nesting callouts in lists<a href="callouts.html#nesting-callouts-in-lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="indenting-calloutsnesting-in-lists" class="section level2 hasAnchor" number="19.6">
+<h2><span class="header-section-number">19.6</span> Indenting callouts/nesting in lists<a href="callouts.html#indenting-calloutsnesting-in-lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can nest callouts inside other elements, such as lists, by indenting the entire callout block. The option In-List Nesting Level in the Callout Generator above will do this for you.</p>
 <p><strong>To place a callout inside a list item or indent the callout, indent the entire <code>::::</code> block (including its opening and closing fences and all of its content) by four spaces.</strong></p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb47-1"><a href="callouts.html#cb47-1" tabindex="-1"></a><span class="ss">1.  </span>This is the first item in the list.</span>
