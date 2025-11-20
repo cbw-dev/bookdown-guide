@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Workshop Schedule Converter</title>
+    <title>Smart Workshop Schedule Converter (Interactive CST)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -29,6 +29,16 @@
             padding: 1rem;
             margin-bottom: 1.5rem;
             border-radius: 0.375rem;
+        }
+        .warning-box {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.375rem;
+        }
+        .conflict-box {
+             border-left: 4px solid #f59e0b;
         }
         .day-block {
             border: 1px solid #e5e7eb;
@@ -60,7 +70,7 @@
     <div class="max-w-4xl mx-auto">
         <div class="bg-white p-8 rounded-2xl shadow-lg">
             <h1 class="text-3xl font-bold text-gray-900">Smart Schedule Converter</h1>
-            <p class="mt-2 text-gray-600">A utility to convert complex schedule formats into a usable CSV, one day at a time.</p>
+            <p class="mt-2 text-gray-600">A utility to convert complex schedule formats into a usable CSV. This tool automatically detects ambiguous Central Time scenarios.</p>
         </div>
 
         <div class="bg-white p-8 rounded-2xl shadow-lg mt-8">
@@ -69,17 +79,61 @@
                 <label for="primary-timezone" class="input-label">Primary Time Zone of Pasted Data</label>
                 <select id="primary-timezone" class="input-field mt-1"></select>
             </div>
-             <div id="timezone-checkboxes" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+             <div id="timezone-checkboxes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
                 <!-- Checkboxes will be dynamically generated here -->
             </div>
         </div>
 
         <div class="bg-white p-8 rounded-2xl shadow-lg mt-8">
             <h2 class="text-xl font-bold text-gray-900">Step 2: Enter Daily Schedules</h2>
+
+            <div class="warning-box">
+                <p class="text-sm text-orange-800"><strong>Note:</strong> You <strong>must</strong> select a valid Date for every day block below to enable smart time zone detection.</p>
+            </div>
+
             <div id="days-container">
                 <!-- Day blocks will be added here -->
             </div>
             <button id="add-day-btn" class="mt-4 w-full bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">Add Another Day</button>
+        </div>
+
+        <!-- STEP 2.5: CONDITIONAL CENTRAL TIME RESOLUTION -->
+        <div id="step-2-5" class="bg-white p-8 rounded-2xl shadow-lg mt-8 hidden conflict-box">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <!-- Icon -->
+                    <svg class="h-6 w-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h2 class="text-xl font-bold text-gray-900">Step 2.5: Resolve Central Time Difference</h2>
+                    <p class="mt-2 text-gray-600">
+                        We detected that some of your selected dates fall during Daylight Savings Time. <br>
+                        During this period, "Central Time" splits into two distinct zones. Which regions do you need?
+                    </p>
+                    <div class="mt-4 space-y-4 bg-amber-50 p-4 rounded-lg border border-amber-200">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="include-ct-dst" type="checkbox" checked class="focus:ring-indigo-500 h-5 w-5 text-indigo-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="include-ct-dst" class="font-bold text-gray-800 block">Central Time (DST Observing)</label>
+                                <span class="text-gray-600">Include this for Manitoba.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="include-ct-std" type="checkbox" checked class="focus:ring-indigo-500 h-5 w-5 text-indigo-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="include-ct-std" class="font-bold text-gray-800 block">Central Standard Time (No DST)</label>
+                                <span class="text-gray-600">Include this for Saskatchewan.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="bg-white p-8 rounded-2xl shadow-lg mt-8">
@@ -105,15 +159,20 @@
             const timezoneCheckboxesContainer = document.getElementById('timezone-checkboxes');
             const daysContainer = document.getElementById('days-container');
             const addDayBtn = document.getElementById('add-day-btn');
+            const step25Block = document.getElementById('step-2-5');
 
+            // CLEAN TIMEZONE DATA (No location names in UI)
             const timezones = [
-                { name: "Pacific Time (PT)", abbr: "PT", offset: -7 },
-                { name: "Mountain Time (MT)", abbr: "MT", offset: -6 },
-                { name: "Central Time (CT)", abbr: "CT", offset: -5 },
-                { name: "Eastern Time (ET)", abbr: "ET", offset: -4 },
-                { name: "Atlantic Time (AT)", abbr: "AT", offset: -3 },
-                { name: "Newfoundland Time (NT)", abbr: "NT", offset: -2.5 }
+                { name: "Pacific Time", abbr: "PT", iana: "America/Vancouver" },
+                { name: "Mountain Time", abbr: "MT", iana: "America/Edmonton" },
+                { name: "Central Time", abbr: "CT", iana: "America/Winnipeg" },
+                { name: "Eastern Time", abbr: "ET", iana: "America/Toronto" },
+                { name: "Atlantic Time", abbr: "AT", iana: "America/Halifax" },
+                { name: "Newfoundland Time", abbr: "NT", iana: "America/St_Johns" }
             ];
+
+            // Hidden Definition for Saskatchewan/CST (Used dynamically)
+            const cstZone = { name: "Central Standard Time", abbr: "CST", iana: "America/Regina" };
 
             // Populate primary timezone dropdown and checkboxes
             timezones.forEach((tz, index) => {
@@ -129,6 +188,10 @@
                 checkbox.id = `tz-checkbox-${index}`;
                 checkbox.value = index;
                 checkbox.className = 'h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500';
+
+                // Trigger check on change
+                checkbox.addEventListener('change', checkForCentralConflict);
+
                 const label = document.createElement('label');
                 label.htmlFor = `tz-checkbox-${index}`;
                 label.textContent = tz.name;
@@ -137,7 +200,13 @@
                 div.appendChild(label);
                 timezoneCheckboxesContainer.appendChild(div);
             });
-            primaryTimezoneSelect.value = '3'; // Default to Eastern Time
+
+            // Default to Eastern Time (Index 3 in new list)
+            primaryTimezoneSelect.value = '3';
+            primaryTimezoneSelect.addEventListener('change', () => {
+                updatePrimaryTzCheckbox();
+                checkForCentralConflict();
+            });
 
             const updatePrimaryTzCheckbox = () => {
                 const checkboxes = document.querySelectorAll('#timezone-checkboxes input[type="checkbox"]');
@@ -153,7 +222,6 @@
                 }
             };
 
-            primaryTimezoneSelect.addEventListener('change', updatePrimaryTzCheckbox);
             updatePrimaryTzCheckbox();
 
             let dayCounter = 0;
@@ -169,6 +237,9 @@
                 const dateInput = document.createElement('input');
                 dateInput.type = 'date';
                 dateInput.className = 'date-input input-field mt-1';
+
+                // Trigger check on date change
+                dateInput.addEventListener('change', checkForCentralConflict);
 
                 const allDayBlocks = document.querySelectorAll('.day-block');
                 if (allDayBlocks.length > 0) {
@@ -203,7 +274,7 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="input-label">Date</label>
+                            <label class="input-label">Date (Required)</label>
                         </div>
                         <div>
                             <label class="input-label">Day Label</label>
@@ -211,7 +282,7 @@
                     </div>
                     <div class="mt-4">
                         <label class="input-label paste-label">Paste Day ${dayCounter} Schedule (Time and Activity columns)</label>
-                        <textarea class="paste-area input-field mt-1 h-40" placeholder="Paste data for this day..."></textarea>
+                        <textarea class="paste-area input-field mt-1 h-40" placeholder="09:00\tWelcome\n09:30\tSession 1..."></textarea>
                     </div>
                 `;
 
@@ -226,11 +297,13 @@
                     removeBtn.addEventListener('click', () => {
                         dayBlock.remove();
                         renumberDays();
+                        checkForCentralConflict(); // Check on remove
                     });
                     dayBlock.querySelector('.flex').appendChild(removeBtn);
                 }
 
                 daysContainer.appendChild(dayBlock);
+                checkForCentralConflict(); // Check on add
             };
 
             const renumberDays = () => {
@@ -248,19 +321,77 @@
             };
 
             addDayBtn.addEventListener('click', addDayBlock);
-            addDayBlock(); // Add the first day by default
+            addDayBlock();
+
+            // --- Helper: Get UTC Offset in Minutes for a specific Date ---
+            function getOffsetInMinutes(dateObj, timeZoneIana) {
+                try {
+                    const specificDateStr = dateObj.toLocaleString('en-US', { timeZone: timeZoneIana, timeZoneName: 'longOffset' });
+                    const match = specificDateStr.match(/GMT([+-]\d{2}):(\d{2})/);
+                    if (!match) return 0;
+                    const hours = parseInt(match[1], 10);
+                    const minutes = parseInt(match[2], 10);
+                    return (hours * 60) + (hours < 0 ? -minutes : minutes);
+                } catch (e) {
+                    console.error(`Error calculating offset for ${timeZoneIana}`, e);
+                    return 0;
+                }
+            }
+
+            // --- STEP 2.5 LOGIC ---
+            function checkForCentralConflict() {
+                // 1. Is Central Time selected? (Via dropdown OR checkbox)
+                const primaryTz = timezones[primaryTimezoneSelect.value];
+                const checkboxes = document.querySelectorAll('#timezone-checkboxes input[type="checkbox"]:checked');
+
+                let centralSelected = false;
+                if (primaryTz.abbr === 'CT') centralSelected = true;
+                checkboxes.forEach(cb => {
+                    if (timezones[cb.value].abbr === 'CT') centralSelected = true;
+                });
+
+                if (!centralSelected) {
+                    step25Block.classList.add('hidden');
+                    return;
+                }
+
+                // 2. Do any dates have a split?
+                const dateInputs = document.querySelectorAll('.date-input');
+                let hasSplit = false;
+
+                dateInputs.forEach(input => {
+                    if (input.value) {
+                        // T12:00:00 to stay in midday safe zone
+                        const d = new Date(input.value + 'T12:00:00');
+                        const ctOffset = getOffsetInMinutes(d, 'America/Winnipeg');
+                        const cstOffset = getOffsetInMinutes(d, 'America/Regina');
+                        if (ctOffset !== cstOffset) {
+                            hasSplit = true;
+                        }
+                    }
+                });
+
+                if (hasSplit) {
+                    step25Block.classList.remove('hidden');
+                } else {
+                    step25Block.classList.add('hidden');
+                }
+            }
 
             // --- Main Logic ---
             generateBtn.addEventListener('click', () => {
                 let allEvents = [];
                 const dayBlocks = document.querySelectorAll('.day-block');
 
+                // 1. Process Inputs
                 dayBlocks.forEach(block => {
                     const dayLabel = block.querySelector('.day-label-input').value;
-                    const date = block.querySelector('.date-input').value;
+                    const dateStr = block.querySelector('.date-input').value;
                     const pasteData = block.querySelector('.paste-area').value;
 
                     if (!pasteData) return;
+
+                    const dateObj = dateStr ? new Date(`${dateStr}T12:00:00`) : new Date();
 
                     const lines = pasteData.trim().split('\n');
                     let rawEvents = [];
@@ -284,7 +415,6 @@
                     for (let i = 0; i < rawEvents.length; i++) {
                         const event = rawEvents[i];
                         const fullActivity = event.activity.join(' ').trim();
-
                         if (!fullActivity && finalEvents.length > 0) {
                             finalEvents[finalEvents.length - 1].endTime = event.time;
                         } else {
@@ -293,10 +423,11 @@
                     }
 
                     finalEvents.forEach(e => {
-                        allEvents.push({ ...e, day_label: dayLabel, date: date });
+                        allEvents.push({ ...e, day_label: dayLabel, date: dateStr, dateObj: dateObj });
                     });
                 });
 
+                // 2. Determine Timezones
                 const primaryTzIndex = primaryTimezoneSelect.value;
                 const primaryTz = timezones[primaryTzIndex];
 
@@ -306,9 +437,33 @@
                     allSelectedTimezones.push(timezones[cb.value]);
                 });
 
-                const uniqueTimezones = [...new Map(allSelectedTimezones.map(item => [item.abbr, item])).values()];
-                uniqueTimezones.sort((a, b) => a.offset - b.offset);
+                let uniqueTimezones = [...new Map(allSelectedTimezones.map(item => [item.name, item])).values()];
 
+                // --- HANDLE SPLIT SELECTION ---
+                const step25Visible = !step25Block.classList.contains('hidden');
+                const centralSelected = uniqueTimezones.some(tz => tz.abbr === 'CT');
+
+                if (centralSelected && step25Visible) {
+                    // Remove the generic "CT" from the list
+                    uniqueTimezones = uniqueTimezones.filter(tz => tz.abbr !== 'CT');
+
+                    // Add specifics based on user selection in Step 2.5
+                    const includeDst = document.getElementById('include-ct-dst').checked;
+                    const includeStd = document.getElementById('include-ct-std').checked;
+
+                    if (includeStd) {
+                        uniqueTimezones.push(cstZone);
+                    }
+                    if (includeDst) {
+                        uniqueTimezones.push(timezones.find(t => t.abbr === 'CT'));
+                    }
+                }
+
+                // Final Sort: PT, MT, CST, CT, ET, AT, NT
+                const sortOrder = ["PT", "MT", "CST", "CT", "ET", "AT", "NT"];
+                uniqueTimezones.sort((a, b) => sortOrder.indexOf(a.abbr) - sortOrder.indexOf(b.abbr));
+
+                // 3. Generate Data
                 const processedEvents = allEvents.map(e => {
                     let type = 'activity';
                     const lowerActivity = e.activity.toLowerCase();
@@ -323,11 +478,16 @@
                         times: []
                     };
 
+                    const primaryOffsetMinutes = getOffsetInMinutes(e.dateObj, primaryTz.iana);
+
                     uniqueTimezones.forEach(tz => {
-                        const offsetFromPrimary = tz.offset - primaryTz.offset;
-                        const newStartTime = convertTime(e.startTime, offsetFromPrimary);
-                        const newEndTime = e.endTime ? convertTime(e.endTime, offsetFromPrimary) : '';
+                        const targetOffsetMinutes = getOffsetInMinutes(e.dateObj, tz.iana);
+                        const diffMinutes = targetOffsetMinutes - primaryOffsetMinutes;
+
+                        const newStartTime = convertTime(e.startTime, diffMinutes);
+                        const newEndTime = e.endTime ? convertTime(e.endTime, diffMinutes) : '';
                         const newTimeDisplay = newEndTime ? `${newStartTime} - ${newEndTime}` : newStartTime;
+
                         pEvent.times.push({ header: `Time (${tz.abbr})`, time: newTimeDisplay });
                     });
 
@@ -366,14 +526,14 @@
                 setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
             });
 
-            function convertTime(timeStr, offset) {
+            function convertTime(timeStr, offsetMinutes) {
                 if (!timeStr || !timeStr.includes(':')) return '';
                 const [h, m] = timeStr.split(':').map(Number);
                 if (isNaN(h) || isNaN(m)) return '';
 
-                const totalMinutes = h * 60 + m + offset * 60;
+                const totalMinutes = h * 60 + m + offsetMinutes;
                 const newHours = Math.floor(totalMinutes / 60 + 24) % 24;
-                const newMinutes = totalMinutes % 60;
+                const newMinutes = (totalMinutes % 60 + 60) % 60;
 
                 return `${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}`;
             }
