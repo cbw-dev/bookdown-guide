@@ -9,7 +9,7 @@ Want to skip all the technical stuff? Use the widget below to create your callou
 ```{r, echo=FALSE, results='asis'}
 htmltools::tags$iframe(
   src = "callout_generator.html",
-  style = "width: 100%; height: 100vh; min-width: 650px; border: none;"
+  style = "width: 100%; height: 75vh; min-width: 650px; border: none;"
 )
 ```
 ::::

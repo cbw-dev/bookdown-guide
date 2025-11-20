@@ -56,15 +56,15 @@
             font-size: 0.85rem;
         }
 
-        /* --- NEW: Wrapper for label and link --- */
+        /* Wrapper for label and link */
         .label-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px; /* Replaces the label's margin-bottom */
+            margin-bottom: 5px;
         }
         .label-wrapper label {
-            margin-bottom: 0; /* Handled by wrapper */
+            margin-bottom: 0;
         }
         .fa-link {
             font-size: 0.75rem;
@@ -80,7 +80,6 @@
             font-size: 0.7rem;
             margin-left: 2px;
         }
-        /* --- End New Styles --- */
 
         .form-group select,
         .form-group input[type="text"],
@@ -110,25 +109,23 @@
             grid-column: 1 / -1;
         }
 
-        /* --- NEW: Wrapper for Icon Select + its Preview --- */
+        /* Wrapper for Icon Select + its Preview */
         .icon-select-wrapper {
             display: flex;
             align-items: center;
-            gap: 8px; /* Space between dropdown and preview */
+            gap: 8px;
         }
         .icon-select-wrapper select {
-            flex-grow: 1; /* Dropdown takes available space */
+            flex-grow: 1;
             width: auto;
         }
         #default-icon-preview {
-            display: none; /* Hidden by default, shown by JS */
+            display: none;
             padding: 0;
             border: none;
             background: none;
-            width: 1.2em; /* Just enough space for the icon */
+            width: 1.2em;
         }
-        /* --- End New Styles --- */
-
 
         .icon-input-wrapper {
             display: flex;
@@ -158,7 +155,7 @@
 
         .icon-preview i {
             font-size: 1.1rem;
-            color: #333; /* Default icon color */
+            color: #333;
             width: 1.2em;
             text-align: center;
         }
@@ -189,18 +186,35 @@
             margin-bottom: 0;
             align-self: end;
             padding-bottom: 4px;
+            /* Ensure it doesn't collapse when disabled */
+            min-height: 24px;
         }
         .form-group-checkbox label {
             margin: 0;
             font-weight: 500;
             font-size: 0.9rem;
+            transition: color 0.2s ease;
         }
         .form-group-checkbox input[type="checkbox"] {
             width: 1em;
             height: 1em;
+            cursor: pointer;
         }
+
+        /* Disabled state for checkboxes */
+        .form-group-checkbox input[type="checkbox"]:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .form-group-checkbox input[type="checkbox"]:disabled + label {
+            color: #aaa;
+            cursor: not-allowed;
+            text-decoration: line-through; /* Optional: clearly shows it's inactive */
+            text-decoration-color: #ddd;
+        }
+
         #custom-icon-group {
-            display: none; /* Hidden by default, shown by JS */
+            display: none;
         }
 
         /* Code Output */
@@ -290,7 +304,6 @@
                     </select>
                 </div>
 
-                <!-- UPDATED: Icon Dropdown and its preview are now grouped -->
                 <div class="form-group">
                     <label for="callout-icon-mode">Icon</label>
                     <div class="icon-select-wrapper">
@@ -299,7 +312,6 @@
                             <option value="none">No Icon</option>
                             <option value="custom">Custom Icon</option>
                         </select>
-                        <!-- NEW: Preview just for the default icon -->
                         <span id="default-icon-preview" class="icon-preview" aria-hidden="true">
                             <i id="default-icon-preview-i" class=""></i>
                         </span>
@@ -311,19 +323,15 @@
                     <input type="number" id="callout-nesting" value="0" min="0" max="5">
                 </div>
 
-                <!-- This is now the "Custom Icon" field, it spans both columns -->
                 <div class="form-group span-all" id="custom-icon-group">
-                    <!-- NEW: Wrapper for label and link -->
                     <div class="label-wrapper">
                         <label for="callout-icon-custom">Custom Icon Class</label>
                         <a href="https://fontawesome.com/icons" target="_blank" class="fa-link">
                             Find Icons <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
-                    <!-- END New Wrapper -->
                     <div class="icon-input-wrapper">
                         <input type="text" id="callout-icon-custom" placeholder="e.g., fas fa-rocket">
-                        <!-- This preview is for the custom text input -->
                         <span id="custom-icon-preview" class="icon-preview" aria-hidden="true">
                             <i id="custom-icon-preview-i" class=""></i>
                         </span>
@@ -408,6 +416,7 @@
             const customIcon = controls.customIconInput.value;
             const isCollapsible = controls.collapsible.checked;
             const isCentered = controls.centerTitle.checked;
+
             const content = controls.content.value || 'This is the content of the callout.';
             const nestingLevel = parseInt(controls.nesting.value, 10) || 0;
             const indent = '    '.repeat(nestingLevel);
@@ -416,9 +425,6 @@
 
             if (style !== 'regular') {
                 attributes.push(`style="${style}"`);
-            }
-            if (style === 'plain' && !isCollapsible) {
-                 // Plain style is only for collapsible.
             }
 
             if (title) {
@@ -434,7 +440,8 @@
             if (isCollapsible) {
                 attributes.push('collapsible="true"');
             }
-            if (isCentered && !isCollapsible) {
+
+            if (isCentered) {
                 attributes.push('center_title="true"');
             }
 
@@ -450,56 +457,40 @@
             output.code.textContent = finalCode;
         }
 
-        // This function is for the "Custom Icon" text field's preview
         function updateCustomIconPreview() {
             const customValue = controls.customIconInput.value;
-            const type = controls.type.value; // Get current color
+            const type = controls.type.value;
 
-            // Set the icon class on the <i> tag
             controls.customIconPreviewI.className = customValue;
-
-            // Set the color class on the parent <span> tag
             controls.customIconPreviewSpan.className = `icon-preview icon-${type}`;
         }
 
-        // This function controls all the UI visibility
-        function updateIconField(e) { // Accept event object
+        function updateIconField(e) {
             const mode = controls.iconMode.value;
             const type = controls.type.value;
-            const triggerElement = e ? e.target : null; // Get the element that triggered the change
+            const triggerElement = e ? e.target : null;
 
             if (mode === 'custom') {
-                // Show custom field, hide default preview
                 controls.customIconGroup.style.display = 'block';
                 controls.defaultIconPreviewSpan.style.display = 'none';
 
-                // --- MODIFICATION ---
-                // Only clear the input if the iconMode dropdown itself was changed
-                // or on the initial page load (no trigger).
-                // Do NOT clear it if the Color dropdown was changed.
                 if (triggerElement === controls.iconMode || !triggerElement) {
                     controls.customIconInput.value = '';
                 }
-                // --- END MODIFICATION ---
 
                 controls.customIconInput.readOnly = false;
                 controls.customIconInput.placeholder = 'e.g., fas fa-rocket';
-
-                // Call custom preview update to set initial color and icon
-                updateCustomIconPreview(); // This will apply color and icon
+                updateCustomIconPreview();
 
             } else if (mode === 'default') {
-                // Hide custom field, show default preview
                 controls.customIconGroup.style.display = 'none';
                 controls.defaultIconPreviewSpan.style.display = 'inline-flex';
 
-                // Set default preview icon and color
                 const iconClass = defaultIcons[type] || 'fas fa-circle-info';
                 controls.defaultIconPreviewI.className = iconClass;
                 controls.defaultIconPreviewSpan.className = `icon-preview icon-${type}`;
 
-            } else { // mode === 'none'
-                // Hide both
+            } else {
                 controls.customIconGroup.style.display = 'none';
                 controls.defaultIconPreviewSpan.style.display = 'none';
             }
@@ -509,22 +500,16 @@
 
         // --- Event Listeners ---
 
-        // General listener for all inputs
         document.getElementById('callout-form').addEventListener('input', (e) => {
-            // Always update the generated code
             updateGenerator();
-
-            // If the user is typing in the custom icon field, update its specific preview
             if (e.target.id === 'callout-icon-custom') {
                 updateCustomIconPreview();
             }
         });
 
-        // Specific listeners for dropdowns that change the UI layout
-        controls.iconMode.addEventListener('change', updateIconField); // Pass event implicitly
-        controls.type.addEventListener('change', updateIconField); // Pass event implicitly
+        controls.iconMode.addEventListener('change', updateIconField);
+        controls.type.addEventListener('change', updateIconField);
 
-        // --- Copy Button ---
         output.copyButton.addEventListener('click', () => {
             const codeToCopy = output.code.textContent;
             try {
@@ -571,8 +556,8 @@
             document.body.removeChild(textArea);
         }
 
-        // Initial call to set the correct UI state on load
-        updateIconField(); // No event passed (triggerElement will be null)
+        // Initial setup
+        updateIconField();
 
     </script>
 </body>
