@@ -136,3 +136,6 @@ symptom-the-page-is-blank-or-workshops-are-not-displaying.
 symptom-my-recent-changes-are-not-appearing-on-the-live-site.
 symptom-a-workshop-card-is-showing-a-broken-image.
 references
+step-1-data-ingestion
+step-2-pre-processing
+step-3-analysis-reporting

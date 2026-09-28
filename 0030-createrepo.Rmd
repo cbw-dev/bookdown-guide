@@ -29,9 +29,16 @@
 
 ## Option 2: Duplicate existing repo
 
+:::: {.callout type="red" title="Warning"}
+
+  If you take this route, you'll need to update *all bioschemas info manually across all files*, since there is no workshop setup step! As a result, we strongly recommend against this approach unless you know what you're doing. Remember, you can always follow the steps in option 1 and copy over the contents of older Rmds, resulting in largely the same result as forking.
+  
+::::
+
 If you are repeating a previously offered workshop and know you'll mostly need to make minor edits, you can create a copy of an existing repo (a process called `forking`) instead of creating it from scratch.
 
 **How to Git Fork**
+
 
 1.  **Go to the pre-existing workshop repository** under the <a href="https://github.com/bioinformaticsdotca/" target="_blank">bioinformaticsdotca GitHub</a> for the workshop you want to recreate. For example, if we wanted to create a new workshop version of <a href="https://github.com/bioinformaticsdotca/AUR_2024" target="_blank">Analysis Using R 2024 (AUR 2024)</a>, we would go to this page:
 

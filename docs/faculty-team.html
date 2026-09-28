@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>12 Faculty team setup | CBW Bookdown Guide</title>
+  <title>12 Faculty setup | CBW Bookdown Guide</title>
   <meta name="description" content="Guide to using the CBW Bookdown template" />
   <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="12 Faculty team setup | CBW Bookdown Guide" />
+  <meta property="og:title" content="12 Faculty setup | CBW Bookdown Guide" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
   <meta property="og:description" content="Guide to using the CBW Bookdown template" />
   <meta name="github-repo" content="cbw-dev/bookdown-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="12 Faculty team setup | CBW Bookdown Guide" />
+  <meta name="twitter:title" content="12 Faculty setup | CBW Bookdown Guide" />
   
   <meta name="twitter:description" content="Guide to using the CBW Bookdown template" />
   <meta name="twitter:image" content="https://cbw-dev.github.io/bookdown-guide/img/bioinformatics_logo.png" />
@@ -131,7 +131,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -221,12 +220,12 @@ div.csl-indent {
 <li class="chapter" data-level="11.1" data-path="deploy-website.html"><a href="deploy-website.html#check-deploy"><i class="fa fa-check"></i><b>11.1</b> Check your deploy and see your website!</a></li>
 <li class="chapter" data-level="" data-path="deploy-website.html"><a href="deploy-website.html#a-very-specific-build-and-deployment-warning"><i class="fa fa-check"></i>A very specific build and deployment warning</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="faculty-team.html"><a href="faculty-team.html"><i class="fa fa-check"></i><b>12</b> Faculty team setup</a></li>
+<li class="chapter" data-level="12" data-path="faculty-team.html"><a href="faculty-team.html"><i class="fa fa-check"></i><b>12</b> Faculty setup</a></li>
 <li class="chapter" data-level="13" data-path="clone.html"><a href="clone.html"><i class="fa fa-check"></i><b>13</b> Clone to your computer</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="clone.html"><a href="clone.html#delete-git-folder-locally"><i class="fa fa-check"></i><b>13.1</b> Oops, I Git Cloned the Wrong Repository!</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="finishing-touches.html"><a href="finishing-touches.html"><i class="fa fa-check"></i><b>14</b> Finishing touches</a></li>
+<li class="chapter" data-level="14" data-path="finishing-touches.html"><a href="finishing-touches.html"><i class="fa fa-check"></i><b>14</b> Finishing touches: logo and sponsor images</a></li>
 <li class="chapter" data-level="15" data-path="link-to-homepage.html"><a href="link-to-homepage.html"><i class="fa fa-check"></i><b>15</b> Link to homepage</a>
 <ul>
 <li class="chapter" data-level="15.1" data-path="link-to-homepage.html"><a href="link-to-homepage.html#get-your-code"><i class="fa fa-check"></i><b>15.1</b> Get your code</a></li>
@@ -434,26 +433,20 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="faculty-team" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">12</span> Faculty team setup<a href="faculty-team.html#faculty-team" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<ol style="list-style-type: decimal">
-<li><p>Go to the <a href="https://github.com/orgs/bioinformaticsdotca/teams">bioinformaticsdotca organization teams page</a></p></li>
-<li><p>Create a team named as your workshop code (e.g. INR_Mon-2510). Leave all settings as their defaults</p></li>
-<li><p>Add your instructors and TAs to the team. Note that this will send them an email invite that they must accept.</p></li>
-<li><p>On your repo page on GitHub’s website, navigate to Settings &gt; Collaborators and Teams. Click “Add Teams” and select your team.</p>
-<details class="callout-dropdown callout-plain callout-gray"><summary class="callout-dropdown-summary summary-has-icon"><span class="callout-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><span class="callout-dropdown-title">See image</span> <span class="callout-dropdown-caret"><i class="fas fa-chevron-right" aria-hidden="true"></i></span></summary><div class="callout-dropdown-content"><p><img src="img/template/add-team.png"
-alt="GitHub Settings - Collaborators and Teams menu" /><br />
-</p></div></details></li>
-<li><p>Give your team Maintain access</p></li>
-</ol>
-<div class="callout-plain callout-orange">
-<span class="callout-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+<h1><span class="header-section-number">12</span> Faculty setup<a href="faculty-team.html#faculty-team" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="callout-yellow">
+<span class="callout-icon"><i class="fas fa-bell" aria-hidden="true"></i></span>
 <div class="callout-content">
 <div class="callout-title-static">
-<p>Important note on access</p>
+<p>Update</p>
 </div>
-<p><strong>Do not give direct repository access to individuals!</strong> Always use team access. This allows us to better control the security of our repositories.</p>
+<p>Note that as of September 2026, this process has changed. You will now add your faculty <em>directly to the repository</em>, skipping the Team creation step. This means you won’t have to go through the Platform Training Manager to add external collaborators. Hooray!</p>
 </div>
 </div>
+<ol style="list-style-type: decimal">
+<li>Go to your repository’s settings, then Collaborators and Teams on the left sidebar.</li>
+<li>Use the Add button on the top right to add your instructors/TAs/sysadmin directly to the repository with <em>maintain</em> access. Note that this will send them an email invite that they must accept.</li>
+</ol>
 
 </div>
             </section>

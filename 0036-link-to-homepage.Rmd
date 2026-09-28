@@ -1,13 +1,5 @@
 # Link to homepage {#link-to-homepage}
 
-:::: {.callout type="yellow" title="Note" style="subtle"}
-
-You can find more info on the Github homepage setup in [Appendix B](#homepage-guide).
-
-For the best experience, we **strongly recommend** setting up the local validation system [described here.](#local-validation)
-
-::::
-
 ## Get your code
 
 1.  Use the below widget to generate your metadata entries for the website.
@@ -24,8 +16,21 @@ For the best experience, we **strongly recommend** setting up the local validati
     ```
 
     ::::
+    
+2. Send both outputs to your Platform Training Manager over Slack. **Be sure to put the text in a code block!** If sent as plain text, the quotation marks will be incorrectly copied.
+
+3. If your workshop is new or has an updated icon, send the workshop icon to the PTM as well.
 
 ## Add to GitHub homepage
+
+:::: {.callout type="yellow" title="The Platform Training Manager completes the remaining steps on this page." style="subtle"}
+
+You can find more info on the Github homepage setup in [Appendix B](#homepage-guide).
+
+For the best experience, we **strongly recommend** setting up the local validation system [described here.](#local-validation)}
+  
+::::
+
 
 2.  Navigate to your `bioinformaticsdotca.github.io` repo in your `CBWGithub` folder.
 

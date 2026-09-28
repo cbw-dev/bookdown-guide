@@ -1,4 +1,4 @@
-# Finishing touches {#finishing-touches}
+# Finishing touches: logo and sponsor images {#finishing-touches}
 
 1.  Open the .Rproj file in the folder you've just downloaded
 2.  Upload your workshop icon to the ``img/`` folder and any sponsor logos to the `img/sponsors` folder
